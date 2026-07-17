@@ -1,0 +1,100 @@
+dataset_id: paderborn
+dataset_name: Paderborn University
+institution: Paderborn University
+release_year: 2016
+publication:
+  dedicated_dataset_paper: "Yes"
+  venue: European Conference of the Prognostics and Health Management Society 2016
+  doi: Unknown
+dataset_mode:
+  batch: "Yes"
+  run_to_failure: "No"
+  variable_speed: "Yes"
+modalities:
+  - vibration acceleration
+  - motor phase current
+channels:
+  count: 1
+  positions:
+    - adapter at top end of rolling-bearing test module; vibration of inner housing holding test bearing
+  directions:
+    - main direction of radial load
+  triaxial: "No"
+  simultaneous_sampling: Unknown
+  synchronized_acquisition: "Yes"
+acquisition:
+  sensor_mounting: []
+  position_selection_rationale: Adapter measures the inner test-bearing housing in the main radial-load direction
+  position_validation_methods:
+    - envelope spectra checked against calculated outer- and inner-race characteristic frequencies
+  record_duration_seconds:
+    - 4
+  samples_per_record:
+    - 256000
+sensors:
+  - model: PCB Piezotronics 336C04
+    type: piezoelectric accelerometer
+    signal_conditioning: Kistler 5015A charge amplifier with 30 kHz low-pass filter
+  - model: LEM CKSR 15-NP
+    type: motor phase current transducer
+    channels_reported: 2
+    low_pass_filter_hz: 25000
+  - model: Lorenz K11
+    type: radial-force sensor
+    range: 10 kN
+  - model: Magtrol 305
+    type: torque and rotational-speed transducer
+  - model: Unknown
+    type: oil-temperature sensor
+daq: A/D converter reported; manufacturer and model Unknown
+sampling_rates_hz:
+  - 64000
+bearing_models:
+  - "6203"
+bearing_types:
+  - ball bearing
+faults:
+  healthy: "Yes"
+  inner_race: "Yes"
+  outer_race: "Yes"
+  ball_or_roller: "No"
+  cage: "No"
+  rotor: "No"
+  gear: "No"
+compound_faults:
+  internal_bearing: "Yes"
+  bearing_rotor: "No"
+  bearing_gear: "No"
+  other: "No"
+operating_conditions:
+  rpm:
+    - 900
+    - 1500
+  load:
+    - 0.1 Nm load torque
+    - 0.7 Nm load torque
+  radial_force:
+    - 400 N
+    - 1000 N
+  torque:
+    - 0.1 Nm
+    - 0.7 Nm
+  temperature:
+    - approximately 45-50 degC
+  bearing_type_shift: "No"
+fault_generation:
+  artificial: "Yes"
+  natural: "Yes"
+  run_to_failure: "No"
+validation_methods:
+  - vibration envelope analysis against BPFO and BPFI with harmonics and sidebands
+  - data-driven classification using vibration and motor-current features
+file_formats:
+  - MAT
+raw_data_available: "Yes"
+processed_data_available: Unknown
+metadata_available: "Yes"
+code_available: Unknown
+license: CC BY-NC 4.0
+official_url: http://mb.uni-paderborn.de/kat/datacenter
+notes: Channel count denotes vibration channels only. Two high-rate motor-current channels and lower-rate synchronous operating-condition signals are also reported. The exact lower sampling rates and deposited-file schema require official documentation.

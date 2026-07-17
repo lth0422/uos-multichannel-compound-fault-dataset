@@ -1,0 +1,14 @@
+dataset_id: hust_vietnam
+sources:
+  - source_id: HUSTV-S01
+    type: original_paper
+    title: "HUST bearing: a practical dataset for ball bearing fault diagnosis"
+    authors: Nguyen Duc Thuan; Hoang Si Hong
+    year: 2023
+    venue: BMC Research Notes 16 138
+    doi: 10.1186/s13104-023-06400-4
+    official_url: https://doi.org/10.1186/s13104-023-06400-4
+    local_file: library/papers/HUST (vietnam)/HUST bearing.pdf
+    redistribution_allowed: "No"
+    accessed_date: 2026-07-18
+    notes: Local publisher PDF remains ignored. Article is CC BY 4.0 and states a public-domain waiver applies to article data unless otherwise stated; repository-file license still requires direct verification.

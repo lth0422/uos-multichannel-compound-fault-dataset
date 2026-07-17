@@ -1,0 +1,17 @@
+dataset_id: ottawa_2023
+sources:
+  - source_id: OTT23-S01
+    type: original_paper
+    title: University of Ottawa constant load and speed rolling-element bearing vibration and acoustic fault signature datasets
+    authors:
+      - Mert Sehri
+      - Patrick Dumond
+      - Michel Bouchard
+    year: 2023
+    venue: Data in Brief 49 109327
+    doi: 10.1016/j.dib.2023.109327
+    official_url: https://doi.org/10.1016/j.dib.2023.109327
+    local_file: library/papers/ottawa 2023/University of Ottawa constant load and speed.pdf
+    redistribution_allowed: CC BY 4.0 for the article
+    accessed_date: 2026-07-17
+    notes: Dedicated dataset paper. Mendeley Data DOI 10.17632/y2px5tg92h is the linked raw/processed repository; dataset-file license requires separate confirmation.

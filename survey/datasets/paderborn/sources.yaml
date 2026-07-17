@@ -1,0 +1,18 @@
+dataset_id: paderborn
+sources:
+  - source_id: PU-S01
+    type: original_paper
+    title: "Condition Monitoring of Bearing Damage in Electromechanical Drive Systems by Using Motor Current Signals of Electric Motors: A Benchmark Data Set for Data-Driven Classification"
+    authors:
+      - Christian Lessmeier
+      - James Kuria Kimotho
+      - Detmar Zimmer
+      - Walter Sextro
+    year: 2016
+    venue: European Conference of the Prognostics and Health Management Society 2016
+    doi: Unknown
+    official_url: http://mb.uni-paderborn.de/kat/datacenter
+    local_file: library/papers/PU/Condition Monitoring of Bearing Damage in Electromechanical Drive.pdf
+    redistribution_allowed: Article CC BY 3.0 US; dataset CC BY-NC 4.0 stated in paper
+    accessed_date: 2026-07-16
+    notes: Original benchmark dataset paper. Current repository URL, deposited file inventory, and DOI require official-site verification.

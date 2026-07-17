@@ -1,0 +1,124 @@
+dataset_id: kaist_batch
+dataset_name: KAIST Batch
+institution: Korea Advanced Institute of Science and Technology
+release_year: 2023
+publication:
+  dedicated_dataset_paper: "Yes"
+  venue: Data in Brief 48 109049
+  doi: 10.1016/j.dib.2023.109049
+dataset_mode:
+  batch: "Yes"
+  run_to_failure: "No"
+  variable_speed: "Yes"
+modalities:
+  - vibration acceleration
+  - acoustic
+  - temperature
+  - motor current
+  - rotational speed
+channels:
+  count: 4
+  positions:
+    - bearing housing A
+    - bearing housing B
+  directions:
+    - x
+    - y
+  triaxial: "No"
+  simultaneous_sampling: "Yes"
+  synchronized_acquisition: "Partial"
+acquisition:
+  sensor_mounting: []
+  position_selection_rationale: Two bearing housings in x and y directions based on ISO 10816-1:1995
+  position_validation_methods: []
+  record_duration_seconds:
+    - 60
+    - 120
+    - 300
+    - 600
+    - 2100
+  samples_per_record: []
+sensors:
+  - model: PCB 352C34
+    type: ceramic shear ICP accelerometer
+    count: 4
+  - model: PCB 378B02
+    type: microphone
+    count: 1
+  - model: K-type
+    type: thermocouple
+    count: 2
+  - model: Hioki CT6700
+    type: current transformer
+    count: 3
+  - model: Autonics FD-620-10
+    type: tachometer
+    count: 1
+daq:
+  - Siemens SCADAS Mobile 5PM50 for vibration and acoustic
+  - NI 9211 for temperature according to article body
+  - NI 9775 for current according to article body
+sampling_rates_hz:
+  - 25600
+  - 51200
+  - 100000
+bearing_models:
+  - NSK 6205 DDU
+  - NSK 6205 steel ball bearing
+bearing_types:
+  - ball bearing
+faults:
+  healthy: "Yes"
+  inner_race: "Yes"
+  outer_race: "Yes"
+  ball_or_roller: "Yes"
+  cage: "No"
+  rotor: "Yes"
+  gear: "No"
+compound_faults:
+  internal_bearing: "No"
+  bearing_rotor: "No"
+  bearing_gear: "No"
+  other: "No"
+operating_conditions:
+  rpm:
+    - 3010
+    - 680-2460 varying
+  load:
+    - 0 Nm
+    - 2 Nm
+    - 4 Nm
+  radial_force: []
+  torque:
+    - 0 Nm
+    - 2 Nm
+    - 4 Nm
+  temperature: []
+  bearing_type_shift: Unknown
+fault_generation:
+  artificial: "Yes"
+  natural: "No"
+  run_to_failure: "No"
+validation_methods:
+  - seeded-fault photographs and dimensions
+  - bearing characteristic-frequency equations and calculated values
+  - representative time series and spectrograms
+file_formats:
+  - MAT
+  - TDMS
+  - CSV
+raw_data_available: "Yes"
+processed_data_available: Unknown
+metadata_available: "Yes"
+code_available: Unknown
+license: Unknown
+official_url: https://doi.org/10.17632/ztmf3m7h5x
+notes: >-
+  Vibration channel count is four; other modality channel counts are not collapsed
+  into this comparison field. Simultaneous vibration acquisition is explicit, while
+  synchronization across every DAQ/modality is only Partial: synchronized speed is
+  stated for the speed part, but cross-device timing/skew is not specified. The
+  Specifications Table reverses NI module roles relative to the article body; the
+  body assigns NI 9211 to temperature and NI 9775 to current. No same-sample
+  compound-fault class is documented. Exact mounting, dataset-file license, and raw
+  repository consistency remain Unknown.

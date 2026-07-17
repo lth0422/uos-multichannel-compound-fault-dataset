@@ -1,0 +1,17 @@
+dataset_id: uos_v1
+sources:
+  - source_id: UOSV1-S01
+    type: original_paper
+    title: Multi-domain vibration dataset with various bearing types under compound machine fault scenarios
+    authors:
+      - Seongjae Lee
+      - Taewan Kim
+      - Taehyoun Kim
+    year: 2024
+    venue: Data in Brief 57, 110940
+    doi: 10.1016/j.dib.2024.110940
+    official_url: https://doi.org/10.1016/j.dib.2024.110940
+    local_file: library/papers/uos_v1/DIB_UOS_dataset.pdf
+    redistribution_allowed: CC BY-NC 4.0 for the article
+    accessed_date: 2026-07-16
+    notes: Original dataset paper; dataset repository licensing must be checked separately.

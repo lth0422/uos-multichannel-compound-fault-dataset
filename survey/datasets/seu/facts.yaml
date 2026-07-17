@@ -1,0 +1,76 @@
+dataset_id: seu
+dataset_name: SEU drivetrain dynamic simulator dataset
+institution: Southeast University; repository hosted by University of California Irvine
+release_year: 2019
+publication:
+  dedicated_dataset_paper: "No"
+  venue: IEEE Transactions on Industrial Informatics 15(4)
+  doi: 10.1109/TII.2018.2864759
+dataset_mode:
+  batch: "Yes"
+  run_to_failure: "No"
+  variable_speed: "No"
+modalities:
+  - vibration signal exact sensor specification Unknown
+channels:
+  count: Unknown
+  positions: []
+  directions: []
+  triaxial: Unknown
+  simultaneous_sampling: Unknown
+  synchronized_acquisition: Unknown
+acquisition:
+  sensor_mounting: []
+  position_selection_rationale: Unknown
+  position_validation_methods: []
+  record_duration_seconds: []
+  samples_per_record: []
+sensors: []
+daq: Unknown
+sampling_rates_hz: []
+bearing_models: []
+bearing_types:
+  - ball bearing exact model Unknown
+faults:
+  healthy: "Yes"
+  inner_race: "Yes"
+  outer_race: "Yes"
+  ball_or_roller: "Yes"
+  cage: "No"
+  rotor: "No"
+  gear: "Yes"
+compound_faults:
+  internal_bearing: "Yes"
+  bearing_rotor: "No"
+  bearing_gear: "No"
+  other: "No"
+operating_conditions:
+  rpm: []
+  load:
+    - controller condition 20 Hz-0 V
+    - controller condition 30 Hz-2 V
+  radial_force: []
+  torque: []
+  temperature: []
+  bearing_type_shift: Unknown
+fault_generation:
+  artificial: Unknown
+  natural: Unknown
+  run_to_failure: "No"
+validation_methods:
+  - downstream transfer-learning classification and cross-validation
+file_formats: []
+raw_data_available: Unknown
+processed_data_available: Unknown
+metadata_available: Unknown
+code_available: Unknown
+license: Unknown
+official_url: http://mlmechanics.ics.uci.edu
+notes: >-
+  This card covers the self-collected drivetrain dynamic simulator data, not the
+  CWRU bearing dataset also analyzed in the paper. Table VI defines bearing
+  Combination as simultaneous inner- and outer-ring cracks. The paper's mixture
+  dataset pools separate bearing and gear fault classes and is not a same-sample
+  bearing-gear compound dataset. The 1024-point windows are preprocessing samples;
+  they are not recorded as raw acquisition length. Nearly all acquisition and
+  repository details require an official source.

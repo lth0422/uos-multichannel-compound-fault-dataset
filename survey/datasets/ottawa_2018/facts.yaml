@@ -1,0 +1,93 @@
+dataset_id: ottawa_2018
+dataset_name: Ottawa 2018
+institution: University of Ottawa
+release_year: 2018
+publication:
+  dedicated_dataset_paper: "Yes"
+  venue: Data in Brief 21 1745-1749
+  doi: 10.1016/j.dib.2018.11.019
+dataset_mode:
+  batch: "Yes"
+  run_to_failure: "No"
+  variable_speed: "Yes"
+modalities:
+  - vibration acceleration
+  - rotational speed
+channels:
+  count: 2
+  positions:
+    - experimental bearing housing
+  directions:
+    - accelerometer direction Unknown
+  triaxial: "No"
+  simultaneous_sampling: Unknown
+  synchronized_acquisition: "Yes"
+acquisition:
+  sensor_mounting:
+    - accelerometer placed on experimental bearing housing; attachment method Unknown
+  position_selection_rationale: Unknown
+  position_validation_methods: []
+  record_duration_seconds:
+    - 10
+  samples_per_record:
+    - 2000000
+sensors:
+  - model: ICP 623C01
+    type: accelerometer
+    count: 1
+  - model: EPC 775
+    type: incremental encoder
+    count: 1
+daq: NI USB-6212 BNC
+sampling_rates_hz:
+  - 200000
+bearing_models:
+  - ER16K
+bearing_types:
+  - ball bearing
+faults:
+  healthy: "Yes"
+  inner_race: "Yes"
+  outer_race: "Yes"
+  ball_or_roller: "No"
+  cage: "No"
+  rotor: "No"
+  gear: "No"
+compound_faults:
+  internal_bearing: "No"
+  bearing_rotor: "No"
+  bearing_gear: "No"
+  other: "No"
+operating_conditions:
+  rpm:
+    - approximately 588-1740 RPM across time-varying records
+  load: []
+  radial_force: []
+  torque: []
+  temperature: []
+  bearing_type_shift: Unknown
+fault_generation:
+  artificial: Unknown
+  natural: Unknown
+  run_to_failure: "No"
+validation_methods:
+  - bearing geometry and BPFI/BPFO order coefficients documented
+file_formats:
+  - MAT
+raw_data_available: "Yes"
+processed_data_available: "No"
+metadata_available: "Yes"
+code_available: Unknown
+license: Unknown
+official_url: https://doi.org/10.17632/v43hmbwxpm
+notes: >-
+  Thirty-six ten-second records cover healthy, inner-race, and outer-race states
+  under four within-record speed trajectories: increasing, decreasing,
+  increasing-then-decreasing, and decreasing-then-increasing, with three trials
+  per health/trajectory case. Both acceleration and encoder channels are sampled
+  at 200 kHz, yielding 2 million samples per channel. This is synchronized
+  vibration-plus-speed acquisition but only one vibration position. The overall
+  extrema listed in the paper are 9.8-29.0 Hz (approximately 588-1740 RPM).
+  Fault-generation method, load, accelerometer direction/mounting, sampling-rate
+  rationale, ADC simultaneity, and dataset-file license remain Unknown. The text
+  duplicates O-C-1 where O-C-3 is expected; repository inspection is required.

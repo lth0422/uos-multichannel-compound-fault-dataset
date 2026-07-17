@@ -1,0 +1,99 @@
+dataset_id: nasa_ims
+dataset_name: NASA IMS
+institution: NSF I/UCR Center for Intelligent Maintenance Systems University of Cincinnati; hosted by NASA PCoE
+release_year: Unknown
+publication:
+  dedicated_dataset_paper: "No"
+  venue: Journal of Sound and Vibration 289 1066-1090
+  doi: 10.1016/j.jsv.2005.03.007
+dataset_mode:
+  batch: "No"
+  run_to_failure: "Yes"
+  variable_speed: "No"
+modalities:
+  - vibration acceleration
+channels:
+  count:
+    - 8 in Set 1
+    - 4 in Sets 2 and 3
+  positions:
+    - bearing 1 housing
+    - bearing 2 housing
+    - bearing 3 housing
+    - bearing 4 housing
+  directions:
+    - x and y in Set 1
+    - one direction per bearing in Sets 2 and 3; direction Unknown
+  triaxial: "No"
+  simultaneous_sampling: Unknown
+  synchronized_acquisition: "Yes"
+acquisition:
+  sensor_mounting:
+    - installed on bearing housings; attachment method Unknown
+  position_selection_rationale: Four bearing housings along the common shaft are monitored; explicit comparative rationale Unknown
+  position_validation_methods: []
+  record_duration_seconds:
+    - 1 as stated in README
+    - 1.024 implied by 20480 samples at 20000 Hz
+  samples_per_record:
+    - 20480
+sensors:
+  - model: PCB 353B33
+    type: high-sensitivity quartz ICP accelerometer
+    count: 8 in Set 1; 4 in Sets 2 and 3
+daq: National Instruments DAQCard-6062E
+sampling_rates_hz:
+  - 20000
+bearing_models:
+  - Rexnord ZA-2115
+bearing_types:
+  - double-row rolling-element bearing
+faults:
+  healthy: "Yes"
+  inner_race: "Yes"
+  outer_race: "Yes"
+  ball_or_roller: "Yes"
+  cage: Unknown
+  rotor: "No"
+  gear: "No"
+compound_faults:
+  internal_bearing: "Yes"
+  bearing_rotor: "No"
+  bearing_gear: "No"
+  other: Unknown
+operating_conditions:
+  rpm:
+    - 2000
+  load: []
+  radial_force:
+    - 6000 lb
+  torque: []
+  temperature: []
+  bearing_type_shift: Unknown
+fault_generation:
+  artificial: "No"
+  natural: "Yes"
+  run_to_failure: "Yes"
+validation_methods:
+  - post-test component inspection
+  - wavelet-filter periodicity compared with BPFO
+  - full-life RMS and kurtosis trends
+file_formats:
+  - ASCII text
+raw_data_available: "Yes"
+processed_data_available: Unknown
+metadata_available: "Yes"
+code_available: Unknown
+license: Unknown
+official_url: https://data.nasa.gov/dataset/ims-bearings
+notes: >-
+  Three test-to-failure experiments monitor four bearings on one shaft at 2000
+  RPM and 6000 lb radial load. Set 1 has two directions per bearing (8 channels);
+  Sets 2 and 3 have one channel per bearing (4 channels). The README calls each
+  file a one-second snapshot, but 20480 samples at 20 kHz imply 1.024 seconds.
+  The 2006 paper reports 20-minute acquisition for its experiment whereas the
+  released README reports 10-minute intervals for most of Set 1 and all of Sets
+  2 and 3. At Set 1 endpoint, bearing 4 has simultaneous roller-element and
+  outer-race damage, meeting the internal compound definition. Hardware ADC
+  simultaneity, exact mounting, released temperature channels, and license
+  applicability to IMS-origin files remain Unknown.

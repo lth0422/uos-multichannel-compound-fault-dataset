@@ -1,0 +1,43 @@
+dataset_id: xjtu_sy
+sources:
+  - source_id: XJTU-S01
+    type: original_paper
+    title: A Hybrid Prognostics Approach for Estimating Remaining Useful Life of Rolling Element Bearings
+    authors:
+      - Biao Wang
+      - Yaguo Lei
+      - Naipeng Li
+      - Ningbo Li
+    year: 2020
+    venue: IEEE Transactions on Reliability 69(1) 401-412
+    doi: 10.1109/TR.2018.2882682
+    official_url: https://doi.org/10.1109/TR.2018.2882682
+    local_file: library/papers/XJTU-SY/A_Hybrid_Prognostics_Approach_for_Estimating_Remaining_Useful_Life_of_Rolling_Element_Bearings.pdf
+    redistribution_allowed: No for publisher PDF unless separately authorized
+    accessed_date: 2026-07-17
+    notes: Methods paper cited by the official README and primary source for the accelerated degradation experiment; published online in 2018 and in the March 2020 issue.
+  - source_id: XJTU-S02
+    type: official_repository
+    title: XJTU-SY Bearing Datasets README
+    authors:
+      - Biao Wang
+    year: Unknown
+    venue: Official GitHub repository
+    doi: Unknown
+    official_url: Unknown
+    local_file: Unknown
+    redistribution_allowed: Unknown
+    accessed_date: 2026-07-17
+    notes: User supplied the official README text. It identifies the providers, 15 complete run-to-failure bearing datasets, the citation paper, and multiple download mirrors; exact GitHub URL and license remain Unknown.
+  - source_id: XJTU-S03
+    type: secondary_source
+    title: User-provided XJTU-SY overview
+    authors: []
+    year: 2026
+    venue: Project conversation
+    doi: Unknown
+    official_url: Unknown
+    local_file: Unknown
+    redistribution_allowed: Unknown
+    accessed_date: 2026-07-17
+    notes: Discovery summary; technical values were accepted only after confirmation in XJTU-S01.

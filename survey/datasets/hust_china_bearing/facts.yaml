@@ -1,0 +1,73 @@
+dataset_id: hust_china_bearing
+dataset_name: HUSTbearing
+institution: Huazhong University of Science and Technology
+release_year: 2022
+publication:
+  dedicated_dataset_paper: "No"
+  venue: Reliability Engineering and System Safety 245 109964
+  doi: 10.1016/j.ress.2024.109964
+dataset_mode:
+  batch: "Yes"
+  run_to_failure: "No"
+  variable_speed: Unknown
+modalities: []
+channels:
+  count: Unknown
+  positions: []
+  directions: []
+  triaxial: Unknown
+  simultaneous_sampling: Unknown
+  synchronized_acquisition: Unknown
+acquisition:
+  sensor_mounting: []
+  position_selection_rationale: Unknown
+  position_validation_methods: []
+  record_duration_seconds: []
+  samples_per_record: []
+sensors: []
+daq: Unknown
+sampling_rates_hz: []
+bearing_models: []
+bearing_types: []
+faults:
+  healthy: Unknown
+  inner_race: Unknown
+  outer_race: Unknown
+  ball_or_roller: Unknown
+  cage: Unknown
+  rotor: "No"
+  gear: "No"
+compound_faults:
+  internal_bearing: Unknown
+  bearing_rotor: "No"
+  bearing_gear: "No"
+  other: Unknown
+operating_conditions:
+  rpm: []
+  load:
+    - multiple working conditions exact values Unknown
+  radial_force: []
+  torque: []
+  temperature: []
+  bearing_type_shift: Unknown
+fault_generation:
+  artificial: "Yes"
+  natural: "No"
+  run_to_failure: "No"
+validation_methods:
+  - downstream domain-generalization benchmark across working conditions
+file_formats: []
+raw_data_available: "Partial"
+processed_data_available: Unknown
+metadata_available: "Partial"
+code_available: "Yes"
+license: Unknown
+official_url: https://github.com/CHAOZHAO-1/DG-PHM
+notes: >-
+  The main article lists HUSTbearing as a 2022 self-collected artificial-fault
+  bearing dataset with multiple working conditions. Detailed settings are routed
+  to online Supplementary Appendix B, absent from the local PDF. The paper says
+  the datasets were released but its Data Availability statement says data will
+  be made available on request, so raw availability is Partial. No sensor,
+  channel, DAQ, rate, duration, RPM, bearing, class, severity, compound-fault,
+  schema, or license value is inferred.

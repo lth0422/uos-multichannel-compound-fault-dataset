@@ -1,0 +1,36 @@
+# Project Context
+
+## Confirmed context
+
+- 기존 UOS v1이 존재한다.
+- UOS Dataset v2를 새롭게 구축할 예정이다.
+- 현재는 published dataset의 literature/dataset survey 단계다.
+- UOS v2용 acquisition hardware로 NI-9234와 cDAQ-9171 한 세트, HS Sensors 13A131 가속도계 4개를 구매했다. 장비 보유는 확정됐지만 최종 수집 설정은 미확정이다.
+- 현재 4채널 배치 후보는 shaft-end와 motor-end bearing housing의 top/side radial channels이며, 교수 검토와 pilot validation 전까지 확정 배치가 아니다.
+
+## Working hypotheses
+
+아래 항목은 조사로 검증할 가설이며 확정 contribution이 아니다.
+
+- synchronized multi-position vibration이 진단 및 물리 검증에 잠재적 가치가 있다.
+- internal bearing compound fault가 기존 benchmark의 공백을 보완할 잠재적 가치가 있다.
+- bearing–rotor compound fault가 현실적인 복합 상태 연구에 잠재적 가치가 있다.
+- paired single-/multi-channel data가 향후 on-device 활용 연구를 지원할 가능성이 있다.
+
+## Unconfirmed decisions
+
+- 최종 센서 위치와 마운팅
+- 최종 채널 수
+- 최종 샘플링레이트
+- 최종 결함 조합
+- 최종 데이터 개수
+- 최종 논문 contribution
+- 최종 hardware-supported sampling rate와 저장/downsampling 정책
+
+## Source hierarchy
+
+1. Original dataset paper
+2. Official dataset documentation
+3. Official institutional repository
+4. Follow-up peer-reviewed paper
+5. Secondary summary

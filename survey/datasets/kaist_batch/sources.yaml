@@ -1,0 +1,14 @@
+dataset_id: kaist_batch
+sources:
+  - source_id: KAIB-S01
+    type: original_paper
+    title: Vibration, acoustic, temperature, and motor current dataset of rotating machine under varying operating conditions for fault diagnosis
+    authors: Wonho Jung; Seong-Hu Kim; Sung-Hyun Yun; Jaewoong Bae; Yong-Hwa Park
+    year: 2023
+    venue: Data in Brief 48 109049
+    doi: 10.1016/j.dib.2023.109049
+    official_url: https://doi.org/10.1016/j.dib.2023.109049
+    local_file: library/papers/kaist(Batch)/Vibration, acoustic, temperature, and motor current dataset of rotating machine under varying operating conditions for fault diagnosis.pdf
+    redistribution_allowed: "No"
+    accessed_date: 2026-07-17
+    notes: Local publisher PDF is ignored and must not be committed; article is CC BY, but dataset-file licensing was not independently verified.

@@ -1,0 +1,56 @@
+dataset_id: nasa_ims
+sources:
+  - source_id: IMS-S01
+    type: official_documentation
+    title: Readme Document for IMS Bearing Data
+    authors:
+      - Edzel R. Lapira
+    year: 2011
+    venue: IMS Bearing Data package documentation
+    doi: Unknown
+    official_url: https://data.nasa.gov/dataset/ims-bearings
+    local_file: library/papers/NASA IMS/Readme Document for IMS Bearing Data.pdf
+    redistribution_allowed: Unknown
+    accessed_date: 2026-07-17
+    notes: Primary documentation for the released three-set package and its channel/file organization.
+  - source_id: IMS-S02
+    type: original_paper
+    title: Wavelet filter-based weak signature detection method and its application on rolling element bearing prognostics
+    authors:
+      - Hai Qiu
+      - Jay Lee
+      - Jing Lin
+      - Gang Yu
+    year: 2006
+    venue: Journal of Sound and Vibration 289 1066-1090
+    doi: 10.1016/j.jsv.2005.03.007
+    official_url: https://doi.org/10.1016/j.jsv.2005.03.007
+    local_file: library/papers/NASA IMS/Wavelet filter-based weak signature detection method and.pdf
+    redistribution_allowed: No for publisher PDF unless separately authorized
+    accessed_date: 2026-07-17
+    notes: Original experiment/application paper cited by the IMS README; documents natural fault progression, endpoint inspection, and physics-related validation.
+  - source_id: IMS-S03
+    type: official_repository
+    title: IMS Bearings NASA Open Data catalog record
+    authors:
+      - NASA Prognostics Center of Excellence
+    year: 2023
+    venue: NASA Open Data Portal
+    doi: Unknown
+    official_url: https://data.nasa.gov/dataset/ims-bearings
+    local_file: Unknown
+    redistribution_allowed: Catalog links to U.S. Government Works guidance; applicability to third-party IMS files needs review
+    accessed_date: 2026-07-17
+    notes: User supplied catalog metadata including issued/modified 2023-11-02 and public access. The portal's 2025 created/updated timestamps appear to describe catalog harvesting, not dataset acquisition or original release.
+  - source_id: IMS-S04
+    type: secondary_source
+    title: User-provided NASA IMS overview
+    authors: []
+    year: 2026
+    venue: Project conversation
+    doi: Unknown
+    official_url: Unknown
+    local_file: Unknown
+    redistribution_allowed: Unknown
+    accessed_date: 2026-07-17
+    notes: Discovery summary; technical facts were checked against IMS-S01 and IMS-S02.

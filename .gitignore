@@ -1,0 +1,25 @@
+# Local literature and external data
+library/papers/
+library/documents/
+data/
+/datasets/
+external_data/
+raw_data/
+*.mat
+*.npy
+*.npz
+*.h5
+*.hdf5
+*.pt
+*.pth
+*.zip
+*.7z
+*.rar
+*.pdf
+# PDF files are ignored globally; add only a narrow, reviewed exception if needed later.
+
+__pycache__/
+.pytest_cache/
+.venv/
+.env
+.ipynb_checkpoints/

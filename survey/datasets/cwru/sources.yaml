@@ -1,0 +1,38 @@
+dataset_id: cwru
+sources:
+  - source_id: CWRU-S01
+    type: official_documentation
+    title: Case Western Reserve University Bearing Data Center
+    authors: []
+    year: Unknown
+    venue: Case School of Engineering official website
+    doi: Unknown
+    official_url: https://engineering.case.edu/bearingdatacenter
+    local_file: Unknown
+    redistribution_allowed: Unknown
+    accessed_date: 2026-07-16
+    notes: Welcome, apparatus/procedures, bearing information, fault specifications, data-file index, baseline, 12 kHz and 48 kHz condition pages reviewed.
+  - source_id: CWRU-S02
+    type: secondary_source
+    title: 데이터셋 정리
+    authors: []
+    year: 2026
+    venue: Local project survey export
+    doi: Unknown
+    official_url: Unknown
+    local_file: library/datasets/cwru/ExportBlock-df061c89-e0ab-4191-b559-f27ba66677a3-Part-1/데이터셋 정리 31439f853cf7806a89a1f703c2042607.pdf
+    redistribution_allowed: Unknown
+    accessed_date: 2026-07-16
+    notes: Secondary working summary; not used as authority for verified technical facts.
+  - source_id: CWRU-S03
+    type: secondary_source
+    title: 데이터셋 registry CSV export
+    authors: []
+    year: 2026
+    venue: Local project survey export
+    doi: Unknown
+    official_url: Unknown
+    local_file: library/datasets/cwru/ExportBlock-df061c89-e0ab-4191-b559-f27ba66677a3-Part-1/데이터셋 정리/데이터셋 31e39f853cf7809b807bc61f22ac6252.csv
+    redistribution_allowed: Unknown
+    accessed_date: 2026-07-16
+    notes: Secondary working index; not used as authority for verified technical facts.

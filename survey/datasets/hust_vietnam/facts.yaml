@@ -1,0 +1,97 @@
+dataset_id: hust_vietnam
+dataset_name: HUST bearing
+institution: Hanoi University of Science and Technology
+release_year: 2023
+publication:
+  dedicated_dataset_paper: "Yes"
+  venue: BMC Research Notes 16 138
+  doi: 10.1186/s13104-023-06400-4
+dataset_mode:
+  batch: "Yes"
+  run_to_failure: "No"
+  variable_speed: "Partial"
+modalities:
+  - vibration acceleration
+channels:
+  count: 1
+  positions:
+    - bearing or bearing housing exact surface Unknown
+  directions:
+    - vertical
+  triaxial: "No"
+  simultaneous_sampling: Unknown
+  synchronized_acquisition: Unknown
+acquisition:
+  sensor_mounting: []
+  position_selection_rationale: Unknown
+  position_validation_methods: []
+  record_duration_seconds:
+    - 5
+    - 10
+  samples_per_record:
+    - 512000
+sensors:
+  - model: PCB 325C33
+    type: accelerometer
+    count: 1
+daq:
+  - NI-9234 sound and vibration input module
+  - NI CompactDAQ chassis model Unknown
+  - LabVIEW
+sampling_rates_hz:
+  - 51200
+bearing_models:
+  - KG Bearing India 6204
+  - KG Bearing India 6205
+  - KG Bearing India 6206
+  - KG Bearing India 6207
+  - KG Bearing India 6208
+bearing_types:
+  - ball bearing
+faults:
+  healthy: "Yes"
+  inner_race: "Yes"
+  outer_race: "Yes"
+  ball_or_roller: "Yes"
+  cage: "No"
+  rotor: "No"
+  gear: "No"
+compound_faults:
+  internal_bearing: "Yes"
+  bearing_rotor: "No"
+  bearing_gear: "No"
+  other: "No"
+operating_conditions:
+  rpm: []
+  load:
+    - 0 W
+    - 200 W
+    - 400 W
+  radial_force: []
+  torque: []
+  temperature: []
+  bearing_type_shift: "Yes"
+fault_generation:
+  artificial: "Yes"
+  natural: "No"
+  run_to_failure: "No"
+validation_methods:
+  - nominal crack width documentation
+  - bearing geometry documentation
+  - defect images supplied in repository
+file_formats:
+  - MAT
+raw_data_available: "Yes"
+processed_data_available: Unknown
+metadata_available: "Yes"
+code_available: Unknown
+license: Unknown
+official_url: https://doi.org/10.17632/cbv7jyx4p9
+notes: >-
+  Internal compound labels are IR+OR, IR+Ball, and OR+Ball in the same
+  artificially faulted bearing; no triple condition is reported. Ball and IR+Ball
+  are missing for bearing 6204. Crack depth varies between bearings. The article
+  reports 99 raw vibration signals but also describes 27 faulty plus 3 healthy
+  bearings at three loads and 30 run-up records/fields; the exact file accounting
+  needs repository inspection. Exact steady/run-up RPM, accelerometer attachment,
+  chassis model, timing, field shapes, and dataset-file license remain Unknown.

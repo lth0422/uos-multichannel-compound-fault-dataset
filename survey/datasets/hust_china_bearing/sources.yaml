@@ -1,0 +1,14 @@
+dataset_id: hust_china_bearing
+sources:
+  - source_id: HUSTC-S01
+    type: original_paper
+    title: "Domain generalization for cross-domain fault diagnosis: An application-oriented perspective and a benchmark study"
+    authors: Chao Zhao; Enrico Zio; Weiming Shen
+    year: 2024
+    venue: Reliability Engineering and System Safety 245 109964
+    doi: 10.1016/j.ress.2024.109964
+    official_url: https://doi.org/10.1016/j.ress.2024.109964
+    local_file: library/papers/HUST (china)/Domain generalization for cross-domain fault diagnosis.pdf
+    redistribution_allowed: "No"
+    accessed_date: 2026-07-18
+    notes: Original release/benchmark source but not a dedicated dataset paper. Online supplementary Appendix B is required; it is not embedded in the local publisher PDF.

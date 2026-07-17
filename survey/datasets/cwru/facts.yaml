@@ -1,0 +1,87 @@
+dataset_id: cwru
+dataset_name: CWRU
+institution: Case Western Reserve University
+release_year: Unknown
+publication:
+  dedicated_dataset_paper: Unknown
+  venue: Unknown
+  doi: Unknown
+dataset_mode:
+  batch: "Yes"
+  run_to_failure: "No"
+  variable_speed: "Yes"
+modalities:
+  - vibration acceleration
+channels:
+  count: 3
+  positions:
+    - drive-end motor housing at 12 o'clock
+    - fan-end motor housing at 12 o'clock
+    - motor supporting base plate in some experiments
+  directions: []
+  triaxial: "No"
+  simultaneous_sampling: Unknown
+  synchronized_acquisition: Unknown
+acquisition:
+  sensor_mounting:
+    - magnetic bases
+  position_selection_rationale: Acceleration measured near to and remote from motor bearings; base plate included in some experiments
+  position_validation_methods: []
+  record_duration_seconds: []
+  samples_per_record: []
+sensors:
+  - model: Unknown
+    type: accelerometer
+    locations:
+      - drive-end housing
+      - fan-end housing
+      - supporting base plate in some experiments
+daq: 16-channel DAT recorder; manufacturer and model Unknown
+sampling_rates_hz:
+  - 12000
+  - 48000
+bearing_models:
+  - 6205-2RS JEM SKF
+  - 6203-2RS JEM SKF
+  - NTN equivalents for selected larger seeded faults
+bearing_types:
+  - deep groove ball bearing
+faults:
+  healthy: "Yes"
+  inner_race: "Yes"
+  outer_race: "Yes"
+  ball_or_roller: "Yes"
+  cage: "No"
+  rotor: "No"
+  gear: "No"
+compound_faults:
+  internal_bearing: "No"
+  bearing_rotor: "No"
+  bearing_gear: "No"
+  other: "No"
+operating_conditions:
+  rpm:
+    - approximately 1720-1797
+  load:
+    - 0 hp
+    - 1 hp
+    - 2 hp
+    - 3 hp
+  radial_force: []
+  torque: []
+  temperature: []
+  bearing_type_shift: "No"
+fault_generation:
+  artificial: "Yes"
+  natural: "No"
+  run_to_failure: "No"
+validation_methods: []
+file_formats:
+  - MAT
+raw_data_available: "Yes"
+processed_data_available: Unknown
+metadata_available: "Yes"
+code_available: Unknown
+license: Unknown
+official_url: https://engineering.case.edu/bearingdatacenter
+notes: Channel count is the maximum reported vibration-channel configuration. Official documentation says every file contains drive-end and fan-end vibration, while base vibration is present in some experiments. Exact directions, record durations, samples per record, channel timing architecture, accelerometer models, and dataset release year remain Unknown.

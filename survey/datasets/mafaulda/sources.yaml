@@ -1,0 +1,45 @@
+dataset_id: mafaulda
+sources:
+  - source_id: MAF-S00
+    type: original_paper
+    title: The influence of feature vector on the classification of mechanical faults using neural networks
+    authors:
+      - Denys Pestana-Viana
+      - Rafael Zambrano-Lopez
+      - Amaro A. de Lima
+      - Thiago de M. Prego
+      - Sergio L. Netto
+      - Eduardo A. B. da Silva
+    year: 2016
+    venue: 2016 IEEE 7th Latin American Symposium on Circuits and Systems (LASCAS)
+    doi: 10.1109/LASCAS.2016.7451023
+    official_url: https://doi.org/10.1109/LASCAS.2016.7451023
+    local_file: library/papers/MAFAULDA/The_influence_of_feature_vector_on_the_classification_of_mechanical_faults_using_neural_networks.pdf
+    redistribution_allowed: No for publisher PDF unless separately authorized
+    accessed_date: 2026-07-17
+    notes: Original publication introducing the newly recorded 1951-signal database. It is an application/method paper rather than a dedicated dataset paper.
+  - source_id: MAF-S01
+    type: official_documentation
+    title: MAFAULDA Machinery Fault Database Online
+    authors:
+      - Signals Multimedia and Telecommunications Laboratory
+    year: Unknown
+    venue: COPPE/Poli/UFRJ official website
+    doi: Unknown
+    official_url: https://www02.smt.ufrj.br/~offshore/mfs/page_01.html
+    local_file: library/papers/MAFAULDA/MAFAULDA __ Machinery Fault Database [Online].pdf
+    redistribution_allowed: Unknown
+    accessed_date: 2026-07-17
+    notes: Browser-saved six-page snapshot of official dataset documentation; not an original paper. Page-level citations refer to this saved snapshot.
+  - source_id: MAF-S02
+    type: secondary_source
+    title: User-provided MAFAULDA overview
+    authors: []
+    year: 2026
+    venue: Project conversation
+    doi: Unknown
+    official_url: Unknown
+    local_file: Unknown
+    redistribution_allowed: Unknown
+    accessed_date: 2026-07-17
+    notes: Used only as a discovery summary; technical claims were checked against MAF-S01.

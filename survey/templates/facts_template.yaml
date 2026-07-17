@@ -1,0 +1,64 @@
+dataset_id: Unknown
+dataset_name: Unknown
+institution: Unknown
+release_year: Unknown
+publication:
+  dedicated_dataset_paper: Unknown
+  venue: Unknown
+  doi: Unknown
+dataset_mode:
+  batch: Unknown
+  run_to_failure: Unknown
+  variable_speed: Unknown
+modalities: []
+channels:
+  count: Unknown
+  positions: []
+  directions: []
+  triaxial: Unknown
+  simultaneous_sampling: Unknown
+  synchronized_acquisition: Unknown
+acquisition:
+  sensor_mounting: []
+  position_selection_rationale: Unknown
+  position_validation_methods: []
+  record_duration_seconds: []
+  samples_per_record: []
+sensors: []
+daq: Unknown
+sampling_rates_hz: []
+bearing_models: []
+bearing_types: []
+faults:
+  healthy: Unknown
+  inner_race: Unknown
+  outer_race: Unknown
+  ball_or_roller: Unknown
+  cage: Unknown
+  rotor: Unknown
+  gear: Unknown
+compound_faults:
+  internal_bearing: Unknown
+  bearing_rotor: Unknown
+  bearing_gear: Unknown
+  other: Unknown
+operating_conditions:
+  rpm: []
+  load: []
+  radial_force: []
+  torque: []
+  temperature: []
+  bearing_type_shift: Unknown
+fault_generation:
+  artificial: Unknown
+  natural: Unknown
+  run_to_failure: Unknown
+validation_methods: []
+file_formats: []
+raw_data_available: Unknown
+processed_data_available: Unknown
+metadata_available: Unknown
+code_available: Unknown
+license: Unknown
+official_url: Unknown
+notes: Unknown

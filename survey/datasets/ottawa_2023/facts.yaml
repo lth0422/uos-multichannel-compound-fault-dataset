@@ -1,0 +1,115 @@
+dataset_id: ottawa_2023
+dataset_name: Ottawa 2023
+institution: University of Ottawa
+release_year: 2023
+publication:
+  dedicated_dataset_paper: "Yes"
+  venue: Data in Brief 49 109327
+  doi: 10.1016/j.dib.2023.109327
+dataset_mode:
+  batch: "Yes"
+  run_to_failure: "Partial"
+  variable_speed: "No"
+modalities:
+  - vibration acceleration
+  - acoustic
+  - rotational speed
+  - load
+  - temperature
+channels:
+  count: 5
+  positions:
+    - motor drive-end bearing
+  directions:
+    - accelerometer direction Unknown
+  triaxial: "No"
+  simultaneous_sampling: Unknown
+  synchronized_acquisition: "Yes"
+acquisition:
+  sensor_mounting:
+    - accelerometer magnetically mounted directly on drive-end bearing inside altered motor casing
+    - microphone independently supported within 2 cm
+  position_selection_rationale: Inside-casing bearing mounting was selected to reduce noise relative to outside motor casing
+  position_validation_methods:
+    - inside-versus-outside accelerometer placement tested qualitatively for noise reduction
+  record_duration_seconds:
+    - 10
+  samples_per_record:
+    - 420000
+sensors:
+  - model: PCB 623C01
+    type: accelerometer
+    count: 1
+  - model: PCB 130F20
+    type: microphone
+    count: 1
+  - model: OMEGA LCM302
+    type: load cell
+    count: 1
+  - model: OMEGA OMDC-MPU-A
+    type: hall effect sensor
+    count: 1
+  - model: OMEGA KTSS-HH
+    type: thermocouple
+    count: 2
+daq: National Instruments USB-6212 with PCB Piezotronics 482C signal conditioner for accelerometer and microphone
+sampling_rates_hz:
+  - 42000
+bearing_models:
+  - NSK 6203ZZ
+  - FAFNIR 203KD
+bearing_types:
+  - steel ball bearing
+faults:
+  healthy: "Yes"
+  inner_race: "Yes"
+  outer_race: "Yes"
+  ball_or_roller: "Yes"
+  cage: "Yes"
+  rotor: "No"
+  gear: "No"
+compound_faults:
+  internal_bearing: "No"
+  bearing_rotor: "No"
+  bearing_gear: "No"
+  other: "No"
+operating_conditions:
+  rpm:
+    - 1750
+  load:
+    - 400 N for healthy inner-race outer-race and cage data
+    - 0 N for ball-fault data
+  radial_force: []
+  torque: []
+  temperature: []
+  bearing_type_shift: "Yes"
+fault_generation:
+  artificial: "No"
+  natural: "Yes"
+  run_to_failure: "Yes"
+validation_methods:
+  - visual fault identification
+  - FFT inspection for fault-type validation
+  - qualitative inside-versus-outside sensor placement comparison
+file_formats:
+  - MAT
+  - XLSX
+  - CSV
+  - PNG
+raw_data_available: "Yes"
+processed_data_available: "Yes"
+metadata_available: "Yes"
+code_available: "Yes"
+license: Unknown
+official_url: https://doi.org/10.17632/y2px5tg92h
+notes: >-
+  Twenty bearings were degraded, with five bearings assigned to each final fault
+  type. The released 60 raw sets select healthy, developing, and faulty stages
+  rather than publishing every one of roughly 50 time-ordered files per bearing,
+  so released run-to-failure coverage is Partial. Each raw set has five columns:
+  acceleration, acoustic, RPM, load, and temperature differential. The first
+  five tests (inner-race group) use NSK 6203ZZ bearings and the remaining fifteen
+  use FAFNIR 203KD; ball-fault data alone uses 0 N rather than 400 N. These are
+  fault-label confounds. The article's Table 1 repeats B-12-1 in the faulty row,
+  likely a label typo but unresolved without repository inspection. Dataset-file
+  license, ADC simultaneity, and accelerometer direction remain Unknown.

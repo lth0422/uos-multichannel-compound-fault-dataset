@@ -1,0 +1,96 @@
+dataset_id: uos_v1
+dataset_name: UOS v1
+institution: University of Seoul
+release_year: 2024
+publication:
+  dedicated_dataset_paper: "Yes"
+  venue: Data in Brief 57, 110940
+  doi: 10.1016/j.dib.2024.110940
+dataset_mode:
+  batch: "Yes"
+  run_to_failure: "No"
+  variable_speed: "Yes"
+modalities:
+  - vibration acceleration
+channels:
+  count: 1
+  positions:
+    - top of shaft-end bearing housing
+  directions:
+    - uniaxial; exact axis orientation not stated
+  triaxial: "No"
+  simultaneous_sampling: Unknown
+  synchronized_acquisition: Unknown
+acquisition:
+  sensor_mounting:
+    - magnetic stud
+  position_selection_rationale: Unknown
+  position_validation_methods: []
+  record_duration_seconds:
+    - 80
+    - 160
+  samples_per_record:
+    - 1280000
+sensors:
+  - model: PCB Piezotronics 333D01
+    type: USB digital accelerometer
+    sensitivity: 4.00% FSV/g
+    measurement_range: +/-20 g
+    mounting: magnetic stud
+daq: Accelerometer connected directly to a laptop through a USB interface; separate DAQ not reported
+sampling_rates_hz:
+  - 8000
+  - 16000
+bearing_models:
+  - "6204"
+  - N204
+  - NJ204
+  - "30204"
+bearing_types:
+  - deep groove ball bearing
+  - cylindrical roller bearing
+  - tapered roller bearing
+faults:
+  healthy: "Yes"
+  inner_race: "Yes"
+  outer_race: "Yes"
+  ball_or_roller: "Yes"
+  cage: "No"
+  rotor: "Yes"
+  gear: "No"
+compound_faults:
+  internal_bearing: "No"
+  bearing_rotor: "Yes"
+  bearing_gear: "No"
+  other: "No"
+operating_conditions:
+  rpm:
+    - 600
+    - 800
+    - 1000
+    - 1200
+    - 1400
+    - 1600
+  load: []
+  radial_force: []
+  torque: []
+  temperature: []
+  bearing_type_shift: "Yes"
+fault_generation:
+  artificial: "Yes"
+  natural: "No"
+  run_to_failure: "No"
+validation_methods:
+  - accelerometer range and finite-value checks
+  - visual noise inspection in raw and frequency-domain signals
+  - envelope spectrum check for BPFI, BPFO, and BSF
+  - peak and RMS comparison between machine-fault and healthy data
+file_formats:
+  - MAT
+raw_data_available: "Yes"
+processed_data_available: "Yes"
+metadata_available: "Yes"
+code_available: Unknown
+license: Unknown
+official_url: https://data.mendeley.com/datasets/53vtnjy6c6
+notes: Three Mendeley Data subset repositories are reported; official_url points to subset 1. Subsets 2 and 3 are recorded in the dataset card and evidence.

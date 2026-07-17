@@ -1,0 +1,104 @@
+dataset_id: mafaulda
+dataset_name: MAFAULDA
+institution: COPPE/Poli/UFRJ
+release_year: 2016
+publication:
+  dedicated_dataset_paper: "No"
+  venue: 2016 IEEE 7th Latin American Symposium on Circuits and Systems (LASCAS)
+  doi: 10.1109/LASCAS.2016.7451023
+dataset_mode:
+  batch: "Yes"
+  run_to_failure: "No"
+  variable_speed: "Yes"
+modalities:
+  - vibration acceleration
+  - acoustic
+  - tachometer
+channels:
+  count: 8
+  positions:
+    - underhang bearing
+    - overhang bearing
+    - acoustic measurement position Unknown
+    - tachometer position Unknown
+  directions:
+    - axial
+    - radial
+    - tangential
+  triaxial: "Yes"
+  simultaneous_sampling: Unknown
+  synchronized_acquisition: "Yes"
+acquisition:
+  sensor_mounting: []
+  position_selection_rationale: Both bearing positions are measured in axial radial and tangential directions; explicit comparative rationale Unknown
+  position_validation_methods: []
+  record_duration_seconds:
+    - 5
+  samples_per_record:
+    - 250000
+sensors:
+  - model: IMI Sensors 601A01
+    type: uniaxial accelerometer
+    count: 3
+  - model: IMI Sensors 604B31
+    type: triaxial accelerometer
+    count: 1
+  - model: Monarch Instrument MT-190
+    type: analog tachometer
+    count: 1
+  - model: Shure SM81
+    type: microphone
+    count: 1
+daq: two National Instruments NI 9234 four-channel modules; chassis Unknown
+sampling_rates_hz:
+  - 50000
+bearing_models: []
+bearing_types:
+  - rolling-element bearing with 8 balls
+faults:
+  healthy: "Yes"
+  inner_race: "No"
+  outer_race: "Yes"
+  ball_or_roller: "Yes"
+  cage: "Yes"
+  rotor: "Yes"
+  gear: "No"
+compound_faults:
+  internal_bearing: "No"
+  bearing_rotor: "Yes"
+  bearing_gear: "No"
+  other: "No"
+operating_conditions:
+  rpm:
+    - 737-3686
+  load:
+    - imbalance masses 0 g 6 g 20 g and 35 g for bearing cases
+    - imbalance-only masses 6-35 g
+  radial_force: []
+  torque: []
+  temperature: []
+  bearing_type_shift: Unknown
+fault_generation:
+  artificial: "Yes"
+  natural: "No"
+  run_to_failure: "No"
+validation_methods:
+  - rotational frequency and first two harmonics used as classification features
+  - one-versus-two bearing sensor-set feature comparison with ANN
+file_formats:
+  - CSV
+raw_data_available: "Yes"
+processed_data_available: Unknown
+metadata_available: "Yes"
+code_available: Unknown
+license: Unknown
+official_url: https://www02.smt.ufrj.br/~offshore/mfs/page_01.html
+notes: >-
+  Official documentation reports 1951 five-second sequences sampled at 50 kHz.
+  Each CSV has eight columns: tachometer, six bearing-acceleration axes, and
+  microphone. Bearing-fault runs include added imbalance masses, so they meet
+  this repository's bearing-rotor compound definition. The 2016 original
+  publication repeatedly identifies cage, outer-race, and ball faults, resolving
+  the official page's contradictory detailed labels in favor of those classes.
+  The paper analyzes seven channels (six vibration plus trigger), whereas the
+  current official download documentation describes an eighth microphone column.

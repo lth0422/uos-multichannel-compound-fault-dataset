@@ -1,0 +1,13 @@
+# Evidence: HUST China Bearing
+
+| Evidence ID | Claim | Evidence summary | Source ID | Page/Section/Table/Figure | Confidence | Status |
+|---|---|---|---|---|---|---|
+| HUSTC-E01 | Original benchmark/release source | The 2024 RESS paper reports a benchmark on eight open and two self-collected datasets and identifies HUSTbearing and HUSTgearbox as the latter. | HUSTC-S01 | pp. 1–2, abstract and Introduction; p. 13, Table 4 | High | Verified |
+| HUSTC-E02 | Minimal HUSTbearing identity | Table 4 lists HUSTbearing as a 2022 bearing dataset with artificial fault generation and multiple working conditions. | HUSTC-S01 | p. 13, Table 4 | High | Verified |
+| HUSTC-E03 | Detailed settings delegated to supplement | Cross-working-condition task details are assigned to Appendix B.2 and cross-machine settings to Appendix B.3 rather than reported in the main text. | HUSTC-S01 | pp. 12–14, Sections 4.3.1–4.3.3 | High | Verified |
+| HUSTC-E04 | Release and code statements | The abstract/Introduction/Conclusion say the two self-collected datasets were released, and the paper provides the DG-PHM GitHub code URL. | HUSTC-S01 | pp. 1–2, abstract and Introduction; p. 16, Conclusion | High | Verified |
+| HUSTC-E05 | Data-access conflict | The Data Availability section states that data will be made available on request, while other sections describe the self-collected datasets as released. | HUSTC-S01 | pp. 1–2 and 16, abstract/Introduction, Data Availability and Conclusion | High | Conflicting |
+| HUSTC-E06 | Fault classes cannot be safely attributed | The cross-machine discussion uses healthy, inner-race, and outer-race states across task groups, but the main paper does not expose Appendix B mappings needed to prove HUSTbearing's exact labels. | HUSTC-S01 | p. 14, Section 4.3.3 | Medium | Needs review |
+| HUSTC-E07 | Validation is algorithmic | HUSTbearing is used in four cross-working-condition tasks and benchmark results are reported, but no physical label, defect, placement, or signal validation is provided in the main article. | HUSTC-S01 | pp. 13–14, Fig. 13(e) and Section 4.3.2 | High | Verified |
+| HUSTC-E08 | HUSTbearing and HUSTgearbox are separate | Table 4 assigns separate dataset indices and components to HUSTbearing and HUSTgearbox. | HUSTC-S01 | p. 13, Table 4 | High | Verified |
+| HUSTC-E09 | Acquisition details missing locally | Sensor, channel, position, mounting, DAQ, rate, RPM/load values, duration, schema, and license are not present in the main article or embedded files. | HUSTC-S01 | pp. 1–18, main article; p. 16, Supplementary Materials | Medium | Needs review |

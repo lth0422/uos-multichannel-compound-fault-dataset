@@ -1,0 +1,14 @@
+dataset_id: seu
+sources:
+  - source_id: SEU-S01
+    type: follow_up_paper
+    title: Highly Accurate Machine Fault Diagnosis Using Deep Transfer Learning
+    authors: Siyu Shao; Stephen McAleer; Ruqiang Yan; Pierre Baldi
+    year: 2019
+    venue: IEEE Transactions on Industrial Informatics 15(4) 2446-2455
+    doi: 10.1109/TII.2018.2864759
+    official_url: https://doi.org/10.1109/TII.2018.2864759
+    local_file: library/papers/SEU/Highly_Accurate_Machine_Fault_Diagnosis_Using_Deep_Transfer_Learning.pdf
+    redistribution_allowed: "No"
+    accessed_date: 2026-07-18
+    notes: Application paper and acquisition source for the authors' DDS experiments, but not a dedicated dataset paper. Publisher PDF must not be committed.

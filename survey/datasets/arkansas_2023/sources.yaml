@@ -1,0 +1,41 @@
+dataset_id: arkansas_2023
+sources:
+  - source_id: ARK23-S01
+    type: original_paper
+    title: Dataset of single and double faults scenarios using vibration signals from a rotary machine
+    authors:
+      - Larry Marshall
+      - David Jensen
+    year: 2023
+    venue: Data in Brief 49, 109358
+    doi: 10.1016/j.dib.2023.109358
+    official_url: https://doi.org/10.1016/j.dib.2023.109358
+    local_file: library/papers/arkansas_2023/Dataset of single and double faults scenarios.pdf
+    redistribution_allowed: CC BY 4.0 for the article
+    accessed_date: 2026-07-16
+    notes: Original dataset paper. Full text, tables, and figures were rechecked for numeric RPM values; none are reported. Dataset is linked to Figshare DOI 10.6084/m9.figshare.22693120.v1; repository license and exact deposited schema require separate verification.
+  - source_id: ARK23-S02
+    type: secondary_source
+    title: User-provided University of Arkansas dataset overview
+    authors: []
+    year: 2026
+    venue: Project conversation
+    doi: Unknown
+    official_url: Unknown
+    local_file: Unknown
+    redistribution_allowed: CC BY 4.0
+    accessed_date: 2026-07-16
+    notes: Summary states 39 scenarios, three operating frequencies, 6.4 kHz, approximately 10 seconds, and CSV format. Technical facts were checked against ARK23-S01 before use.
+  - source_id: ARK23-S03
+    type: official_repository
+    title: Single and Double Fault Scenarios for a Rotary Machine raw-data archive
+    authors:
+      - David Jensen
+    year: 2023
+    venue: Figshare
+    doi: 10.6084/m9.figshare.22693120.v1
+    official_url: https://doi.org/10.6084/m9.figshare.22693120.v1
+    local_file: external_data/arkansas_2023/22693120.zip
+    redistribution_allowed: Unknown
+    accessed_date: 2026-07-17
+    notes: Official metadata states 25, 50, and 75 RPM and a CC BY 4.0 license. Read-only inspection covered all 2,925 CSV metadata headers and 117 full representative records; the archive itself remains Git-ignored.

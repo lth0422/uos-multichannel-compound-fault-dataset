@@ -1,0 +1,94 @@
+dataset_id: xjtu_sy
+dataset_name: XJTU-SY
+institution: Xi'an Jiaotong University and Changxing Sumyoung Technology Co. Ltd.
+release_year: Unknown
+publication:
+  dedicated_dataset_paper: "No"
+  venue: IEEE Transactions on Reliability 69(1) 401-412
+  doi: 10.1109/TR.2018.2882682
+dataset_mode:
+  batch: "No"
+  run_to_failure: "Yes"
+  variable_speed: "Yes"
+modalities:
+  - vibration acceleration
+channels:
+  count: 2
+  positions:
+    - tested bearing housing
+  directions:
+    - horizontal
+    - vertical
+  triaxial: "No"
+  simultaneous_sampling: Unknown
+  synchronized_acquisition: "Yes"
+acquisition:
+  sensor_mounting:
+    - placed on tested bearing housing at 90 degrees; attachment method Unknown
+  position_selection_rationale: Horizontal direction aligns with applied load and is reported to capture more degradation information
+  position_validation_methods:
+    - source selects horizontal signal for RUL estimation based on load direction and observed degradation information
+  record_duration_seconds:
+    - 1.28
+  samples_per_record:
+    - 32768
+sensors:
+  - model: PCB 352C33
+    type: accelerometer
+    count: 2
+daq: Unknown
+sampling_rates_hz:
+  - 25600
+bearing_models:
+  - LDK UER204
+bearing_types:
+  - rolling-element bearing
+faults:
+  healthy: "Yes"
+  inner_race: "Yes"
+  outer_race: "Yes"
+  ball_or_roller: Unknown
+  cage: Unknown
+  rotor: "No"
+  gear: "No"
+compound_faults:
+  internal_bearing: Unknown
+  bearing_rotor: "No"
+  bearing_gear: "No"
+  other: Unknown
+operating_conditions:
+  rpm:
+    - 2100
+    - 2250
+    - 2400
+  load: []
+  radial_force:
+    - 12 kN at 2100 RPM
+    - 11 kN at 2250 RPM
+    - 10 kN at 2400 RPM
+  torque: []
+  temperature: []
+  bearing_type_shift: Unknown
+fault_generation:
+  artificial: "No"
+  natural: "Yes"
+  run_to_failure: "Yes"
+validation_methods:
+  - run-to-failure degradation trajectory and endpoint photographs
+  - vibration amplitude threshold above 20 g defines failure time for safety
+file_formats: []
+raw_data_available: "Yes"
+processed_data_available: Unknown
+metadata_available: "Yes"
+code_available: Unknown
+license: Unknown
+official_url: Unknown
+notes: >-
+  Fifteen bearings are run to failure under three constant-per-run operating
+  conditions. Two accelerometers measure horizontal and vertical directions on
+  the same tested-bearing housing, so this is multi-direction but not verified
+  multi-position acquisition. Snapshots contain 32768 samples per channel at
+  25.6 kHz (1.28 s) every one minute. The paper uses horizontal vibration for
+  RUL because the radial load is applied horizontally. Dataset release date,
+  file format, license, DAQ, and hardware simultaneous-sampling architecture
+  remain Unknown.

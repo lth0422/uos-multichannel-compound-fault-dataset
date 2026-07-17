@@ -1,0 +1,114 @@
+dataset_id: pronostia
+dataset_name: PRONOSTIA / FEMTO-ST
+institution: FEMTO-ST Institute
+release_year: 2012
+publication:
+  dedicated_dataset_paper: "Yes"
+  venue: IEEE International Conference on Prognostics and Health Management PHM 2012
+  doi: Unknown
+dataset_mode:
+  batch: "No"
+  run_to_failure: "Partial"
+  variable_speed: "Yes"
+modalities:
+  - vibration acceleration
+  - temperature
+  - rotational speed
+  - radial force
+  - torque
+channels:
+  count: 6
+  positions:
+    - tested bearing outer race
+  directions:
+    - horizontal
+    - vertical
+  triaxial: "No"
+  simultaneous_sampling: Unknown
+  synchronized_acquisition: "Yes"
+acquisition:
+  sensor_mounting:
+    - two accelerometers placed radially on tested-bearing outer race at 90 degrees; attachment method Unknown
+    - PT100 probe placed in a hole near the outer ring
+  position_selection_rationale: Horizontal and vertical directions monitor radial vibration at the loaded test bearing; explicit comparative rationale Unknown
+  position_validation_methods: []
+  record_duration_seconds: []
+  samples_per_record: []
+sensors:
+  - model: Unknown
+    type: miniature accelerometer
+    count: 2
+  - model: PT100 1/3 DIN class
+    type: platinum RTD
+    count: 1
+  - model: Unknown
+    type: speed sensor
+    count: 1
+  - model: Unknown
+    type: force sensor
+    count: 1
+  - model: Unknown
+    type: torque sensor
+    count: 1
+daq: NI cDAQ four-slot chassis with three I/O modules; exact models Unknown
+sampling_rates_hz:
+  - 25600 for acceleration
+  - 10 for temperature
+  - 100 for speed force and torque
+bearing_models: []
+bearing_types:
+  - ball bearing; exact model and geometry Unknown
+faults:
+  healthy: "Yes"
+  inner_race: "Yes"
+  outer_race: "Yes"
+  ball_or_roller: "Yes"
+  cage: "Yes"
+  rotor: "No"
+  gear: "No"
+compound_faults:
+  internal_bearing: "Yes"
+  bearing_rotor: "No"
+  bearing_gear: "No"
+  other: Unknown
+operating_conditions:
+  rpm:
+    - 1800
+    - 1650
+    - 1500
+  load: []
+  radial_force:
+    - 4000 N at 1800 RPM
+    - 4200 N at 1650 RPM
+    - 5000 N at 1500 RPM
+  torque: []
+  temperature: []
+  bearing_type_shift: Unknown
+fault_generation:
+  artificial: "No"
+  natural: "Yes"
+  run_to_failure: "Yes"
+validation_methods:
+  - PSD K-factor crest factor and wavelet-packet degradation features
+  - post-experiment visual comparison of normal and degraded bearing
+  - comparison against bearing life and characteristic-frequency models with reported mismatch
+file_formats: []
+raw_data_available: "Yes"
+processed_data_available: Unknown
+metadata_available: "Yes"
+code_available: Unknown
+license: Unknown
+official_url: https://hal.science/hal-00719503
+notes: >-
+  The PHM 2012 challenge has 17 bearing trajectories under three fixed-per-run
+  speed/load conditions. Six learning trajectories are complete run-to-failure;
+  eleven test trajectories are truncated for RUL prediction, so released
+  run-to-failure coverage is Partial. Acceleration is measured horizontally and
+  vertically at one bearing position. Bearings have no initially seeded defects
+  and may degrade across balls, rings, and cage simultaneously, establishing
+  naturally developed internal compound damage without controlled component
+  labels. The paper states that classical characteristic-frequency signatures
+  are difficult to obtain for these mixed degradations. Snapshot duration,
+  snapshot cadence, samples per snapshot, released file formats, exact bearing
+  model, stopping criterion, mounting attachment, cDAQ module identities,
+  hardware timing, and dataset license remain Unknown.

@@ -1,0 +1,21 @@
+dataset_id: pronostia
+sources:
+  - source_id: PRO-S01
+    type: original_paper
+    title: PRONOSTIA An Experimental Platform for Bearings Accelerated Degradation Tests
+    authors:
+      - Patrick Nectoux
+      - Rafael Gouriveau
+      - Kamal Medjaher
+      - Emmanuel Ramasso
+      - Brigitte Chebel-Morello
+      - Noureddine Zerhouni
+      - Christophe Varnier
+    year: 2012
+    venue: IEEE International Conference on Prognostics and Health Management PHM 2012
+    doi: Unknown
+    official_url: https://hal.science/hal-00719503
+    local_file: library/papers/PRONOSTIA/PRONOSTIA, An experimental platform for bearings.pdf
+    redistribution_allowed: HAL open-access copy; dataset-file license Unknown
+    accessed_date: 2026-07-17
+    notes: Original platform/challenge paper and primary source for acquisition and PHM 2012 split. HAL identifier hal-00719503.
