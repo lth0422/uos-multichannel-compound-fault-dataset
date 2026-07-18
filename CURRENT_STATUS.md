@@ -24,6 +24,7 @@ Published dataset survey and evidence collection
 - Current four-channel shaft-end/motor-end top/side layout recorded as a pilot candidate; legacy pre-purchase DAQ/mounting note audited and relocated
 - Sampling-rate/record-length rationale and four-channel pilot validation protocol drafted from hardware constraints and survey evidence
 - Purchased NI-9234/cDAQ-9171 and four HS 13A131 accelerometers recorded with preliminary specification and compatibility review
+- NI-9234 native sampling-rate grid documented from the 13.1072 MHz timebase rule; 25.6 kS/s remains a primary pilot candidate, while 100 Hz is documented only as a processed derivative requiring explicit anti-alias filtering/resampling
 - KAIST Batch dedicated Data in Brief paper reviewed and registered as an additional direct comparator; four simultaneous accelerometers at two bearing housings in x/y directions, 25.6 kHz vibration, and 60–2100-second record precedents documented
 - Sensor-layout and sampling/record-length design notes updated: KAIST strongly supports the proposed geometry as a pilot candidate but does not validate UOS mounting surfaces or establish an optimal rate/duration
 - HUST Vietnam dedicated Data Note reviewed and registered as a direct comparator; intentional IR+OR, IR+Ball, and OR+Ball defects, five bearing models, NI-9234 at 51.2 kHz, and 10-second steady/5-second run-up records documented
@@ -77,4 +78,4 @@ Published dataset survey and evidence collection
 
 ## Last updated
 
-2026-07-17
+2026-07-18

@@ -16,13 +16,18 @@ HUST Vietnam is a hardware-relevant precedent because it uses NI-9234 at 51.2 kH
 
 NI-9234 uses discrete native rates and provides an alias-free bandwidth of approximately `0.45 × fs`.
 
+The internal-timebase equation is `fs = 13,107,200 Hz / (256 × n)`, with integer `n = 1..31`. The complete native grid therefore spans 51.2 kS/s down to about 1.652 kS/s. Planning should prefer documented native rates such as 51.2, 25.6, 12.8, 6.4, and 3.2 kS/s unless pilot evidence gives a specific reason to use a fractional rate.
+
 | Native rate | Approx. alias-free bandwidth | Four-channel samples/s | Current role |
 |---:|---:|---:|---|
+| 12.8 kS/s | 5.76 kHz | 51,200 | Possible storage-saving candidate if pilot spectra show no required content above this band |
 | 17.067 kS/s | 7.68 kHz | 68,268 | Lower-bandwidth candidate; does not cover the supplier-listed 10 kHz sensor range |
 | 25.6 kS/s | 11.52 kHz | 102,400 | Primary pilot candidate; nominally covers the supplier-listed 0.5–10 kHz range |
 | 51.2 kS/s | 23.04 kHz | 204,800 | High-rate master/pilot reference; bandwidth above 10 kHz is not calibrated by the current supplier specification |
 
 The current most defensible hypothesis is to compare 25.6 and 51.2 kS/s during pilot acquisition. If downsampled 25.6 kS/s retains all validated fault/envelope information and phase relationships, it is the more storage-efficient release candidate. A 51.2 kS/s master rate is justified only if high-rate acquisition materially improves alias protection, transient capture, mounting diagnosis, or reproducible downsampling.
+
+Any 100 Hz representation should be treated as a derived low-rate signal for on-device or algorithm demonstrations. It requires an explicit anti-alias filter, resampling method, and statement of which physical peaks are intentionally preserved or discarded; it is not a native NI-9234 rate.
 
 KAIST's use of 25.6 kHz strengthens its status as a practical comparison point for the same four-channel, two-housing/two-direction geometry. It does not replace the UOS derivation: the paper reports no bandwidth, anti-alias, rotation-count, or duration-selection analysis. [KAIB-E02, KAIB-E11]
 
@@ -56,7 +61,7 @@ The RPM values are evaluation points, not a final UOS grid. Recompute the table 
 
 - Pilot: acquire 10-second synchronized master records at both 25.6 and 51.2 kS/s for representative healthy/pure-fault conditions.
 - Analysis: compare deterministic 1-, 2-, 5-, and 10-second windows from the same masters.
-- Release hypothesis: retain master records and publish canonical shorter-window indices/downsampling code.
+- Release hypothesis: retain master records and publish canonical shorter-window indices/downsampling code. If a 100 Hz derivative is needed, generate it from the master record with versioned filtering/resampling code and keep it clearly separate from raw acquisition.
 - Splitting: assign train/validation/test at bearing/assembly/physical-run level before windowing.
 
 This strategy is provisional. Ten seconds is useful for comparing resolutions and shorter windows, not yet the final per-record requirement.
@@ -69,6 +74,8 @@ Approximate payload excludes file/container metadata.
 
 | Rate | Duration | Samples across 4 channels | float32 payload | float64 payload |
 |---:|---:|---:|---:|---:|
+| 12.8 kS/s | 1 s | 51,200 | 0.20 MB | 0.41 MB |
+| 12.8 kS/s | 10 s | 512,000 | 2.05 MB | 4.10 MB |
 | 25.6 kS/s | 1 s | 102,400 | 0.41 MB | 0.82 MB |
 | 25.6 kS/s | 10 s | 1,024,000 | 4.10 MB | 8.19 MB |
 | 51.2 kS/s | 1 s | 204,800 | 0.82 MB | 1.64 MB |

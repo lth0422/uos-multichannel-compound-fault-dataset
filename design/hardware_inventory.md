@@ -90,13 +90,53 @@ This assessment does not replace the delivered manuals, calibration certificates
 
 The NI-9234 does not accept every arbitrary rate when using its internal 13.1072 MHz timebase; it uses discrete divided rates. Its alias-free bandwidth is approximately `0.45 × fs`.
 
+The internal-timebase rule is:
+
+`fs = 13,107,200 Hz / (256 × n)`, where `n` is an integer from 1 to 31.
+
+| n | Native rate (Hz) |
+|---:|---:|
+| 1 | 51,200.00 |
+| 2 | 25,600.00 |
+| 3 | 17,066.67 |
+| 4 | 12,800.00 |
+| 5 | 10,240.00 |
+| 6 | 8,533.33 |
+| 7 | 7,314.29 |
+| 8 | 6,400.00 |
+| 9 | 5,688.89 |
+| 10 | 5,120.00 |
+| 11 | 4,654.55 |
+| 12 | 4,266.67 |
+| 13 | 3,938.46 |
+| 14 | 3,657.14 |
+| 15 | 3,413.33 |
+| 16 | 3,200.00 |
+| 17 | 3,011.76 |
+| 18 | 2,844.44 |
+| 19 | 2,694.74 |
+| 20 | 2,560.00 |
+| 21 | 2,438.10 |
+| 22 | 2,327.27 |
+| 23 | 2,226.09 |
+| 24 | 2,133.33 |
+| 25 | 2,048.00 |
+| 26 | 1,969.23 |
+| 27 | 1,896.30 |
+| 28 | 1,828.57 |
+| 29 | 1,765.52 |
+| 30 | 1,706.67 |
+| 31 | 1,651.61 |
+
+The clean binary-rate sequence most relevant for planning is 51.2, 25.6, 12.8, 6.4, and 3.2 kS/s. These are easier to document and compare than fractional rates, but the final choice still depends on diagnostic bandwidth, RPM, bearing geometry, and pilot validation.
+
 | Candidate native rate | NI alias-free bandwidth | Relation to supplier-listed 10 kHz sensor range |
 |---:|---:|---|
 | 17.067 kS/s | about 7.68 kHz | Does not cover the entire listed sensor range |
 | 25.6 kS/s | 11.52 kHz | Covers the listed 10 kHz range nominally |
 | 51.2 kS/s | 23.04 kHz | Exceeds the listed calibrated sensor range; increases storage without establishing additional reliable sensor bandwidth |
 
-Therefore, **25.6 kS/s is a hardware-supported candidate** if the study requires the full supplier-listed 0.5–10 kHz sensor range. It is not yet the selected UOS v2 sampling rate. A lower rate may be sufficient if survey evidence and pilot spectra establish a lower diagnostic bandwidth; 51.2 kS/s may be justified for anti-aliasing margin, transient inspection, or later downsampling, but this must be demonstrated.
+Therefore, **25.6 kS/s is a hardware-supported candidate** if the study requires the full supplier-listed 0.5–10 kHz sensor range. It is not yet the selected UOS v2 sampling rate. A lower rate may be sufficient if survey evidence and pilot spectra establish a lower diagnostic bandwidth; 51.2 kS/s may be justified for anti-aliasing margin, transient inspection, or later downsampling, but this must be demonstrated. If an on-device or teaching example uses 100 Hz signals, that should be treated as a processed derivative with an explicit anti-alias filter and resampling procedure, not as an NI-9234 native acquisition rate.
 
 ## Decisions still open
 
