@@ -108,6 +108,28 @@ NI-9234의 alias-free bandwidth는 대략 `0.45 × fs`로 볼 수 있다. 따라
 
 12.8 kS/s는 저장 효율 측면의 후보로 남길 수 있다. 다만 13A131의 10 kHz 범위를 전체적으로 커버하지 못하므로, pilot spectrum에서 필요한 분석 대역이 5.76 kHz 이하라는 근거가 있어야 한다.
 
+## 센서 대역과 결함주파수 대역의 구분
+
+가속도계가 10 kHz까지 측정 가능하다는 말과, 베어링 결함의 주요 특성 주파수가 10 kHz까지 필요하다는 말은 다르다.
+
+현재 13A131의 supplier-listed frequency range는 0.5-10 kHz다. 이는 센서가 어느 범위까지 사용할 수 있는지를 말한다. 반면 실제로 필요한 분석 대역은 bearing geometry, RPM, defect type, harmonic을 몇 차까지 볼지, envelope analysis에서 어떤 공진 대역을 사용할지에 따라 정해진다.
+
+사용자가 추가한 Wang et al. 2024 정리 메모는 이 구분을 설명하는 참고 자료다. 해당 메모는 SKF 6205 베어링, 2,000 RPM, 12 kHz sampling 조건에서 IR+OR, IR+Ball, OR+Ball, IR+OR+Ball 복합 결함을 다루며, 기본 결함주파수와 주요 harmonic/coupling 성분이 대체로 저주파 대역에 모인다는 해석을 제공한다. 메모 기준으로는 복합 결함의 이론적 고차 성분 상한이 약 1.2 kHz 수준으로 정리되어 있다.
+
+다만 이 값을 UOS v2의 일반 상한으로 바로 확정하면 안 된다. 이유는 다음과 같다.
+
+- Wang et al.의 bearing model, RPM, 결함 형상, 하중, 전달 경로가 UOS v2와 다르다.
+- bearing characteristic frequency는 RPM에 비례하므로, UOS v2의 최고 RPM이 바뀌면 필요한 대역도 같이 바뀐다.
+- 기본 BPFO/BPFI/BSF 자체는 1 kHz 이하일 가능성이 높더라도, envelope analysis는 더 높은 구조 공진 대역을 이용할 수 있다.
+- mounting, housing resonance, impact transient, rotor fault sideband, looseness/misalignment 성분은 pilot spectrum으로 확인해야 한다.
+
+따라서 현재 판단은 다음이 가장 안전하다.
+
+- 25.6 kS/s는 센서 10 kHz 대역 전체를 nominal하게 커버하는 보수적 후보이다.
+- 12.8 kS/s는 실제 필요한 결함/공진 대역이 5.76 kHz 이하로 확인될 경우 저장 효율 후보가 될 수 있다.
+- 6.4 kS/s 이하도 기본 결함주파수만 보면 가능해 보일 수 있지만, envelope band, transient, channel comparison, anti-alias margin을 포기하는 결정이 될 수 있으므로 pilot 없이 기본값으로 두기는 이르다.
+- 최종 sampling rate는 "센서가 어디까지 가능한가"가 아니라 "UOS bearing/RPM에서 검증해야 할 최고 진단 대역이 어디까지인가"로 정해야 한다.
+
 ## 100 Hz 데이터에 대한 주의
 
 100 Hz는 NI-9234의 native acquisition rate가 아니다. 따라서 100 Hz 신호가 필요하다면 raw acquisition이 아니라 후처리된 derivative signal로 정의해야 한다.
