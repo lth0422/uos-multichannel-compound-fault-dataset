@@ -7,6 +7,7 @@ Survey에서 확인된 연구 공백과 실제 보유 장비 제약을 연결하
 - `sensor_layout_candidate.md`: shaft-end/motor-end 상단·측면 4채널 후보와 타당성 평가 기준
 - `sampling_and_record_length_rationale.md`: survey·hardware·물리 기준을 결합한 rate/duration 후보
 - `sampling_and_record_length_rationale_ko.md`: Notion/교수 검토용 한국어 sampling rate/RPM/duration 통합 결정 근거 초안
+- `rpm_selection_rationale_ko.md`: Notion/교수 검토용 한국어 RPM grid 정량 분석 및 후보안
 - `pilot_validation_protocol.md`: 위치, mounting, timing, sampling, duration을 확정하기 위한 pilot 절차
 
 Local design references that should not be committed, such as bandwidth notes and PDFs, are kept under `library/documents/design/`.
