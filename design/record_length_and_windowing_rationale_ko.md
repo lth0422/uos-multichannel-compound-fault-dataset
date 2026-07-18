@@ -1,0 +1,257 @@
+# 데이터 길이와 windowing 설계 근거
+
+## 결정 상태
+
+아직 UOS Dataset v2의 최종 master record 길이, window 길이, overlap, split 방식은 확정하지 않는다. 이 문서는 긴 진동 데이터를 짧은 sample로 나눌 때 발생할 수 있는 과대평가 문제를 정리하고, 데이터 길이를 정할 때 고려해야 할 기준을 제안한다.
+
+핵심 질문은 단순히 "몇 초를 측정할 것인가"가 아니다. 더 중요한 질문은 다음이다.
+
+- 장비가 실제로 연속 측정하는 master record 길이는 얼마인가?
+- 모델 입력으로 사용할 window 길이는 얼마인가?
+- window를 어떻게 자를 것인가?
+- train/test split은 어떤 단위로 할 것인가?
+- window 개수가 실제 독립 실험 수를 과장하지 않는가?
+
+## 용어 구분
+
+데이터 길이를 논할 때 다음 용어를 구분해야 한다.
+
+| Term | 의미 |
+|---|---|
+| acquisition duration | 장비가 실제로 연속 측정한 시간 |
+| master record duration | 공개 또는 보존하는 원 진동 record의 길이 |
+| stored file duration | 파일 하나에 저장된 신호 길이 |
+| snapshot length | 장기 실험 중 일정 간격으로 짧게 저장한 조각 |
+| analysis window length | 모델 입력 또는 feature extraction에 사용하는 잘린 구간 길이 |
+| effective independent sample | 실제로 독립적인 물리 실험/조립/반복에서 나온 sample |
+
+예를 들어 160초를 한 번 측정한 뒤 1초 window 160개로 자르면, 파일상 sample은 160개처럼 보일 수 있다. 그러나 이것은 독립적인 실험 160번과 같지 않다. 같은 bearing, 같은 mounting, 같은 RPM, 같은 physical acquisition run에서 나온 서로 강하게 correlated된 window들이다.
+
+## UOS v1의 긴 record 해석
+
+UOS v1은 8 kHz와 16 kHz 두 sampling rate에서 같은 sample count를 맞추기 위해 서로 다른 duration을 사용했다.
+
+| Sampling rate | Duration | Samples per file |
+|---:|---:|---:|
+| 8 kHz | 160 s | 1,280,000 |
+| 16 kHz | 80 s | 1,280,000 |
+
+즉 UOS v1의 80/160초는 다음 관계로 이해하는 것이 안전하다.
+
+```text
+8,000 Hz × 160 s = 1,280,000 samples
+16,000 Hz × 80 s = 1,280,000 samples
+```
+
+이 설계는 같은 sample count를 맞춘다는 장점이 있지만, 그 자체가 물리적으로 80초 또는 160초가 반드시 필요하다는 근거는 아니다. UOS v2에서는 긴 duration을 그대로 계승하기보다, master record 길이와 analysis window 길이를 분리해서 설계해야 한다.
+
+## 긴 record가 만드는 sample 수 착시
+
+긴 record를 짧은 window로 자르면 sample 수가 빠르게 늘어난다.
+
+예를 들어 160초 record를 non-overlap window로 자르면 다음과 같다.
+
+| Window length | Non-overlap windows from 160 s |
+|---:|---:|
+| 1 s | 160 |
+| 2 s | 80 |
+| 5 s | 32 |
+| 10 s | 16 |
+
+50% overlap을 사용하면 window 수는 더 늘어난다.
+
+| Window length | Step | Approx. windows from 160 s |
+|---:|---:|---:|
+| 1 s | 0.5 s | 319 |
+| 2 s | 1 s | 159 |
+| 5 s | 2.5 s | 63 |
+| 10 s | 5 s | 31 |
+
+하지만 이 window들은 같은 physical run에서 나온 조각이므로 독립 sample로 취급하면 안 된다. sample count는 많아져도 effective independent sample 수는 크게 늘지 않을 수 있다.
+
+## window-level split의 과대평가 위험
+
+가장 위험한 방식은 긴 record를 먼저 window로 자른 뒤, window 단위로 무작위 train/test split을 하는 것이다.
+
+```text
+long record
+→ 1 s windows
+→ random train/test split
+```
+
+이렇게 하면 같은 physical run에서 나온 유사한 window가 train과 test에 동시에 들어갈 수 있다. 이 경우 모델은 결함의 일반적인 물리 특징보다 다음 정보를 외울 수 있다.
+
+- 같은 bearing instance의 고유 신호
+- 같은 mounting 상태
+- 같은 sensor/cable response
+- 같은 RPM stability
+- 같은 rig resonance
+- 같은 acquisition order나 noise pattern
+
+그 결과 within-dataset accuracy는 높게 나오지만, 다른 bearing, 다른 assembly, 다른 rig, 다른 dataset에서는 성능이 크게 떨어질 수 있다.
+
+이 현상은 특정 외부 데이터셋 하나에만 해당하는 문제가 아니다. 어떤 외부 benchmark와 비교하더라도 다음 상황이 가능하다.
+
+```text
+UOS 내부 random-window 평가에서는 성능이 높음
+다른 rig/sensor/load/fault-generation dataset에서는 성능이 낮음
+```
+
+이때 원인은 모델 자체만이 아니라, UOS 내부 평가가 correlated windows 때문에 과대평가되었을 가능성도 함께 검토해야 한다.
+
+## 올바른 split 단위
+
+UOS v2에서는 window 단위 split을 기본 평가로 사용하면 안 된다. split은 windowing 전에 더 큰 물리 단위에서 수행해야 한다.
+
+권장 split 계층은 다음과 같다.
+
+```text
+bearing type
+→ bearing instance
+→ fault assembly
+→ RPM/load condition
+→ physical acquisition run
+→ windows
+```
+
+최소 원칙은 다음과 같다.
+
+- train/test split은 windowing 전에 수행한다.
+- 같은 physical acquisition run에서 나온 window가 train과 test에 동시에 들어가면 안 된다.
+- 가능하면 같은 bearing instance 또는 같은 remount/assembly가 train/test에 동시에 들어가지 않도록 별도 평가를 둔다.
+- RPM generalization, bearing-type generalization, fault-combination generalization은 별도 split으로 정의한다.
+
+## 추천 evaluation split
+
+UOS v2는 하나의 random accuracy만 보고하지 말고, 여러 난이도의 split을 제공하는 것이 좋다.
+
+| Split name | Train/test 분리 기준 | 목적 |
+|---|---|---|
+| window split | window 단위 무작위 분할 | baseline 또는 leakage demonstration 용도. 주 평가로 사용하지 않음 |
+| run-grouped split | physical acquisition run 단위 분할 | 같은 run leakage 방지 |
+| bearing-instance split | bearing instance 단위 분할 | 같은 베어링 개체 memorization 방지 |
+| remount/assembly split | 재조립 또는 remount 단위 분할 | mounting/assembly signature memorization 방지 |
+| RPM-held-out split | 일부 RPM을 test로 제외 | speed generalization 평가 |
+| bearing-type-held-out split | 일부 bearing type을 test로 제외 | bearing type domain shift 평가 |
+| fault-combination-held-out split | 일부 compound 조합을 test로 제외 | multi-label 조합 일반화 평가 |
+
+주 논문에서는 최소한 run-grouped split을 기본값으로 삼고, window split은 성능 과대평가 가능성을 보이는 보조 실험으로만 다루는 것이 안전하다.
+
+## record length 선정 기준
+
+데이터 길이는 다음 조건을 동시에 고려해서 정해야 한다.
+
+### 1. 최저 RPM에서의 회전 수
+
+600 RPM은 10 rps이므로, duration별 회전 수는 다음과 같다.
+
+| Duration | Rotations at 600 RPM |
+|---:|---:|
+| 1 s | 10 |
+| 2 s | 20 |
+| 5 s | 50 |
+| 10 s | 100 |
+| 80 s | 800 |
+| 160 s | 1600 |
+
+10초 record는 600 RPM에서도 100회전을 포함하므로, 물리 검증과 window 비교를 위한 master record 후보로 충분히 방어 가능하다. 1초 window는 on-device inference 후보로는 의미가 있지만, 물리 검증용 단독 record로는 짧을 수 있다.
+
+### 2. 주파수 해상도
+
+FFT bin spacing은 `1/T`이다.
+
+| Duration | Frequency resolution |
+|---:|---:|
+| 1 s | 1 Hz |
+| 2 s | 0.5 Hz |
+| 5 s | 0.2 Hz |
+| 10 s | 0.1 Hz |
+| 80 s | 0.0125 Hz |
+| 160 s | 0.00625 Hz |
+
+80/160초는 매우 높은 주파수 해상도를 제공하지만, 조건 수가 많은 UOS v2에서는 저장량과 correlated window 문제가 커진다.
+
+### 3. stationarity
+
+record가 너무 길면 같은 조건이라고 해도 다음 변화가 생길 수 있다.
+
+- bearing/shaft 온도 변화
+- grease 또는 접촉 상태 변화
+- RPM drift
+- mounting/cable 상태 변화
+- 결함 충격의 비정상성
+
+따라서 긴 record가 항상 좋은 것은 아니다. UOS v2에서는 10초 master record를 기준 후보로 두고, pilot에서 stationarity를 확인한 뒤 필요하면 더 긴 record를 일부 조건에만 추가하는 방식이 안전하다.
+
+### 4. 저장 용량과 조건 수
+
+UOS v2 시나리오 초안은 sampling rate를 제외하면 다음 조건 수를 가진다.
+
+```text
+6 RPM × 3 bearing types × 8 rotor classes × 8 bearing classes = 1,152 condition cells
+```
+
+sampling rate 2개를 모두 별도 취득하면:
+
+```text
+1,152 × 2 = 2,304 record cells
+```
+
+여기에 반복 trial 수를 곱하면 전체 record 수는 빠르게 커진다. 따라서 UOS v1처럼 80/160초를 모든 조건에 적용하면 저장량과 후처리 비용이 커진다.
+
+## 추천 수집/공개 전략
+
+현재 가장 방어 가능한 전략은 다음이다.
+
+```text
+1. 각 physical condition에서 10초 synchronized 4-channel master record를 수집한다.
+2. 같은 master record에서 1초, 2초, 5초, 10초 deterministic windows를 정의한다.
+3. raw master record와 window index를 모두 공개한다.
+4. train/test split은 physical run 또는 bearing instance 기준으로 먼저 정의한다.
+5. window는 split 이후에 생성하거나, split group ID를 반드시 유지한다.
+```
+
+이 전략의 장점은 다음과 같다.
+
+- 긴 raw signal을 보존한다.
+- 1/2/5/10초 window 성능 비교가 가능하다.
+- on-device inference용 짧은 window를 제공할 수 있다.
+- 같은 master record에서 나온 paired window 비교가 가능하다.
+- window leakage를 통제할 수 있다.
+- UOS v1보다 짧은 record를 쓰더라도 물리적 근거를 제시할 수 있다.
+
+## pilot에서 확인할 항목
+
+pilot에서는 다음을 확인해야 한다.
+
+- 10초 record 안에서 RPM이 충분히 안정적인가?
+- 1/2/5/10초 window에서 BPFO/BPFI/BSF/FTF와 harmonic이 안정적으로 보이는가?
+- envelope spectrum에서 필요한 대역이 window 길이에 따라 얼마나 달라지는가?
+- 1초 또는 2초 window가 on-device inference에 충분한가?
+- 5초 또는 10초 window가 물리 검증에 충분한가?
+- 같은 physical run에서 나온 window 간 correlation이 얼마나 큰가?
+- window-level split과 run-grouped split 사이 성능 차이가 얼마나 나는가?
+
+특히 마지막 항목은 중요하다. window-level split 성능이 높고 run-grouped split 성능이 낮다면, 이는 긴 record에서 나온 correlated window가 성능을 과대평가했을 가능성을 보여준다.
+
+## 현재 결론
+
+UOS v1의 80/160초 record는 sample count를 맞춘 설계로 이해하는 것이 안전하다. UOS v2에서는 이를 그대로 계승하기보다, master record와 analysis window를 분리해서 설계하는 것이 더 방어적이다.
+
+현재 추천은 다음과 같다.
+
+```text
+Master record candidate:
+10 s synchronized 4-channel record
+
+Canonical analysis windows:
+1 s, 2 s, 5 s, 10 s
+
+Default evaluation split:
+physical-run grouped split
+
+Stronger evaluation:
+bearing-instance/remount/RPM-held-out split
+```
+
+최종 record length는 pilot spectrum, stationarity, storage estimate, grouped-split 성능 차이를 확인한 뒤 확정해야 한다.
