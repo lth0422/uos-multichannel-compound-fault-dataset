@@ -1,8 +1,8 @@
-# 샘플링레이트 및 데이터 길이 선정 근거
+# 샘플링레이트, RPM, 데이터 길이 선정 근거
 
 ## 결정 상태
 
-아직 UOS Dataset v2의 최종 샘플링레이트와 데이터 길이는 확정하지 않았다. 이 문서는 보유 장비, 선행 데이터셋 조사 결과, 물리 기반 진단 요구사항을 함께 검토하여 pilot acquisition에서 비교할 후보를 정리하기 위한 작업 문서다.
+아직 UOS Dataset v2의 최종 샘플링레이트, RPM grid, 데이터 길이는 확정하지 않았다. 이 문서는 보유 장비, 선행 데이터셋 조사 결과, 물리 기반 진단 요구사항을 함께 검토하여 pilot acquisition에서 비교할 후보를 정리하기 위한 작업 문서다.
 
 따라서 아래 내용은 최종 contribution이나 최종 수집 조건이 아니라, 교수 검토와 pilot validation 전에 사용할 근거 정리다.
 
@@ -15,6 +15,23 @@
 특히 KAIST Batch는 UOS v2와 유사하게 두 bearing housing의 두 방향에서 총 4개의 진동 채널을 수집한 선행 사례이며, 진동 샘플링레이트 25.6 kHz를 사용했다. 이는 UOS v2의 25.6 kS/s 후보를 설명할 때 좋은 비교 근거가 된다. 다만 KAIST 논문도 25.6 kHz를 왜 최적으로 선택했는지에 대한 bandwidth, anti-aliasing, 회전수, 주파수 해상도 기반의 정량 근거를 충분히 제시하지는 않는다. [KAIB-E02, KAIB-E05, KAIB-E06, KAIB-E11]
 
 HUST Vietnam은 NI-9234를 사용한 hardware-relevant precedent다. 이 데이터셋은 steady-state record를 51.2 kHz로 10초 수집하고, run-up data는 5초로 제공한다. 논문은 높은 샘플링레이트가 신호 변화를 자세히 포착한다고 설명하지만, UOS v2에 필요한 bearing characteristic frequency, envelope band, anti-aliasing margin, NI-9234 filter transition 기반의 상세 도출은 제공하지 않는다. [HUSTV-E04-HUSTV-E06]
+
+샘플링레이트, RPM, 데이터 길이를 함께 보면 다음과 같다. 이 표는 비교 근거이며, UOS v2 설정을 그대로 결정하는 voting table이 아니다.
+
+| Dataset | Sampling rate | RPM condition | Record length |
+|---|---:|---:|---:|
+| UOS v1 | 8,000; 16,000 Hz | 600; 800; 1,000; 1,200; 1,400; 1,600 RPM | 80; 160 s |
+| CWRU | 12,000; 48,000 Hz | approximately 1,720-1,797 RPM | Unknown |
+| Paderborn | 64,000 Hz | 900; 1,500 RPM | 4 s |
+| XJTU-SY | 25,600 Hz | 2,100; 2,250; 2,400 RPM | 1.28 s |
+| NASA IMS | 20,000 Hz | 2,000 RPM | 1 s stated; 1.024 s implied by sample count |
+| MAFAULDA | 50,000 Hz | 737-3,686 RPM | 5 s |
+| Arkansas 2023 | 6,400 Hz | 25; 50; 75 RPM | 10 s |
+| Ottawa 2018 | 200,000 Hz | approximately 588-1,740 RPM within variable-speed records | 10 s |
+| Ottawa 2023 | 42,000 Hz | 1,750 RPM | 10 s |
+| PRONOSTIA | 25,600 Hz acceleration | 1,800; 1,650; 1,500 RPM | Unknown |
+| KAIST Batch | 25,600 Hz vibration | 3,010 RPM; 680-2,460 RPM varying | 60; 120; 300; 600; 2,100 s |
+| HUST Vietnam | 51,200 Hz | Unknown in reviewed article | 5; 10 s |
 
 ## 보유 장비에 따른 제약
 
@@ -124,6 +141,49 @@ NI-9234의 alias-free bandwidth는 대략 `0.45 × fs`로 볼 수 있다. 따라
 
 복합 결함에서는 sum/difference peak가 보인다고 해서 곧바로 compound fault의 물리 검증으로 결론 내리면 안 된다. matched pure-fault reference와 repeated compound trial을 함께 비교해야 한다.
 
+## RPM 선정 원칙
+
+RPM은 단순히 기존 데이터셋에서 자주 쓰인 값을 따라 정하면 안 된다. RPM은 결함주파수, 회전주파수, 데이터 길이, load 조건, motor/rig 한계, 안전성, domain-shift 실험 목적을 동시에 결정하는 핵심 변수다.
+
+현재 선행 데이터셋은 서로 다른 RPM 전략을 사용한다.
+
+- UOS v1은 600-1,600 RPM의 여러 fixed-speed 조건을 제공한다.
+- Paderborn은 900 RPM과 1,500 RPM을 사용한다.
+- PRONOSTIA는 1,500, 1,650, 1,800 RPM을 load와 함께 condition으로 묶어 사용한다.
+- XJTU-SY는 2,100, 2,250, 2,400 RPM을 radial load와 함께 묶어 사용한다.
+- KAIST Batch는 3,010 RPM fixed-speed와 680-2,460 RPM varying-speed 조건을 제공한다.
+- Ottawa 2018은 record 내부에서 speed가 변하는 variable-speed 데이터를 제공한다.
+
+이 비교에서 얻을 수 있는 결론은 "특정 RPM이 표준"이라는 것이 아니다. 오히려 UOS v2는 RPM과 load가 fault label 또는 bearing batch와 confounding되지 않도록 독립적으로 설계해야 한다.
+
+## RPM 후보를 정할 때 필요한 계산
+
+최종 RPM grid를 정하기 전에 각 후보 RPM에 대해 다음을 계산해야 한다.
+
+- shaft frequency `fr = RPM / 60`
+- bearing geometry 기반 FTF, BPFO, BPFI, BSF
+- 각 fault frequency의 harmonic 범위
+- unbalance, misalignment, looseness 관련 1x, 2x, 3x 성분
+- RPM 변화에 따른 sideband 간격
+- 최저 RPM에서 필요한 최소 회전 수
+- 최고 RPM에서 필요한 최고 분석 주파수와 sampling-rate margin
+- motor/rig가 안정적으로 유지할 수 있는 speed range
+- load 조건과 함께 걸었을 때의 안전성, 발열, slip, stationarity
+
+RPM grid는 가능한 한 load와 독립적으로 설계해야 한다. 예를 들어 `RPM A`에는 healthy만 있고 `RPM B`에는 compound fault만 있으면, 모델이 결함이 아니라 RPM 차이를 학습할 수 있다. 따라서 이상적인 설계는 각 fault condition이 동일한 RPM/load 조합에서 반복 측정되는 balanced factorial grid다. 장비 또는 시간 제약 때문에 incomplete block이 필요하면, 어떤 조합이 빠졌는지 metadata와 논문에 명시해야 한다.
+
+## 현재 제안 가능한 RPM strategy
+
+현재 단계에서 RPM을 확정하지 않고, 다음 세 가지 후보 strategy를 pilot 전 검토 대상으로 두는 것이 안전하다.
+
+| Strategy | 설명 | 장점 | 주의점 |
+|---|---|---|---|
+| UOS v1 continuity grid | 600-1,600 RPM 범위를 중심으로 v1과 연결되는 fixed-speed grid 구성 | v1과 비교 설명이 쉬움; 낮은 RPM에서 충분한 회전 수/해상도 검토 가능 | v2 rig와 bearing geometry에 맞는 fault-frequency 대역 재계산 필요 |
+| common benchmark grid | 900, 1,500, 1,800 RPM 등 Paderborn/PRONOSTIA와 겹치는 fixed-speed 후보 포함 | 선행 데이터셋과 조건 설명이 쉬움 | load, bearing type, sensor bandwidth가 다르므로 직접 비교로 과장하면 안 됨 |
+| fixed + variable-speed pilot | fixed-speed 조건을 기본으로 두고, 일부 run-up 또는 variable-speed record를 별도 pilot로 수집 | real-time/order tracking 연구 가능성 확인 | variable-speed는 annotation, tachometer alignment, stationarity 처리가 더 어려움 |
+
+현재 가장 방어 가능한 임시안은 fixed-speed grid를 우선 설계하고, variable-speed는 별도 pilot candidate로 분리하는 것이다. fixed-speed 조건에서 먼저 channel quality, fault-frequency visibility, envelope spectrum, repeated-run stability를 확인한 뒤 variable-speed 확장 여부를 결정한다.
+
 ## 데이터 길이 후보
 
 데이터 길이는 초 단위만으로 정하면 안 된다. 최소 회전 수, 주파수 해상도, stationarity, storage, inference window를 함께 봐야 한다.
@@ -145,6 +205,8 @@ NI-9234의 alias-free bandwidth는 대략 `0.45 × fs`로 볼 수 있다. 따라
 
 현재 제안 가능한 pilot strategy는 다음과 같다.
 
+- 후보 RPM grid를 먼저 정하되, 각 fault condition이 같은 RPM/load 조합을 공유하도록 설계한다.
+- RPM은 tachometer 또는 speed sensor로 측정하고, vibration record와 시간 정렬 방법을 문서화한다.
 - 대표 healthy/pure-fault 조건에서 25.6 kS/s와 51.2 kS/s를 모두 수집한다.
 - 각 조건은 synchronized 4-channel master record로 저장한다.
 - 우선 10초 master record를 수집한다.
@@ -185,5 +247,7 @@ NI-9234의 alias-free bandwidth는 대략 `0.45 × fs`로 볼 수 있다. 따라
 ## 현재 임시 결론
 
 현재 문헌조사와 장비 제약만 기준으로 하면, 25.6 kS/s는 가장 설명하기 쉬운 primary pilot candidate다. 51.2 kS/s는 high-rate master 또는 downsampling 검증용 후보로 남긴다. 12.8 kS/s는 저장 효율 후보지만, 필요한 진단 대역이 5.76 kHz 이하라는 pilot 근거가 있어야 한다.
+
+RPM은 UOS v1의 600-1,600 RPM 범위, Paderborn/PRONOSTIA/XJTU-SY/KAIST의 fixed-speed precedent, UOS rig의 motor/load 한계, bearing geometry 기반 fault-frequency 계산을 함께 검토해 정해야 한다. 현재는 fixed-speed grid를 먼저 설계하고, variable-speed/run-up은 별도 pilot candidate로 두는 것이 안전하다.
 
 데이터 길이는 10초 master record를 수집한 뒤 1, 2, 5, 10초 window를 비교하는 방식이 현재 가장 방어 가능하다. 최종 길이는 실제 RPM, bearing characteristic frequency, frequency resolution, stationarity, storage, on-device inference 요구사항을 함께 검토한 뒤 확정해야 한다.
