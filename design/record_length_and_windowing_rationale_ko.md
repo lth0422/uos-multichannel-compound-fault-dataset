@@ -27,6 +27,48 @@
 
 예를 들어 160초를 한 번 측정한 뒤 1초 window 160개로 자르면, 파일상 sample은 160개처럼 보일 수 있다. 그러나 이것은 독립적인 실험 160번과 같지 않다. 같은 bearing, 같은 mounting, 같은 RPM, 같은 physical acquisition run에서 나온 서로 강하게 correlated된 window들이다.
 
+## 외부 데이터셋의 record 길이를 해석하는 방식
+
+선행 데이터셋에서 "record length가 10초"라고 되어 있어도 항상 같은 의미는 아니다. 최소한 다음 세 가지 방식을 구분해야 한다.
+
+| 방식 | 의미 | 해석상 주의점 |
+|---|---|---|
+| long master record 후처리 | 조건 하나에서 긴 신호를 연속 측정하고, 이후 짧은 window로 잘라 사용 | window 수가 많아도 독립 실험 수가 많아진 것은 아님 |
+| short master record 직접 저장 | 조건 하나에서 5초 또는 10초 정도를 연속 측정하고, 그 원신호 파일을 dataset record로 저장 | 10초 record 자체가 raw/master record이며, 필요하면 그 안에서 다시 1/2/5초 window를 만들 수 있음 |
+| long-term experiment의 snapshot 저장 | 장시간 운전 또는 run-to-failure 실험 중 일정 간격마다 짧은 신호 조각만 저장 | 전체 운전 시간과 공개된 vibration snapshot 길이를 혼동하면 안 됨 |
+
+따라서 "10초 데이터가 많다"는 말은 두 가지로 나누어 해석해야 한다.
+
+```text
+조건별로 10초 raw/master record가 여러 개 있는 것
+≠
+10초 record를 잘라 만든 1초 ML sample이 여러 개 있는 것
+```
+
+예를 들어 조건 하나에서 10초를 연속 측정했다면 기본 구조는 다음과 같다.
+
+```text
+RPM 1200, IR fault, load A
+→ 10초 연속 측정
+→ 10초 raw/master record 1개 저장
+→ 필요하면 1초 non-overlap window 10개 또는 2초 window 5개 생성
+```
+
+이 경우 10초 신호는 원본 데이터이고, 1초 또는 2초 sample은 후처리로 만든 analysis window다. 반대로 NASA IMS나 XJTU-SY처럼 run-to-failure 성격의 데이터셋은 전체 실험이 장시간 진행되지만, 공개 vibration data는 일정 간격으로 저장된 짧은 snapshot이다. 이때는 "실험 duration"과 "snapshot length"를 분리해서 기록해야 한다.
+
+UOS v2에서는 이 혼동을 피하기 위해 다음 metadata를 명시하는 것이 바람직하다.
+
+```yaml
+acquisition_duration_seconds: 10
+master_record_duration_seconds: 10
+stored_file_duration_seconds: 10
+window_length_seconds: [1, 2, 5, 10]
+window_source: derived_from_master_record
+split_group: physical_acquisition_run
+```
+
+즉 현재 후보 전략인 "조건당 10초 synchronized master record를 저장하고, 이후 1/2/5/10초 window를 정의한다"는 방식은 short master record 직접 저장 방식에 해당한다. 중요한 점은 window를 만들더라도 train/test split은 window 단위가 아니라 physical acquisition run 또는 bearing instance 단위로 먼저 정해야 한다는 것이다.
+
 ## UOS v1의 긴 record 해석
 
 UOS v1은 8 kHz와 16 kHz 두 sampling rate에서 같은 sample count를 맞추기 위해 서로 다른 duration을 사용했다.
