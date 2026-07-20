@@ -1,127 +1,161 @@
-# UOS Dataset v2 후보 차별성 및 연구 공백 검토
+# UOS Dataset v2 차별성 후보
 
-## 목적과 판정 상태
+## 한 줄 결론
 
-이 문서는 UOS Dataset v2가 논문에서 주장할 수 **있을지도 모르는** 차별성을, 현재까지 검토된 데이터셋 증거와 내부 참고자료에 대조해 정리한다. 이는 contribution 확정 문서가 아니다. 최종 논문에는 각 후보가 공식 원문·공식 repository·pilot 결과로 다시 검증된 뒤에만 반영한다.
+> **가장 유력한 차별성은 ‘4채널’이나 ‘복합결함’ 하나가 아니라, 베어링 내부 복합결함과 베어링–로터 복합결함을 체계적으로 구성하고, 모든 조건을 동일한 4채널 동시 측정 방식과 물리 검증 절차로 수집하는 것**이다.
 
-현재 후보 수집 계획의 센서 위치, 채널 수, sampling rate, RPM, record 길이, 결함 조합과 반복 수는 모두 미확정이다. 특히 4채널 top/side × shaft-end/motor-end 배치와 25.6 kS/s는 **pilot 후보**이지 이미 확정된 데이터셋 특성이 아니다.
+이 내용은 아직 최종 결론이 아니다. 기존 데이터셋의 공식 자료를 더 확인하고 예비 실험을 마친 뒤 확정한다.
 
-## 현재 결론
+## 우리가 만들려는 데이터
 
-UOS v2가 `다채널`, `다위치`, `복합결함`, 또는 `가변 RPM`을 제공한다는 사실만으로는 novelty를 주장할 수 없다. 각 요소의 선례가 이미 확인되어 있다. 남아 있는 가능성은 개별 요소가 아니라, 아래 요소를 같은 물리 run·동일 메타데이터 체계·동일 검증 규약으로 결합하고 공개하는 데 있다.
+현재 검토 중인 구성은 다음과 같다.
 
-1. 순수 결함을 대조군으로 갖는 통제된 internal-bearing pairwise-plus-triple 결함 행렬
-2. 위 internal-bearing 행렬과 unbalance·misalignment·looseness를 분리 가능한 요인으로 연결한 bearing–rotor 복합 설계
-3. 동일 synchronized vibration record에서 파생한 canonical single-channel 및 multi-channel 입력과, 물리 run 기준 split 규약
-4. 장비 timing, 센서 위치·방향·mounting, 채널 mapping을 재현 가능하게 공개하고 실제 timing/response를 확인하는 절차
-5. 결함 기하·RPM·envelope/order spectrum·반복성·사후 점검을 함께 사용하는 compound-label 물리 검증
-6. bearing ID, assembly/remount, load, RPM, acquisition order를 기록하여 label confounding과 window leakage를 방지하는 metadata 설계
+- 베어링 정상 및 단일결함: IR(내륜), OR(외륜), Ball(볼)
+- 베어링 내부 복합결함: IR+OR, IR+Ball, OR+Ball, IR+OR+Ball
+- 로터 결함: Unbalance(불평형), Misalignment(축정렬 불량), Looseness(풀림)
+- 베어링 결함과 로터 결함이 동시에 존재하는 조건
+- 축 양쪽 베어링 하우징의 상단·측면에서 수집한 4채널 진동
+- 같은 측정 신호에서 만든 단일채널·2채널·4채널 비교 데이터
+- 결함주파수, 회전주파수, envelope spectrum(포락선 스펙트럼) 등을 이용한 결함 확인
 
-위 여섯 항목은 모두 **candidate contribution**이다. 어느 하나도 현재 상태에서 보편적 최초성 또는 성능 우위를 뜻하지 않는다.
+센서 위치, 25.6 kS/s의 샘플링 주파수, RPM, 30초 측정 길이와 결함 조합 수는 아직 후보값이다.
 
-## 기존 데이터셋과의 대조
+## 그래서 무엇이 다른가
 
-| 후보 주장 | 이미 확인된 선례 | 따라서 주장할 수 없는 것 | 남는 후보 차별성 | 상태 |
-|---|---|---|---|---|
-| 두 bearing housing의 여러 진동 채널 | KAIST Batch는 two housing × x/y의 동시 4 accelerometer layout을 제공한다. CWRU, NASA IMS, MAFAULDA, Arkansas도 여러 위치의 진동 측정 선례를 가진다. [CB-01] | “4채널”, “두 위치”, “다위치 진동” 자체가 신규라는 주장 | 동일 physical run에서 고정된 channel subset을 제공하고, single-/multi-channel ablation과 split 규약을 미리 정의 | Candidate [CB-08] |
-| internal bearing compound fault | HUST Vietnam은 IR+OR, IR+Ball, OR+Ball을 의도적으로 제공하며, SEU는 IR+OR class를 제공한다. Paderborn, NASA IMS, Arkansas, PRONOSTIA에도 복합 손상 선례가 있다. [CB-02] | pairwise internal compound가 최초라는 주장 | matched healthy/pure reference와 함께, 결함 severity·bearing ID·replicate 정의가 분명한 pairwise + IR+OR+Ball 행렬 | Candidate [CB-07] |
-| bearing–rotor compound | UOS v1, MAFAULDA, Arkansas에 bearing과 rotor-system 결함이 함께 나타나는 선례가 있다. [CB-03] | bearing–rotor compound 자체가 새롭다는 주장 | 내부 베어링 결함 축과 unbalance/misalignment/looseness 축을 같은 설계 안에서 분리·교차시키는 요인 설계 | Candidate [CB-09] |
-| synchronized acquisition | KAIST는 simultaneous 4-channel layout을 명시한다. 여러 데이터셋은 공통 record를 제공하지만 ADC topology/skew를 충분히 쓰지 않는 경우가 있다. [G4] | “동시 수집”이라는 단어만으로의 신규성 | NI-9234 기반 timing architecture, 채널 mapping, start alignment, skew/상한, filter/group delay를 실제로 기록·검증 | Candidate [G4] |
-| 물리 기반 결함 검증 | UOS v1, Paderborn, NASA IMS 등은 characteristic frequency 또는 envelope 근거를 사용한다. [G5] | FFT/envelope 그림 하나만으로 validation이 신규라는 주장 | 모든 pure/compound condition을 대상으로 사전 정의한 기하 기반 주파수·RPM tolerance·quality check·repeatability·사후 점검을 연결 | Candidate [CB-10] |
-| 여러 RPM/하중 조건 | Ottawa 2018은 record 내부에서 RPM을 변화시키며, 여러 benchmark가 fixed RPM 또는 load 조건을 변화시킨다. [CB-04; G6] | “가변 운전조건” 자체가 신규라는 주장 | fault, bearing batch, RPM, load, acquisition order가 서로 label shortcut이 되지 않도록 균형 또는 block 구조와 metadata를 공개 | Candidate [G6] |
+### 1. 베어링 내부결함과 로터결함을 하나의 체계로 비교한다
 
-`CB-*`는 [claim_bank.md](../survey/synthesis/claim_bank.md), `G*`는 [gap_analysis.md](../survey/synthesis/gap_analysis.md)의 source-linked claim/gap ID를 가리킨다. 해당 문서의 모든 결론도 reviewed sources 범위 안에서만 유효하다.
+기존 데이터셋에도 복합결함은 있다. HUST Vietnam은 IR+OR, IR+Ball, OR+Ball을 제공한다[1]. UOS v1은 베어링 결함과 불평형·축정렬 불량·풀림이 결합된 조건을 제공한다[2]. Arkansas 데이터셋에도 베어링 결함과 굽은 축이 함께 존재하는 조건이 있다[3].
 
-## 다채널의 연구 필요성과 주장 경계
+따라서 “복합결함이 있다”만으로는 차별성이 아니다.
 
-다채널 신호에는 위치·방향별 전달경로 차이, 국부 noise, load-zone 영향, 장착 상태 차이 때문에 상호보완적 정보가 있을 수 있다. 하지만 이것은 UOS v2의 데이터셋 수준에서 아직 검증해야 할 가설이다.
+UOS v2의 차별성 후보는 다음 조건을 **같은 장비, 같은 운전조건, 같은 측정 규칙**으로 연결하는 것이다.
 
-- MAFAULDA에는 특정 ANN feature 실험에서 one-versus-two bearing sensor-set 비교가 보고되어 있다. 이는 해당 실험 설정의 근거일 뿐, 모든 모델·결함·센서 배치에서 multi-channel이 항상 우수하다는 증명은 아니다. [CB-06]
-- 내부 참고 메모는 다채널 fusion 관련 후속 논문 후보를 제시한다. 그러나 원문 전문, 데이터셋, split, 비교 대상, 수치 산출 조건을 아직 이 저장소에서 검토하지 않았으므로 그 정확도 수치나 일반화 결론을 논문 claim으로 사용하지 않는다. [LOCAL-NOV-01]
-- UOS v2의 유효한 검증 질문은 “4채널이 1채널보다 항상 좋은가?”가 아니라, **동일한 physical run에서 어떤 위치·방향 조합이 어떤 결함·RPM·노이즈 조건에서 보완적 정보를 제공하는가**이다.
+| 구분 | 비교 조건 |
+|---|---|
+| 기준 데이터 | 정상 |
+| 베어링 단일결함 | IR, OR, Ball |
+| 베어링 내부 복합결함 | IR+OR, IR+Ball, OR+Ball, IR+OR+Ball |
+| 로터 단일결함 | 불평형, 축정렬 불량, 풀림 |
+| 베어링–로터 복합결함 | 위 베어링 결함과 로터 결함이 동시에 존재하는 조건 |
 
-따라서 향후 benchmark에는 최소한 다음을 함께 제시한다.
+즉, 개별 결함만 많이 모으는 것이 아니라 **단일결함 → 베어링 내부 복합결함 → 베어링–로터 복합결함**으로 이어지는 비교 구조를 만드는 것이 핵심이다.
 
-1. 고정 single-channel baseline: 각 CH1–CH4를 독립적으로 평가
-2. 위치별 pair와 4-channel 조합: 같은 물리 record에서 파생
-3. 동일 model family, 동일 split, 동일 window/feature budget 비교
-4. 평균 성능뿐 아니라 condition별 성능, variance, channel failure/ablation 결과
-5. window-level 분할이 아닌 physical acquisition run, bearing instance, remount 또는 assembly 기준 분할
+다만 모든 조합을 실제로 수집할지는 결함 제작 가능성, 안전성, 반복성, 전체 데이터 규모를 확인한 후 정한다.
 
-성능 향상 수치는 이 비교가 실제로 완료된 뒤에만 기록한다.
+### 2. 같은 측정에서 단일채널과 다채널을 공정하게 비교한다
 
-## 복합결함 후보의 주장 경계
+다위치·다채널 진동 데이터도 이미 존재한다. KAIST Batch는 두 베어링 하우징의 x·y 방향에서 가속도계 4개를 동시에 측정한다[4]. MAFAULDA는 두 베어링 위치에서 여러 방향의 진동을 수집하며, 특정 실험에서 한쪽과 양쪽 센서 사용 결과를 비교했다[5].
 
-복합결함은 같은 sample/physical condition에 둘 이상의 결함이 실제로 존재할 때만 인정한다. 서로 다른 단일결함 record를 단순히 병합하거나, 여러 class가 한 dataset 안에 있다는 사실은 compound condition의 증거가 아니다.
+따라서 “4채널 진동” 자체도 차별성이 아니다.
 
-UOS v2에서 검토할 수 있는 최소 대조 구조는 다음과 같다.
+UOS v2에서는 하나의 물리적 측정에서 다음 입력을 함께 만들 수 있다.
 
-| 축 | 필요한 대조군 | 검증해야 할 점 |
-|---|---|---|
-| Internal bearing | healthy, IR, OR, Ball, IR+OR, IR+Ball, OR+Ball, IR+OR+Ball | 같은 bearing type·severity 정책·RPM/load·assembly 조건에서 component labels와 결함 기하가 추적되는가 |
-| Rotor system | healthy, unbalance, misalignment, looseness | 각 rotor condition의 설치/정렬/질량/체결 상태가 독립 metadata로 남는가 |
-| Bearing–rotor | pure bearing, pure rotor, 결합 condition | 결합 label이 같은 physical run에서 성립하고, 순수 대조군과 비교 가능한가 |
+- CH1, CH2, CH3, CH4 각각의 단일채널 입력
+- 같은 베어링 위치의 2채널 입력
+- 서로 다른 베어링 위치를 조합한 2채널 입력
+- 전체 4채널 입력
 
-이는 권장 설계이지 확정 수집 범위가 아니다. 특히 triple internal compound와 모든 bearing–rotor 교차조합은 조립 가능성, 안전성, 재현성, 사후 점검을 pilot으로 통과한 경우에만 채택한다.
+모든 입력이 같은 시점의 같은 운전상태에서 나오므로, 채널 수 외의 조건을 최대한 동일하게 유지할 수 있다. 이를 paired comparison(동일 측정 기반 짝지어진 비교)이라고 한다.
 
-## 내부 비교자료의 활용 범위
+이 비교를 통해 확인하려는 것은 “다채널이 항상 더 좋다”가 아니다. 다음 질문에 답하는 것이 목적이다.
 
-다음 세 파일은 현재 `library/documents/design/novelty/`에 보관했다. Git-ignore 대상의 로컬 참고자료이며, 최종 근거 저장소가 아니다.
+- 어느 센서 위치가 어떤 결함을 잘 감지하는가?
+- 두 위치의 정보가 실제로 서로 보완적인가?
+- 복합결함에서 다채널의 효과가 단일결함보다 큰가?
+- 일부 채널이 없거나 잡음이 심할 때 성능이 얼마나 변하는가?
 
-| Local ID | 파일 | 역할 | 사용 제한 |
-|---|---|---|---|
-| LOCAL-NOV-01 | `multichannel_literature_leads.csv` | 다채널 fusion 관련 논문 후보와 URL 목록 | 원문을 읽고 source ID·page/table/figure를 등록하기 전에는 수치나 결론을 인용하지 않음 |
-| LOCAL-NOV-02 | `dataset_competitiveness_working_matrix.xlsx` | dataset 후보를 빠르게 비교하는 내부 작업표 | 각 O/X, 채널 수, 공개 여부를 독립 증거로 취급하지 않음 |
-| LOCAL-NOV-03 | `dataset_construction_necessity_working_note.pdf` | 다채널·복합결함 필요성을 정리한 내부 메모 | 인용문헌의 원문 확인 전에는 해석 초안으로만 사용 |
+성능 향상은 실제 비교 실험 결과가 나온 뒤에만 수치로 제시한다.
 
-작업표를 현재 survey와 대조했을 때의 주의점은 다음과 같다.
+### 3. 결함이 실제로 측정되었는지 조건별로 검증한다
 
-- UOS v2의 채널 수·sampling rate·RPM·bearing 구성은 작업표에 적힌 값이 있어도 아직 설계 후보다. 최종 facts로 승격하지 않는다.
-- `bearing count/type`, `sensor position count`, `vibration channel count`, `total recorded channel count`는 별도 열이어야 한다. 예를 들어 비진동 modality까지 포함한 총 채널 수로 multi-channel vibration을 판단하면 안 된다.
-- 공개 여부가 불명확하거나 비공개 comparator는 research-gap의 부재를 입증하는 증거로 사용하지 않는다.
-- 복합결함 O/X는 same-sample 여부, 결함 조합, 의도성, severity, pure control을 별도로 확인해야 한다.
-- 작업표의 HUST/MAFAULDA/Arkansas/KAIST/Paderborn 값은 현재 survey card의 source-linked facts와 충돌할 수 있으므로, 이후 변경은 `facts.yaml`과 `evidence.md`를 기준으로 한다.
+기존에도 결함주파수와 포락선 스펙트럼을 사용한 데이터셋이 있다. UOS v1과 Paderborn은 베어링 결함주파수에 근거한 분석을 제시했고[2][6], NASA IMS는 결함주파수와 분해 후 손상 상태를 함께 확인했다[7].
 
-## 논문에서 사용할 수 있는 표현 초안
+따라서 FFT(고속 푸리에 변환)나 포락선 스펙트럼 그림을 제시하는 것만으로는 차별성이 아니다.
 
-다음은 검증이 진행될 때까지 안전한 표현이다.
+UOS v2에서는 각 조건마다 다음 사항을 같은 기준으로 확인하는 방안을 검토한다.
 
-- “UOS Dataset v2 is designed to investigate whether synchronized multi-position vibration offers complementary diagnostic information under controlled conditions.”
-- “The dataset design targets a candidate gap: matched pure, internal-bearing compound, and bearing–rotor compound conditions with traceable acquisition metadata.”
-- “Paired channel subsets are intended to enable controlled single- versus multi-channel evaluation; no universal performance advantage is assumed.”
-- “Final sensor placement, sampling rate, record duration, and fault matrix will be selected after hardware and pilot validation.”
+- 실제 RPM과 회전주파수
+- 베어링 형상으로 계산한 BPFO(외륜 결함주파수), BPFI(내륜 결함주파수), BSF(볼 결함주파수)
+- 결함주파수와 고조파가 원신호·포락선 스펙트럼에 나타나는지
+- 로터결함의 회전주파수 성분과 고조파가 나타나는지
+- 4개 채널에서 신호가 어떻게 다르게 전달되는지
+- 센서 포화, 잡음, RPM 흔들림, 누락값 여부
+- 반복 측정과 센서 재부착 후에도 결과가 유지되는지
+- 측정 후 실제 결함 상태를 사진 또는 치수로 다시 확인했는지
 
-피해야 할 표현은 다음과 같다.
+특히 복합결함에서는 예상 성분이 보이지 않을 수도 있다. 이 경우에도 결함이 확인되었다고 처리하지 않고, 확인 실패 또는 결과 불일치로 기록한다.
 
-- “The first/only/best multi-channel compound-fault dataset”
-- “Multi-channel data outperform single-channel data”
-- “Existing datasets lack compound faults”
-- “The proposed four-channel layout is optimal”
+## 보조적인 강점
 
-## Claim 확정 전 증거 게이트
+아래 항목은 단독 차별성이라기보다 데이터의 신뢰성과 활용도를 높이는 요소다.
 
-| Gate | 필요한 증거 | 통과 전 상태 |
-|---|---|---|
-| G-A: closest comparator audit | HUST Vietnam, Arkansas, MAFAULDA, Paderborn, KAIST, UOS v1의 공식 repository와 원문에서 compound matrix·채널·metadata를 재확인 | Candidate gap |
-| G-B: multi-channel literature audit | LOCAL-NOV-01의 각 논문을 원문 기준으로 dataset, sensor modality/position, split, baseline, 성능 수치, 한계를 evidence table에 기록 | Literature lead only |
-| G-C: timing and layout pilot | NI-9234 task 설정, channel mapping, timing, mounting/remount, noise/clipping, coherence 및 위치별 fault visibility 측정 | Candidate acquisition architecture |
-| G-D: factorial/confound pilot | bearing ID, assembly, fault, RPM, load, acquisition order를 분리해 pure/compound repeat를 획득 | Candidate dataset design |
-| G-E: physical label validation | defect geometry, measured RPM, envelope/order spectrum, repeatability, 사후 점검을 condition별로 연결 | Candidate validation contribution |
-| G-F: paired benchmark | physical-run grouped split에서 single-/multi-channel ablation을 동일 조건으로 수행 | Candidate performance claim |
+### 측정 조건을 자세히 기록
 
-## 다음 자료 우선순위
+베어링 번호, 결함 제작 정보, 조립·재부착 번호, 센서 위치, 실제 RPM, 하중, 수집 순서와 온도 등을 함께 기록한다. 이렇게 해야 모델이 결함이 아니라 특정 베어링이나 수집 순서를 외워서 높은 성능을 내는 문제를 줄일 수 있다.
 
-1. `LOCAL-NOV-01`에 적힌 다채널 fusion 논문의 원문 또는 저자 공개본을 추가한다. 각 논문은 별도 source ID로 등록하고, fusion이 multi-position vibration인지 multi-modal인지부터 분리한다.
-2. 가장 가까운 공개 comparator의 공식 metadata를 확인한다. 우선순위는 HUST Vietnam, Arkansas, MAFAULDA, KAIST Batch, Paderborn, UOS v1이다.
-3. UOS rig의 실제 bearing geometry, fault 제작 방식, load direction, tachometer/RPM 측정 방식을 확정해 물리 주파수 표와 label-validation plan을 작성한다.
-4. 4채널 배치와 25.6 kS/s/record-length 후보는 [pilot_validation_protocol.md](pilot_validation_protocol.md)의 pilot으로 판정한다. 수집 software의 30초 파일 단위와 안정화 파일 처리 규칙도 이 단계에서 metadata로 고정한다.
+### 물리적 측정 단위로 학습·시험 데이터 분리
 
-## Evidence references
+한 번 수집한 30초 신호를 여러 구간으로 나누면 파일 수는 늘어나지만, 각 구간은 서로 매우 비슷하다. 같은 30초 신호에서 나온 구간을 학습 데이터와 시험 데이터에 나누어 넣으면 성능이 실제보다 높게 보일 수 있다.
 
-- [claim_bank.md](../survey/synthesis/claim_bank.md): CB-01–CB-10과 각 dataset evidence ID
-- [gap_analysis.md](../survey/synthesis/gap_analysis.md): G1–G6의 범위·한계·추가 검증 항목
-- [implications_for_uos_v2.md](../survey/synthesis/implications_for_uos_v2.md): pilot design requirements와 decision gates
-- [comparison_master.md](../survey/synthesis/comparison_master.md): 현재 14개 dataset의 source-linked 비교 결과(모든 row는 `needs_review`)
-- LOCAL-NOV-01–03: 위 표에 정의한 로컬 working references; primary evidence가 아님
+따라서 같은 측정에서 잘라낸 모든 구간은 같은 그룹에 두고, 가능하면 측정 회차·베어링 개체·재조립 단위로 학습·검증·시험 데이터를 나눈다.
 
-Last reviewed: 2026-07-20
+### 원신호와 짧은 분석 구간을 함께 제공
+
+30초 동시 측정 원신호를 보존하고, 1초·2초·5초·10초 분석 구간을 동일한 규칙으로 만들 수 있다. 이렇게 하면 물리 분석에는 긴 신호를 사용하고, 실시간 추론 연구에는 짧은 신호를 사용할 수 있다.
+
+30초 측정 방식과 첫 번째 30초 안정화 구간의 처리 방법은 현재 수집 소프트웨어를 이용한 예비 실험 후 확정한다.
+
+## 차별성이 아닌 것
+
+다음 표현은 현재 조사 결과와 맞지 않으므로 사용하지 않는다.
+
+- “최초의 다채널 회전기계 데이터셋”
+- “최초의 복합결함 데이터셋”
+- “기존 데이터셋에는 베어링–로터 복합결함이 없다”
+- “다채널은 단일채널보다 항상 우수하다”
+- “현재 제안한 센서 위치가 최적이다”
+- “25.6 kS/s와 30초가 최적의 수집 조건이다”
+
+## 현재 가장 적절한 설명
+
+논문 작성 전 단계에서는 다음처럼 설명하는 것이 가장 정확하다.
+
+> UOS Dataset v2는 베어링 단일결함, 베어링 내부 복합결함, 로터결함 및 베어링–로터 복합결함을 같은 시험 장치와 운전조건에서 비교할 수 있도록 구성하는 것을 목표로 한다. 또한 동일 시점에 수집한 4채널 진동을 이용하여 단일채널과 다채널 진단을 공정하게 비교하고, 각 결함 조건을 물리적 특징과 실험 기록으로 검증하는 것을 목표로 한다. 이 구성의 신규성과 최종 수집 조건은 기존 데이터셋의 추가 확인과 예비 실험 후 확정한다.
+
+더 짧게 표현하면 다음과 같다.
+
+> **체계적인 복합결함 구성 + 동일 측정 기반 단일·다채널 비교 + 조건별 물리 검증**
+
+## 확정하기 위해 남은 작업
+
+1. HUST Vietnam, Arkansas, MAFAULDA, KAIST Batch, Paderborn 및 UOS v1의 공식 저장소 자료를 추가 확인한다.
+2. 다채널 성능 비교 논문의 원문에서 센서 종류·위치, 데이터 분할 방식, 비교 조건과 성능 수치를 확인한다.
+3. 4채널 후보 위치가 서로 다른 유용한 정보를 제공하는지 예비 실험으로 확인한다.
+4. 베어링 형상과 RPM을 이용해 조건별 결함주파수 범위를 계산한다.
+5. 베어링 내부 3중 결함과 베어링–로터 조합을 반복 제작할 수 있는지 확인한다.
+6. 25.6 kS/s와 30초 측정이 신호 대역, 회전 수, 저장 용량 측면에서 적절한지 확인한다.
+
+## 참고문헌
+
+[1] N. D. Thuan and H. S. Hong, “HUST bearing: a practical dataset for ball bearing fault diagnosis,” *BMC Research Notes*, vol. 16, 2023. DOI: [10.1186/s13104-023-06400-4](https://doi.org/10.1186/s13104-023-06400-4).
+
+[2] S. Lee, T. Kim, and T. Kim, “Multi-domain vibration dataset with various bearing types under compound machine fault scenarios,” *Data in Brief*, vol. 57, 2024, Art. 110940. DOI: [10.1016/j.dib.2024.110940](https://doi.org/10.1016/j.dib.2024.110940).
+
+[3] L. Marshall and D. Jensen, “Dataset of single and double faults scenarios using vibration signals from a rotary machine,” *Data in Brief*, vol. 49, 2023, Art. 109358. DOI: [10.1016/j.dib.2023.109358](https://doi.org/10.1016/j.dib.2023.109358).
+
+[4] W. Jung, S.-H. Kim, S.-H. Yun, J. Bae, and Y.-H. Park, “Vibration, acoustic, temperature, and motor current dataset of rotating machine under varying operating conditions for fault diagnosis,” *Data in Brief*, vol. 48, 2023, Art. 109049. DOI: [10.1016/j.dib.2023.109049](https://doi.org/10.1016/j.dib.2023.109049).
+
+[5] D. Pestana-Viana, R. Zambrano-Lopez, A. A. de Lima, T. de M. Prego, S. L. Netto, and E. A. B. da Silva, “The influence of feature vector on the classification of mechanical faults using neural networks,” *2016 IEEE 7th Latin American Symposium on Circuits and Systems*, 2016. DOI: [10.1109/LASCAS.2016.7451023](https://doi.org/10.1109/LASCAS.2016.7451023).
+
+[6] C. Lessmeier, J. K. Kimotho, D. Zimmer, and W. Sextro, “Condition Monitoring of Bearing Damage in Electromechanical Drive Systems by Using Motor Current Signals of Electric Motors: A Benchmark Data Set for Data-Driven Classification,” *European Conference of the Prognostics and Health Management Society*, 2016. 공식 데이터셋 페이지: [Paderborn KAt Data Center](http://mb.uni-paderborn.de/kat/datacenter).
+
+[7] H. Qiu, J. Lee, J. Lin, and G. Yu, “Wavelet filter-based weak signature detection method and its application on rolling element bearing prognostics,” *Journal of Sound and Vibration*, vol. 289, pp. 1066–1090, 2006. DOI: [10.1016/j.jsv.2005.03.007](https://doi.org/10.1016/j.jsv.2005.03.007).
+
+## 저장소 내 상세 근거
+
+- [데이터셋 비교표](../survey/synthesis/comparison_master.md)
+- [연구 공백 분석](../survey/synthesis/gap_analysis.md)
+- [근거 기반 주장 목록](../survey/synthesis/claim_bank.md)
+- [UOS v2 설계 시사점](../survey/synthesis/implications_for_uos_v2.md)
+
+최종 검토일: 2026-07-20
