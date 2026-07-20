@@ -31,6 +31,8 @@ Published dataset survey and evidence collection
 - Internal-compound candidate gap narrowed from pairwise combinations to a complete balanced pairwise-plus-triple matrix with matched references and controlled severity
 - SEU transfer-learning application paper reviewed; self-collected DDS subset registered separately from reused CWRU data, IR+OR Combination verified, and pooled bearing/gear `mixture` distinguished from same-sample compound faults
 - HUST China benchmark/release paper and official HUSTbearing GitHub README reviewed; 25.6 kHz, 262,144-point/10.2-s records, ER-16K bearing, 9 health states, ten constant-speed conditions plus one 0-40-0 Hz time-varying condition, and IR+OR combination faults documented
+- Internal dataset-comparison workbook and novelty working note reviewed and relocated under the ignored local design library; their unverified claims are explicitly separated from source-linked survey facts
+- UOS v2 candidate-contribution review drafted: multi-channel/multi-position/compound/variable-RPM alone are not novelty claims; controlled compound matrix, paired channel-ablation protocol, timing metadata, physical validation, and confound-resistant metadata remain candidate gaps pending verification and pilot evidence
 
 ## In progress
 
@@ -52,6 +54,7 @@ Published dataset survey and evidence collection
 - HUST Vietnam Mendeley manifest, 99-record accounting, RPM values, MAT schema, mounting, chassis/timing, and dataset license verification
 - SEU official repository documentation, raw acquisition schema, sensor/DAQ/mounting, sampling/duration, controller-setting interpretation, persistent access, and license verification
 - HUSTbearing raw Excel schema, license, exact sensor/DAQ/mounting/channel details, and Supplementary Appendix B task mappings
+- Full-text audit of the multi-channel fusion literature leads, including sensor taxonomy, split protocol, comparison baseline, quantitative result, and limitations
 
 ## Next actions
 
@@ -62,6 +65,7 @@ Published dataset survey and evidence collection
 5. existing four-channel 위치·방향 pilot protocol을 실제 rig 좌표·하중방향·mounting 정보로 구체화
 6. candidate bearing geometry/RPM을 반영해 sampling rate·record length 계산 갱신
 7. HUST Vietnam official repository metadata로 복합결함 matrix와 raw schema 독립 검증
+8. 다채널 fusion literature lead 원문을 source-linked evidence로 전환하고, UOS v2 paired channel-ablation claim의 외부 근거 범위를 확정
 
 ## Open questions
 
@@ -71,6 +75,7 @@ Published dataset survey and evidence collection
 - sampling rate, RPM 범위, record 길이를 결정할 최소 bandwidth·frequency-resolution·rotation-count 기준
 - 13A131 제조사 원본 datasheet, 개별 calibration certificate, 정확한 NI-9234 connector variant
 - SEU 등 남은 후보가 unresolved gap을 실제로 좁히는지와 추가 등록 우선순위
+- 내부 비교 작업표의 값 중 source-linked survey와 충돌하거나 미검증인 항목의 처리 기준
 
 ## Blockers
 

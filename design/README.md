@@ -9,6 +9,7 @@ Survey에서 확인된 연구 공백과 실제 보유 장비 제약을 연결하
 - `sampling_and_record_length_rationale_ko.md`: Notion/교수 검토용 한국어 sampling rate/RPM/duration 통합 결정 근거 초안
 - `rpm_selection_rationale_ko.md`: Notion/교수 검토용 한국어 RPM grid 정량 분석 및 후보안
 - `record_length_and_windowing_rationale_ko.md`: Notion/교수 검토용 한국어 데이터 길이, windowing, split leakage 분석
+- `uos_v2_candidate_contributions_ko.md`: 기존 dataset 선례와 내부 literature lead를 분리한 UOS v2 후보 차별성·연구 공백·claim gate 검토
 - `pilot_validation_protocol.md`: 위치, mounting, timing, sampling, duration을 확정하기 위한 pilot 절차
 
-Local design references that should not be committed, such as bandwidth notes and PDFs, are kept under `library/documents/design/`.
+Local design references that should not be committed, such as bandwidth notes and PDFs, are kept under `library/documents/design/`. The unverified novelty working note, comparison workbook, and literature leads are in `library/documents/design/novelty/`.
