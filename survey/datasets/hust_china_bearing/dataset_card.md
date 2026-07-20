@@ -13,31 +13,31 @@ The available 2024 review/benchmark paper introduces eight open datasets and two
 
 ## Acquisition setup
 
-Unknown from the locally available main article. The source assigns the detailed dataset and task settings to online Supplementary Appendix B, which is not embedded in the local PDF. [HUSTC-E03, HUSTC-E09]
+The official HUSTbearing GitHub README identifies a SpectraQuest Mechanical Fault Simulator with speed control, motor, shaft, acceleration sensor, bearing, and data acquisition board. The exact accelerometer model/count, DAQ model, axis count, mounting, and channel schema remain Unknown because the README describes components generically and the raw Excel files were not downloaded. [HUSTC-E03, HUSTC-E09, HUSTC-E10]
 
 ### Measurement position and mounting rationale
 
-Unknown. Sensor position, direction, mounting, position-selection rationale, and validation are not reported in the main article. [HUSTC-E09]
+Unknown. The official README shows an acceleration sensor near the bearing in the rig schematic, but exact sensor position, direction, mounting, position-selection rationale, and validation are not reported in text. [HUSTC-E09, HUSTC-E10]
 
 ### Sampling rate, RPM, and record length rationale
 
-Unknown. The main article does not state HUSTbearing sampling rate, RPM/load grid, raw duration, samples per record, bandwidth rationale, or window rationale. These values must not be inferred from other benchmark datasets or algorithm input processing. [HUSTC-E09]
+The official HUSTbearing GitHub README reports 25.6 kHz sampling and 262,144 points per sampling, approximately 10.2 s. It lists ten constant-speed operating conditions at 20, 25, 30, 35, 40, 60, 65, 70, 75, and 80 Hz, plus one time-varying 0-40-0 Hz condition. The README warns that the second column in raw files represents speed but is redundant for constant-speed records; correct speed should be taken from filenames. No bandwidth, anti-aliasing, frequency-resolution, rotation-count, or window-selection rationale is reported. [HUSTC-E09, HUSTC-E11, HUSTC-E12]
 
 ## Sensors and channels
 
-Unknown. The main article does not identify HUSTbearing sensor modality/model/count, channel layout, simultaneous sampling, synchronization, or DAQ. [HUSTC-E09]
+The official README establishes vibration/acceleration data from an acceleration sensor, but model, count, axis directions, simultaneous sampling, synchronization, and DAQ model remain Unknown. [HUSTC-E09, HUSTC-E10]
 
 ## Operating conditions
 
-Table 4 classifies HUSTbearing as having multiple working conditions, but their numeric values and controlled variables are absent from the main article. [HUSTC-E02]
+HUSTbearing has 11 operating conditions: ten constant-speed conditions at 20-80 Hz and one 0-40-0 Hz time-varying speed condition. Converted to shaft speed, the constant-speed set is approximately 1200, 1500, 1800, 2100, 2400, 3600, 3900, 4200, 4500, and 4800 RPM. The 0-40-0 Hz condition corresponds to approximately 0-2400-0 RPM if the listed Hz is shaft rotational frequency. [HUSTC-E02, HUSTC-E11]
 
 ## Fault conditions and labels
 
-Table 4 states that the bearing faults are artificial. Exact health classes, defect components, severities, generation method, and compound-fault status are not stated in the main article. The cross-machine benchmark discusses healthy/IR/OR tasks across selected datasets, but without Supplementary Appendix B it is not safe to attribute every class to HUSTbearing. [HUSTC-E02, HUSTC-E06]
+The official README lists nine health states: normal, medium/severe inner-race fault, medium/severe outer-race fault, medium/severe ball fault, and medium/severe combination fault. It states that combination fault denotes both inner-race and outer-race faults and that all faults are artificially preset. Reported defect sizes are 0.15/0.3 mm for inner/outer race medium/severe faults and 0.25/0.5 mm for ball medium/severe faults. No IR+ball, OR+ball, triple internal compound, rotor, or gear fault is reported. [HUSTC-E10, HUSTC-E13]
 
 ## Data organization and access
 
-The abstract/conclusion says two self-collected datasets were released and provides a GitHub code repository. The Data Availability statement instead says data will be made available on request. The local PDF contains no embedded supplement, manifest, persistent dataset DOI, file schema, or license. Raw availability is therefore Partial pending official supplementary/repository verification. [HUSTC-E04, HUSTC-E05]
+The official HUSTbearing repository links Quark and Google Drive data locations and states that raw data comprise 99 Excel files, equal to 9 health states times 11 working conditions. Filenames encode fault class/severity and operating condition, for example `0.5X_B_65Hz`. Repository license and raw Excel schema still require verification; raw data were not downloaded for this update. [HUSTC-E04, HUSTC-E05, HUSTC-E14]
 
 ## Validation reported by source
 
@@ -46,11 +46,12 @@ The paper benchmarks eight domain-generalization algorithms and reports difficul
 ## Known limitations and conflicts
 
 - Detailed Appendix B is not included in the local PDF.
-- “Released” statements coexist with “available on request.”
-- Acquisition, schema, license, and fault taxonomy are unavailable locally.
+- The paper's “available on request” statement conflicts with the public HUSTbearing GitHub data links.
+- Exact sensor model/count, DAQ model, mounting, channel schema, and license remain Unknown.
 - HUSTbearing and HUSTgearbox are separate datasets and must not be merged.
-- No conclusion about compound faults, multi-channel acquisition, sampling rate, or duration is currently supportable.
+- Only IR+OR internal compound is documented; IR+ball, OR+ball, and IR+OR+ball are not reported.
+- The README text says “4 different operating conditions” but lists 11 conditions and elsewhere says 11. This is treated as a README typo.
 
 ## Evidence coverage
 
-This is an intentionally sparse card. Values requiring supplementary or official repository evidence remain Unknown.
+First-pass extraction now uses both the 2024 benchmark paper and the official HUSTbearing GitHub README. Values requiring raw Excel inspection, Supplementary Appendix B, or hardware documentation remain Unknown.

@@ -30,7 +30,7 @@ Published dataset survey and evidence collection
 - HUST Vietnam dedicated Data Note reviewed and registered as a direct comparator; intentional IR+OR, IR+Ball, and OR+Ball defects, five bearing models, NI-9234 at 51.2 kHz, and 10-second steady/5-second run-up records documented
 - Internal-compound candidate gap narrowed from pairwise combinations to a complete balanced pairwise-plus-triple matrix with matched references and controlled severity
 - SEU transfer-learning application paper reviewed; self-collected DDS subset registered separately from reused CWRU data, IR+OR Combination verified, and pooled bearing/gear `mixture` distinguished from same-sample compound faults
-- HUST China benchmark/release paper reviewed for HUSTbearing; only artificial faults and multiple working conditions verified, with acquisition/fault details left Unknown because online Supplementary Appendix B is absent
+- HUST China benchmark/release paper and official HUSTbearing GitHub README reviewed; 25.6 kHz, 262,144-point/10.2-s records, ER-16K bearing, 9 health states, ten constant-speed conditions plus one 0-40-0 Hz time-varying condition, and IR+OR combination faults documented
 
 ## In progress
 
@@ -51,7 +51,7 @@ Published dataset survey and evidence collection
 - KAIST Batch official repository schema/license, exact accelerometer attachment, cross-device timing, and NI module-role conflict verification
 - HUST Vietnam Mendeley manifest, 99-record accounting, RPM values, MAT schema, mounting, chassis/timing, and dataset license verification
 - SEU official repository documentation, raw acquisition schema, sensor/DAQ/mounting, sampling/duration, controller-setting interpretation, persistent access, and license verification
-- HUSTbearing online Supplementary Appendix B, repository/access reconciliation, fault classes, sensor/DAQ/mounting, sampling/duration, RPM/load values, schema, and license verification
+- HUSTbearing raw Excel schema, license, exact sensor/DAQ/mounting/channel details, and Supplementary Appendix B task mappings
 
 ## Next actions
 
@@ -70,7 +70,7 @@ Published dataset survey and evidence collection
 - UOS v2 후보 센서 위치를 평가할 물리 근거와 pilot validation metric
 - sampling rate, RPM 범위, record 길이를 결정할 최소 bandwidth·frequency-resolution·rotation-count 기준
 - 13A131 제조사 원본 datasheet, 개별 calibration certificate, 정확한 NI-9234 connector variant
-- SEU/HUST China 등 남은 후보가 unresolved gap을 실제로 좁히는지와 추가 등록 우선순위
+- SEU 등 남은 후보가 unresolved gap을 실제로 좁히는지와 추가 등록 우선순위
 
 ## Blockers
 
@@ -78,4 +78,4 @@ Published dataset survey and evidence collection
 
 ## Last updated
 
-2026-07-18
+2026-07-20

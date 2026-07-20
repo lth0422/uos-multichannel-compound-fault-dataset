@@ -9,11 +9,13 @@ publication:
 dataset_mode:
   batch: "Yes"
   run_to_failure: "No"
-  variable_speed: Unknown
-modalities: []
+  variable_speed: "Yes"
+modalities:
+  - vibration acceleration
 channels:
   count: Unknown
-  positions: []
+  positions:
+    - near tested bearing; exact position Unknown
   directions: []
   triaxial: Unknown
   simultaneous_sampling: Unknown
@@ -22,30 +24,48 @@ acquisition:
   sensor_mounting: []
   position_selection_rationale: Unknown
   position_validation_methods: []
-  record_duration_seconds: []
-  samples_per_record: []
-sensors: []
+  record_duration_seconds:
+    - 10.2
+  samples_per_record:
+    - 262144
+sensors:
+  - model: Unknown
+    type: acceleration sensor
+    count: Unknown
 daq: Unknown
-sampling_rates_hz: []
-bearing_models: []
-bearing_types: []
+sampling_rates_hz:
+  - 25600
+bearing_models:
+  - ER-16K
+bearing_types:
+  - ball bearing
 faults:
-  healthy: Unknown
-  inner_race: Unknown
-  outer_race: Unknown
-  ball_or_roller: Unknown
-  cage: Unknown
+  healthy: "Yes"
+  inner_race: "Yes"
+  outer_race: "Yes"
+  ball_or_roller: "Yes"
+  cage: "No"
   rotor: "No"
   gear: "No"
 compound_faults:
-  internal_bearing: Unknown
+  internal_bearing: "Yes"
   bearing_rotor: "No"
   bearing_gear: "No"
-  other: Unknown
+  other: "No"
 operating_conditions:
-  rpm: []
-  load:
-    - multiple working conditions exact values Unknown
+  rpm:
+    - 1200
+    - 1500
+    - 1800
+    - 2100
+    - 2400
+    - 3600
+    - 3900
+    - 4200
+    - 4500
+    - 4800
+    - 0-2400-0 time-varying equivalent if Hz denotes shaft rotational frequency
+  load: []
   radial_force: []
   torque: []
   temperature: []
@@ -56,18 +76,22 @@ fault_generation:
   run_to_failure: "No"
 validation_methods:
   - downstream domain-generalization benchmark across working conditions
-file_formats: []
-raw_data_available: "Partial"
+file_formats:
+  - Excel
+raw_data_available: "Yes"
 processed_data_available: Unknown
-metadata_available: "Partial"
+metadata_available: "Yes"
 code_available: "Yes"
 license: Unknown
-official_url: https://github.com/CHAOZHAO-1/DG-PHM
+official_url: https://github.com/CHAOZHAO-1/HUSTbearing-dataset
 notes: >-
-  The main article lists HUSTbearing as a 2022 self-collected artificial-fault
-  bearing dataset with multiple working conditions. Detailed settings are routed
-  to online Supplementary Appendix B, absent from the local PDF. The paper says
-  the datasets were released but its Data Availability statement says data will
-  be made available on request, so raw availability is Partial. No sensor,
-  channel, DAQ, rate, duration, RPM, bearing, class, severity, compound-fault,
-  schema, or license value is inferred.
+  The official HUSTbearing README reports 9 health states and 11 operating
+  conditions: ten constant-speed conditions from 20 to 80 Hz plus one 0-40-0 Hz
+  time-varying condition. RPM values above are project conversions from Hz to
+  RPM, assuming the listed Hz denotes shaft rotational frequency. The README
+  says the raw file's second column represents speed but is redundant for
+  constant-speed records; filenames provide the correct speed. Internal
+  compound coverage is limited to IR+OR combination faults with medium/severe
+  severities. Exact accelerometer model/count, DAQ, mounting, channel schema,
+  raw Excel columns, and license remain Unknown because raw files were not
+  downloaded.

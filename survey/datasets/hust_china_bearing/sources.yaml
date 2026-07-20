@@ -12,3 +12,15 @@ sources:
     redistribution_allowed: "No"
     accessed_date: 2026-07-18
     notes: Original release/benchmark source but not a dedicated dataset paper. Online supplementary Appendix B is required; it is not embedded in the local publisher PDF.
+  - source_id: HUSTC-S02
+    type: official_repository
+    title: "HUSTbearing dataset"
+    authors: Chao Zhao
+    year: Unknown
+    venue: GitHub repository
+    doi:
+    official_url: https://github.com/CHAOZHAO-1/HUSTbearing-dataset
+    local_file:
+    redistribution_allowed: Unknown
+    accessed_date: 2026-07-20
+    notes: Official dataset README with data links, health states, operating conditions, sampling rate, point count, tested bearing, and filename conventions. Raw data were not downloaded.
