@@ -2,7 +2,7 @@
 
 ## Decision status
 
-The core-ten survey plus KAIST Batch and HUST Vietnam supports a pilot design, not final acquisition settings. Sensor positions, channel count, sampling rate, RPM/load grid, record length, fault combinations, repetitions, and paper contributions remain unconfirmed until hardware characterization and pilot validation are complete.
+The current 16-dataset survey supports a pilot design, not final acquisition settings. Sensor positions, channel count, sampling rate, RPM/load grid, record length, fault combinations, repetitions, and paper contributions remain unconfirmed until hardware characterization and pilot validation are complete.
 
 ## Proposed design requirements for the pilot
 
@@ -12,7 +12,7 @@ Use independent fields for bearing component (`IR`, `OR`, `ball/roller`, `cage`)
 
 ### 2. Preserve pure references and planned compounds
 
-Before compound acquisition, collect matched healthy and pure single-fault references. HUST Vietnam already publishes IR+OR, IR+Ball, and OR+Ball, so UOS differentiation requires more than those class names. A candidate design is a balanced pairwise-plus-triple matrix with controlled severity and independent validation, but feasibility must be demonstrated before this becomes final scope. Bearing–rotor combinations should be factorially separated from internal components where practical. [HUSTV-E08–E09]
+Before compound acquisition, collect matched healthy and pure single-fault references. HUST Vietnam already publishes all three pairwise combinations, and S1 Data publishes those three plus the triple combination. UOS differentiation therefore requires more than the class list. A candidate design is to repeat matched healthy/pure/pairwise/triple conditions across selected bearing structural types and RPMs with traceable independent runs, fixed simultaneous channels, and a common validation policy. Bearing–rotor combinations should be factorially separated from internal components where practical. [HUSTV-E08–E09, S1-E04–E10]
 
 ### 3. Treat synchronization as a measured/documented property
 
@@ -116,5 +116,5 @@ Freeze paper claims only after repository verification of the closest datasets a
 2. Define the candidate bearing geometry and calculate shaft/BPFO/BPFI/BSF/FTF ranges over proposed RPMs.
 3. Draft a four-sensor placement pilot with explicit metrics and remount repetitions.
 4. Compare two or three NI-9234-native rate/duration candidates using pilot spectra and storage estimates.
-5. Verify official metadata for the closest compound comparators: Arkansas, MAFAULDA, Paderborn, NASA IMS, and PRONOSTIA.
+5. Verify official metadata for the closest compound comparators: S1 Data, MCC5-THU, HUST Vietnam, Arkansas, and MAFAULDA.
 6. Verify KAIST Batch's official repository schema/license and exact mounting only if those details affect a design gate; review SEU/HUST only with original or official dataset documentation.

@@ -1,0 +1,97 @@
+dataset_id: s1_data
+dataset_name: S1 Data — Original diagnosis signal at 2000 rpm
+institution: Harbin University of Science and Technology and collaborating institutions
+release_year: 2024
+publication:
+  dedicated_dataset_paper: "No"
+  venue: PLOS ONE 19(2) e0297935
+  doi: 10.1371/journal.pone.0297935
+dataset_mode:
+  batch: "Yes"
+  run_to_failure: "No"
+  variable_speed: "No"
+modalities:
+  - vibration acceleration
+channels:
+  count: 5
+  positions:
+    - support-bearing housing
+    - faulty-bearing housing surface
+    - gearbox casing
+  directions:
+    - support-bearing uniaxial direction Unknown
+    - faulty-bearing uniaxial direction Unknown
+    - gearbox three-way axes exact coordinate labels Unknown
+  triaxial: "Yes"
+  simultaneous_sampling: Unknown
+  synchronized_acquisition: Unknown
+acquisition:
+  sensor_mounting: []
+  position_selection_rationale: The locations represent the support bearing, tested bearing, and gearbox transmission path; exact comparative rationale Unknown
+  position_validation_methods:
+    - transmission-path analysis between the faulty bearing and gearbox casing
+  record_duration_seconds:
+    - 1 by calculation from 12000 points at 12000 Hz
+  samples_per_record:
+    - 12000
+sensors:
+  - model: Unknown
+    type: uniaxial piezoelectric acceleration sensor
+    count: 2
+  - model: Unknown
+    type: three-way piezoelectric acceleration sensor
+    count: 1
+daq: Unknown
+sampling_rates_hz:
+  - 12000
+bearing_models:
+  - SKF 6205
+bearing_types:
+  - deep groove ball bearing
+faults:
+  healthy: Unknown
+  inner_race: "Yes"
+  outer_race: "Yes"
+  ball_or_roller: "Yes"
+  cage: "No"
+  rotor: "No"
+  gear: "No"
+compound_faults:
+  internal_bearing: "Yes"
+  bearing_rotor: "No"
+  bearing_gear: "No"
+  other: "No"
+operating_conditions:
+  rpm:
+    - 2000
+  load: []
+  radial_force: []
+  torque: []
+  temperature: []
+  bearing_type_shift: "No"
+fault_generation:
+  artificial: "Yes"
+  natural: "No"
+  run_to_failure: "No"
+validation_methods:
+  - bearing and gearbox characteristic-frequency calculation from geometry
+  - time-domain and envelope-spectrum analysis of three pairwise and one triple internal compound fault
+  - transmission-path and interference-component analysis
+file_formats:
+  - ZIP archive; internal signal format Unknown
+raw_data_available: "Yes"
+processed_data_available: Unknown
+metadata_available: "Partial"
+code_available: Unknown
+license: CC BY 4.0 article; exact supporting-data reuse terms require confirmation
+official_url: https://doi.org/10.1371/journal.pone.0297935
+notes: >-
+  The supporting S1 Data contains original diagnostic signals at 2000 RPM. The
+  article verifies IR+OR, IR+rolling-element, OR+rolling-element, and triple
+  IR+OR+rolling-element experiments, with 20 groups per fault type and 12000
+  points per group at 12 kHz. Fig. 9 labels two uniaxial acceleration sensors at
+  the support and faulty bearings plus one three-way accelerometer at the gearbox,
+  supporting five vibration axes across three positions. Exact axes, models, DAQ,
+  mounting, stored column schema, and simultaneous timing remain Unknown. Gear
+  meshing and shaft/coupling effects are interference, not introduced gear or
+  rotor fault labels.

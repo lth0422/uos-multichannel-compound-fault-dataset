@@ -28,6 +28,8 @@ HUST China/HUSTbearing은 RPM 조건 설계 관점에서 별도로 참고할 가
 | XJTU-SY | 25,600 Hz | 2,100; 2,250; 2,400 RPM | 1.28 s |
 | NASA IMS | 20,000 Hz | 2,000 RPM | 1 s stated; 1.024 s implied by sample count |
 | MAFAULDA | 50,000 Hz | 737-3,686 RPM | 5 s |
+| S1 Data | 12,000 Hz | 2,000 RPM | 1 s calculated from 12,000 points |
+| MCC5-THU | 12,800 Hz | 1,000; 2,000; 3,000 RPM fixed during variable-load tests; time-varying speed curves | 60 s |
 | Arkansas 2023 | 6,400 Hz | 25; 50; 75 RPM | 10 s |
 | Ottawa 2018 | 200,000 Hz | approximately 588-1,740 RPM within variable-speed records | 10 s |
 | Ottawa 2023 | 42,000 Hz | 1,750 RPM | 10 s |

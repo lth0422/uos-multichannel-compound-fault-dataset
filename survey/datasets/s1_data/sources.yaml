@@ -1,0 +1,31 @@
+dataset_id: s1_data
+sources:
+  - source_id: S1-S01
+    type: original_paper
+    title: Vibration characterization of rolling bearings with compound fault features under multiple interference factors
+    authors:
+      - Yaping Wang
+      - Huimin Yang
+      - Songtao Zhao
+      - Yuqi Fan
+      - Renquan Dong
+    year: 2024
+    venue: PLOS ONE 19(2) e0297935
+    doi: 10.1371/journal.pone.0297935
+    official_url: https://doi.org/10.1371/journal.pone.0297935
+    local_file: library/papers/s1/s1 dataset.pdf
+    redistribution_allowed: CC BY 4.0 for article; local PDF remains Git-ignored
+    accessed_date: 2026-07-21
+    notes: Original research article and primary source for the supporting S1 Data; official supporting ZIP was not downloaded or inspected.
+  - source_id: S1-S02
+    type: secondary_source
+    title: User-provided comparison-table entry for S1 Data
+    authors: []
+    year: 2026
+    venue: Project conversation and local working workbook
+    doi: Unknown
+    official_url: Unknown
+    local_file: library/documents/design/novelty/dataset_competitiveness_working_matrix.xlsx
+    redistribution_allowed: Unknown
+    accessed_date: 2026-07-21
+    notes: Used for discovery only. Its two-uniaxial-plus-one-triaxial claim was subsequently confirmed by visual inspection of S1-S01 Fig. 9; other workbook values still require primary-source verification.

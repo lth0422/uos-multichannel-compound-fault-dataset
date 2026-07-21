@@ -28,11 +28,14 @@ Published dataset survey and evidence collection
 - KAIST Batch dedicated Data in Brief paper reviewed and registered as an additional direct comparator; four simultaneous accelerometers at two bearing housings in x/y directions, 25.6 kHz vibration, and 60–2100-second record precedents documented
 - Sensor-layout and sampling/record-length design notes updated: KAIST strongly supports the proposed geometry as a pilot candidate but does not validate UOS mounting surfaces or establish an optimal rate/duration
 - HUST Vietnam dedicated Data Note reviewed and registered as a direct comparator; intentional IR+OR, IR+Ball, and OR+Ball defects, five bearing models, NI-9234 at 51.2 kHz, and 10-second steady/5-second run-up records documented
-- Internal-compound candidate gap narrowed from pairwise combinations to a complete balanced pairwise-plus-triple matrix with matched references and controlled severity
+- Before S1 review, the internal-compound candidate gap was narrowed from pairwise combinations to a complete pairwise-plus-triple matrix; S1 subsequently established that the combination set itself already exists, so the current candidate is the broader matched multi-bearing/multi-RPM/timing/validation design recorded below
 - SEU transfer-learning application paper reviewed; self-collected DDS subset registered separately from reused CWRU data, IR+OR Combination verified, and pooled bearing/gear `mixture` distinguished from same-sample compound faults
 - HUST China benchmark/release paper and official HUSTbearing GitHub README reviewed; 25.6 kHz, 262,144-point/10.2-s records, ER-16K bearing, 9 health states, ten constant-speed conditions plus one 0-40-0 Hz time-varying condition, and IR+OR combination faults documented
 - Internal dataset-comparison workbook and novelty working note reviewed and relocated under the ignored local design library; their unverified claims are explicitly separated from source-linked survey facts
 - UOS v2 candidate-contribution review drafted: multi-channel/multi-position/compound/variable-RPM alone are not novelty claims; controlled compound matrix, paired channel-ablation protocol, timing metadata, physical validation, and confound-resistant metadata remain candidate gaps pending verification and pilot evidence
+- S1 Data original PLOS ONE article reviewed and registered; five vibration axes at three positions, all three pairwise internal compounds plus the triple condition, 12 kHz/12,000-point groups at 2,000 RPM, and compound envelope analysis documented
+- MCC5-THU dedicated Data in Brief article reviewed and registered; six vibration axes at two positions, speed/torque channels, 12.8 kHz/60-second variable-condition records, three severities, and broken-tooth+IR/OR bearing–gear compounds documented
+- Candidate novelty narrowed after S1/MCC5 review: internal pairwise-plus-triple and broad multi-channel compound data are established precedents; matched references across bearing structures/RPMs with explicit timing, paired channel comparison, and release-wide validation remain candidates
 
 ## In progress
 
@@ -55,6 +58,8 @@ Published dataset survey and evidence collection
 - SEU official repository documentation, raw acquisition schema, sensor/DAQ/mounting, sampling/duration, controller-setting interpretation, persistent access, and license verification
 - HUSTbearing raw Excel schema, license, exact sensor/DAQ/mounting/channel details, and Supplementary Appendix B task mappings
 - Full-text audit of the multi-channel fusion literature leads, including sensor taxonomy, split protocol, comparison baseline, quantitative result, and limitations
+- S1 official supporting ZIP schema, exact sensor axes/models, DAQ, mounting, simultaneous timing, and license verification
+- MCC5-THU official repository license/raw schema, 48-versus-112 transitional-condition conflict, DAQ, mounting, and timing verification
 
 ## Next actions
 
@@ -66,6 +71,7 @@ Published dataset survey and evidence collection
 6. candidate bearing geometry/RPM을 반영해 sampling rate·record length 계산 갱신
 7. HUST Vietnam official repository metadata로 복합결함 matrix와 raw schema 독립 검증
 8. 다채널 fusion literature lead 원문을 source-linked evidence로 전환하고, UOS v2 paired channel-ablation claim의 외부 근거 범위를 확정
+9. S1 Data와 MCC5-THU 공식 deposit의 channel schema와 timing metadata를 확인해 차별성 표의 `?` 항목을 해소
 
 ## Open questions
 
@@ -76,6 +82,8 @@ Published dataset survey and evidence collection
 - 13A131 제조사 원본 datasheet, 개별 calibration certificate, 정확한 NI-9234 connector variant
 - SEU 등 남은 후보가 unresolved gap을 실제로 좁히는지와 추가 등록 우선순위
 - 내부 비교 작업표의 값 중 source-linked survey와 충돌하거나 미검증인 항목의 처리 기준
+- S1 Data의 5축 신호가 supporting ZIP 안에서 동시에 저장되는지와 정확한 축·열 순서
+- MCC5-THU의 transitional condition 수가 48인지 112인지와 모든 8개 열의 공통 시간축 여부
 
 ## Blockers
 
@@ -83,4 +91,4 @@ Published dataset survey and evidence collection
 
 ## Last updated
 
-2026-07-20
+2026-07-21

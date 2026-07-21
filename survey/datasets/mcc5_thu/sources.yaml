@@ -1,0 +1,48 @@
+dataset_id: mcc5_thu
+sources:
+  - source_id: MCC5-S01
+    type: original_paper
+    title: Multi-mode fault diagnosis datasets of gearbox under variable working conditions
+    authors:
+      - Shijin Chen
+      - Zeyi Liu
+      - Xiao He
+      - Dongliang Zou
+      - Donghua Zhou
+    year: 2024
+    venue: Data in Brief 54 110453
+    doi: 10.1016/j.dib.2024.110453
+    official_url: https://doi.org/10.1016/j.dib.2024.110453
+    local_file: library/papers/mcc5-thu/Multi-mode fault diagnosis datasets of gearbox under variable working conditions.pdf
+    redistribution_allowed: CC BY 4.0 for article; local PDF remains Git-ignored
+    accessed_date: 2026-07-21
+    notes: Dedicated dataset paper; the official Mendeley repository and raw CSVs were not independently inspected.
+  - source_id: MCC5-S02
+    type: official_repository
+    title: Multi-mode Fault Diagnosis Datasets of Gearbox Under Variable Working Conditions
+    authors:
+      - Shijin Chen
+      - Zeyi Liu
+      - Xiao He
+      - Dongliang Zou
+      - Donghua Zhou
+    year: 2024
+    venue: Mendeley Data
+    doi: 10.17632/p92gj2732w.1
+    official_url: https://doi.org/10.17632/p92gj2732w.1
+    local_file: Unknown
+    redistribution_allowed: Unknown
+    accessed_date: 2026-07-21
+    notes: Repository identity is reported by MCC5-S01; landing-page metadata and raw files were not independently inspected.
+  - source_id: MCC5-S03
+    type: secondary_source
+    title: User-provided comparison-table entry for MCC5-THU
+    authors: []
+    year: 2026
+    venue: Project conversation and local working workbook
+    doi: Unknown
+    official_url: Unknown
+    local_file: library/documents/design/novelty/dataset_competitiveness_working_matrix.xlsx
+    redistribution_allowed: Unknown
+    accessed_date: 2026-07-21
+    notes: Used for discovery only; technical facts were checked against MCC5-S01.

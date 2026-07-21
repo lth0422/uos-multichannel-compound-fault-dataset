@@ -1,0 +1,110 @@
+dataset_id: mcc5_thu
+dataset_name: MCC5-THU Multi-mode Fault Diagnosis Datasets of Gearbox Under Variable Working Conditions
+institution: MCC5 Group Shanghai and Tsinghua University
+release_year: 2024
+publication:
+  dedicated_dataset_paper: "Yes"
+  venue: Data in Brief 54 110453
+  doi: 10.1016/j.dib.2024.110453
+dataset_mode:
+  batch: "Yes"
+  run_to_failure: "No"
+  variable_speed: "Yes"
+modalities:
+  - vibration acceleration
+  - rotational speed key-phase
+  - torque
+channels:
+  count: 8
+  positions:
+    - motor drive end
+    - gearbox intermediate-shaft bearing seat
+    - motor output shaft speed-sensor position
+    - gearbox input shaft torque-sensor position
+  directions:
+    - axial
+    - horizontal
+    - vertical
+  triaxial: "Yes"
+  simultaneous_sampling: Unknown
+  synchronized_acquisition: "Yes"
+acquisition:
+  sensor_mounting: []
+  position_selection_rationale: Motor drive end and faulty gearbox intermediate-shaft bearing seat are monitored; explicit comparative rationale Unknown
+  position_validation_methods: []
+  record_duration_seconds:
+    - 60
+  samples_per_record:
+    - 768000 per channel by calculation from 12800 Hz and 60 s
+sensors:
+  - model: TES001V
+    type: triaxial accelerometer
+    count: 2
+  - model: Unknown
+    type: photoelectric key-phase speed sensor
+    count: 1
+  - model: S2001
+    type: torque sensor
+    count: 1
+daq: Measurement and control system; exact DAQ model Unknown
+sampling_rates_hz:
+  - 12800
+bearing_models:
+  - ER16K
+bearing_types:
+  - ball bearing
+faults:
+  healthy: "Yes"
+  inner_race: "Yes"
+  outer_race: "Yes"
+  ball_or_roller: "No"
+  cage: "No"
+  rotor: "No"
+  gear: "Yes"
+compound_faults:
+  internal_bearing: "No"
+  bearing_rotor: "No"
+  bearing_gear: "Yes"
+  other: "No"
+operating_conditions:
+  rpm:
+    - 1000 fixed during time-varying-load tests
+    - 2000 fixed during time-varying-load tests
+    - 3000 fixed during time-varying-load tests
+    - time-varying speed curves from zero to commanded levels including 1000 2000 2500 and 3000 RPM
+  load:
+    - 10 Nm fixed during time-varying-speed tests
+    - 20 Nm fixed during time-varying-speed tests
+    - time-varying torque curves between zero and 10 or 20 Nm
+  radial_force: []
+  torque:
+    - measured gearbox input-shaft torque
+  temperature:
+    - laboratory temperature difference controlled within 2 degrees C
+  bearing_type_shift: "No"
+fault_generation:
+  artificial: "Yes"
+  natural: "No"
+  run_to_failure: "No"
+validation_methods:
+  - missing-tooth example envelope spectrum with rotational gear-mesh and sideband frequencies
+  - actual speed key-phase and torque measurement under time-varying commands
+  - documented fault geometry and three severity levels
+file_formats:
+  - CSV
+raw_data_available: "Yes"
+processed_data_available: Unknown
+metadata_available: "Yes"
+code_available: Unknown
+license: CC BY 4.0 article; dataset-file license requires official repository confirmation
+official_url: https://doi.org/10.17632/p92gj2732w.1
+notes: >-
+  The release contains 240 sixty-second CSV records. Each has eight columns:
+  speed key-phase, torque, and six acceleration axes from two TES001V triaxial
+  sensors at the motor drive end and gearbox intermediate-shaft bearing seat.
+  Compound faults are broken gear tooth plus ER16K bearing IR damage and broken
+  tooth plus bearing OR damage, each at light medium and high severity. These are
+  bearing-gear compounds, not internal-bearing or bearing-rotor compounds. Table
+  1 reports 48 transitional conditions while Section 3 reports 112 transitional
+  combinations. Exact DAQ, attachment, hardware simultaneity, and channel skew
+  remain Unknown.
