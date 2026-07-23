@@ -1,0 +1,13 @@
+position,spectrum,pair_count,pairwise_pearson_median,pairwise_pearson_min,pairwise_pearson_max,interpretation_limit
+ShaftEndTop,fft_1_500_hz,6,0.9466356895165366,0.9270907577290836,0.9588089454740091,Sequential shape similarity; not coherence
+ShaftEndTop,fft_500_7000_hz,6,0.9425678631464037,0.9372033275331747,0.9469940480157223,Sequential shape similarity; not coherence
+ShaftEndTop,envelope_1_500_hz,6,0.8878053157805539,0.8100426374502053,0.928106562253617,Sequential shape similarity; not coherence
+ShaftEndSide,fft_1_500_hz,6,0.9641778530242384,0.956975451811343,0.9696938661365094,Sequential shape similarity; not coherence
+ShaftEndSide,fft_500_7000_hz,6,0.9343782302088902,0.9195891673325323,0.9430969936058357,Sequential shape similarity; not coherence
+ShaftEndSide,envelope_1_500_hz,6,0.8857631542368583,0.838751961755698,0.9138570947062716,Sequential shape similarity; not coherence
+MotorEndTop,fft_1_500_hz,6,0.9654711150696811,0.9593661326177843,0.9756824624455543,Sequential shape similarity; not coherence
+MotorEndTop,fft_500_7000_hz,6,0.9172159010903862,0.9155403847274246,0.9288513442077113,Sequential shape similarity; not coherence
+MotorEndTop,envelope_1_500_hz,6,0.8765299739053638,0.7593846872800926,0.9151007814572586,Sequential shape similarity; not coherence
+MotorEndSide,fft_1_500_hz,6,0.9259993695610493,0.8590133968497108,0.9801550180202329,Sequential shape similarity; not coherence
+MotorEndSide,fft_500_7000_hz,6,0.8906849196610483,0.8290032610627419,0.9405100087503283,Sequential shape similarity; not coherence
+MotorEndSide,envelope_1_500_hz,6,0.8809582283070281,0.8050937239891917,0.9406774855191062,Sequential shape similarity; not coherence

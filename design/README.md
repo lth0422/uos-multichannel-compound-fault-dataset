@@ -11,5 +11,6 @@ Survey에서 확인된 연구 공백과 실제 보유 장비 제약을 연결하
 - `record_length_and_windowing_rationale_ko.md`: Notion/교수 검토용 한국어 데이터 길이, windowing, split leakage 분석
 - `uos_v2_candidate_contributions_ko.md`: 기존 dataset 선례와 내부 literature lead를 분리한 UOS v2 후보 차별성·연구 공백·claim gate 검토
 - `pilot_validation_protocol.md`: 위치, mounting, timing, sampling, duration을 확정하기 위한 pilot 절차
+- `../pilot/`: 실제 UOS v2 파일럿의 조건, 원자료 위치, 재현 가능한 분석 결과와 판정 보고서
 
 Local design references that should not be committed, such as bandwidth notes and PDFs, are kept under `library/documents/design/`. The unverified novelty working note, comparison workbook, and literature leads are in `library/documents/design/novelty/`.

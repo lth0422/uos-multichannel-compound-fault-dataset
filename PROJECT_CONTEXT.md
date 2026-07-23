@@ -5,8 +5,12 @@
 - 기존 UOS v1이 존재한다.
 - UOS Dataset v2를 새롭게 구축할 예정이다.
 - 현재는 published dataset의 literature/dataset survey 단계다.
+- 2026-07-22부터 survey 근거를 유지하면서 UOS v2 pilot acquisition validation을 시작했다. 이는 full acquisition 시작 승인이 아니라 장비·채널·위치 후보를 검증하는 전환 단계다.
 - UOS v2용 acquisition hardware로 NI-9234와 cDAQ-9171 한 세트, HS Sensors 13A131 가속도계 4개를 구매했다. 장비 보유는 확정됐지만 최종 수집 설정은 미확정이다.
 - 현재 4채널 배치 후보는 shaft-end와 motor-end bearing housing의 top/side radial channels이며, 교수 검토와 pilot validation 전까지 확정 배치가 아니다.
+- 첫 파일럿은 30204, IR, rotor healthy, nominal 1400 RPM에서 네 13A131/NI-9234 채널을 네 후보 위치로 각각 옮겨 측정한 순차 4×4 교차시험이다. 동시 4채널 자료가 아니다.
+- 첫 파일럿에서 네 채널 모두 회전주파수와 BPFI 포락선 성분을 검출했지만, 단일 RPM·단일 결함·순차 측정이므로 최종 배치와 full acquisition protocol은 미확정이다.
+- UOS v2의 조건별 synchronized four-channel master record 수집 목표 길이는 60초로 결정했다. 모델 입력 window 길이, overlap, 안정화 제외 규칙과 공개 파생본 길이는 별도 검증 후 결정한다.
 
 ## Working hypotheses
 

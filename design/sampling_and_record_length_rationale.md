@@ -2,7 +2,7 @@
 
 ## Decision status
 
-No final rate or duration is selected. This document narrows pilot candidates using purchased hardware, the core-ten survey, and physical requirements.
+The per-condition synchronized four-channel master acquisition duration is set to 60 seconds. No final sampling rate, RPM grid, canonical model-input window, overlap, or stabilization-exclusion rule is selected. This document connects the selected acquisition duration and remaining candidates to purchased hardware, survey precedents, and physical requirements.
 
 ## What the dataset survey establishes
 
@@ -54,17 +54,18 @@ Duration must be evaluated by rotations and resolution, not seconds alone.
 | 2 s | 0.5 Hz | 20 | 33.3 | 56.7 |
 | 5 s | 0.2 Hz | 50 | 83.3 | 141.7 |
 | 10 s | 0.1 Hz | 100 | 166.7 | 283.3 |
+| 60 s | 0.0167 Hz | 600 | 1,000 | 1,700 |
 
 The RPM values are evaluation points, not a final UOS grid. Recompute the table when the minimum and maximum measured RPMs are confirmed.
 
 ## Candidate recording strategy
 
-- Pilot: acquire 10-second synchronized master records at both 25.6 and 51.2 kS/s for representative healthy/pure-fault conditions.
-- Analysis: compare deterministic 1-, 2-, 5-, and 10-second windows from the same masters.
+- Acquisition: retain 60-second synchronized master records for each physical condition.
+- Analysis: compare deterministic 1-, 2-, 5-, 10-, 30-, and 60-second windows from the same masters.
 - Release hypothesis: retain master records and publish canonical shorter-window indices/downsampling code. If a 100 Hz derivative is needed, generate it from the master record with versioned filtering/resampling code and keep it clearly separate from raw acquisition.
 - Splitting: assign train/validation/test at bearing/assembly/physical-run level before windowing.
 
-This strategy is provisional. Ten seconds is useful for comparing resolutions and shorter windows, not yet the final per-record requirement.
+The 60-second master duration is an acquisition decision, not a claim that 60 seconds is the optimal model-input length. Shorter canonical windows remain an analysis decision.
 
 KAIST's 60–2100-second files support the feasibility of retaining long master records, but those durations serve different load/speed tasks and are not evidence that UOS inference samples should be equally long. [KAIB-E05, KAIB-E06]
 
@@ -80,6 +81,9 @@ Approximate payload excludes file/container metadata.
 | 25.6 kS/s | 10 s | 1,024,000 | 4.10 MB | 8.19 MB |
 | 51.2 kS/s | 1 s | 204,800 | 0.82 MB | 1.64 MB |
 | 51.2 kS/s | 10 s | 2,048,000 | 8.19 MB | 16.38 MB |
+| 12.8 kS/s | 60 s | 3,072,000 | 12.29 MB | 24.58 MB |
+| 25.6 kS/s | 60 s | 6,144,000 | 24.58 MB | 49.15 MB |
+| 51.2 kS/s | 60 s | 12,288,000 | 49.15 MB | 98.30 MB |
 
 Total project storage requires the final counts of conditions, repetitions, RPM/load cells, remounts, and metadata channels.
 

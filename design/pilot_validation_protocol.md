@@ -1,5 +1,11 @@
 # Pilot Validation Protocol
 
+## Execution status
+
+- 2026-07-22 first crossover pilot: four 13A131/NI-9234 channels were moved sequentially across shaft-end/motor-end top/side positions under 30204 IR, healthy rotor, nominal 1400 RPM. All channels passed preliminary finite/range/shaft/BPFI-envelope screening.
+- This run supports sensor/channel commissioning and position observability only. It does not complete simultaneous-layout, phase/coherence, multi-RPM, healthy-reference, remount-repeatability, rate-comparison, or compound-feasibility phases.
+- Evidence and results: [`../pilot/2026-07-22_1400rpm_30204_ir_h/pilot_validation_report_ko.md`](../pilot/2026-07-22_1400rpm_30204_ir_h/pilot_validation_report_ko.md)
+
 ## Objective
 
 Determine whether the proposed CH1–CH4 layout is mechanically and diagnostically justified, and select evidence-based sampling-rate and record-length candidates before full acquisition.
@@ -54,7 +60,7 @@ Include 17.067 kS/s only if pilot evidence shows that useful information is conf
 
 ## Phase 5 — duration/window comparison
 
-Acquire provisional 10-second masters and evaluate 1-, 2-, 5-, and 10-second deterministic windows. Compare minimum rotations, spectral/order resolution, feature variance, repeatability, and model stability. Prevent windows from the same run from crossing dataset splits.
+Acquire 60-second synchronized master records and evaluate deterministic 1-, 2-, 5-, 10-, 30-, and 60-second analysis windows. Compare minimum rotations, spectral/order resolution, feature variance, stationarity, repeatability, and model stability. Prevent windows from the same physical run from crossing dataset splits. The 60-second acquisition duration is selected; the canonical model-input window and stabilization-exclusion rule remain open.
 
 ## Phase 6 — compound feasibility
 

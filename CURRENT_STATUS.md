@@ -2,7 +2,7 @@
 
 ## Current phase
 
-Published dataset survey and evidence collection
+UOS v2 pilot acquisition validation, with published-dataset survey retained as design evidence
 
 ## Completed
 
@@ -36,6 +36,13 @@ Published dataset survey and evidence collection
 - S1 Data original PLOS ONE article reviewed and registered; five vibration axes at three positions, all three pairwise internal compounds plus the triple condition, 12 kHz/12,000-point groups at 2,000 RPM, and compound envelope analysis documented
 - MCC5-THU dedicated Data in Brief article reviewed and registered; six vibration axes at two positions, speed/torque channels, 12.8 kHz/60-second variable-condition records, three severities, and broken-tooth+IR/OR bearing–gear compounds documented
 - Candidate novelty narrowed after S1/MCC5 review: internal pairwise-plus-triple and broad multi-channel compound data are established precedents; matched references across bearing structures/RPMs with explicit timing, paired channel comparison, and release-wide validation remain candidates
+- First UOS v2 acquisition pilot organized and analyzed: 30204 IR, healthy rotor, nominal 1400 RPM; four HS 13A131/NI-9234 channels were sequentially crossed over four shaft-end/motor-end top/side positions
+- Pilot raw files relocated under ignored `external_data/uos_v2_pilot/`; reproducible TDMS/MAT analysis, characteristic-frequency calculation, CSV outputs, six figures, tests, evidence table, and Korean validation report added under `pilot/`
+- All 16 new-system runs passed exploratory finite/range/shaft/BPFI-envelope screens; same-position RMS CV was 2.06–3.92%, and all channels showed the 23.25 Hz shaft peak and approximately 205.25–205.50 Hz BPFI envelope peak
+- CH0 ShaftEndTop raw `H_H` label recorded as a user-confirmed metadata typo; raw data preserved and analysis audit fields retain the conflict
+- New-versus-legacy comparison was repeated with identical 0–7 kHz filtering and absolute 1×/BPFI peak amplitudes: bandwidth matching reduces RMS ratios from 1.19–2.12 to 0.97–1.41, while 1× ratios are 1.02–1.24; bandwidth is a major but incomplete explanation and a gross factor-of-two calibration error is not supported
+- Per-condition synchronized four-channel master acquisition duration set to 60 seconds; canonical analysis-window length, overlap, stabilization exclusion, and release derivatives remain open
+- Exact per-channel peak-frequency CSV and a horizontally offset plot added because overlaid spectra hide coincident channel peaks; all 16 new-system runs show 23.25 Hz shaft peaks and 205.25 or 205.50 Hz BPFI envelope peaks
 
 ## In progress
 
@@ -50,7 +57,7 @@ Published dataset survey and evidence collection
 - Ottawa 2018 fault generation, load, mounting, sampling rationale, ADC timing, repository label, and license verification
 - PRONOSTIA official challenge README/schema, bearing geometry, stopping criterion, endpoint damage, hardware timing, and license verification
 - Remaining core dataset primary-source collection and fact verification
-- Candidate UOS v2 contribution verification and four-channel placement/rate/duration pilot design
+- Candidate UOS v2 contribution verification and follow-up simultaneous four-channel placement/rate/duration pilot
 - Delivered 13A131 mounting/calibration documents and actual M5 magnet/adapter compatibility verification
 - Delivered sensor documentation 확인 및 four-channel pilot compatibility test 준비
 - KAIST Batch official repository schema/license, exact accelerometer attachment, cross-device timing, and NI module-role conflict verification
@@ -60,18 +67,17 @@ Published dataset survey and evidence collection
 - Full-text audit of the multi-channel fusion literature leads, including sensor taxonomy, split protocol, comparison baseline, quantitative result, and limitations
 - S1 official supporting ZIP schema, exact sensor axes/models, DAQ, mounting, simultaneous timing, and license verification
 - MCC5-THU official repository license/raw schema, 48-versus-112 transitional-condition conflict, DAQ, mounting, and timing verification
+- First pilot follow-up: simultaneous four-channel healthy/IR runs over multiple RPMs, repeat/remount runs, tachometer alignment, and severe-condition clipping headroom
 
 ## Next actions
 
-1. UOS v1 official repository metadata와 dataset license 독립 검증
-2. CWRU file-level metadata 보강 및 Paderborn 공식 repository 자료 보강
-3. closest compound comparators의 공식 repository 메타데이터 독립 검증
-4. NI-9234/HS 13A131 primary documentation과 candidate bearing geometry 확정
-5. existing four-channel 위치·방향 pilot protocol을 실제 rig 좌표·하중방향·mounting 정보로 구체화
-6. candidate bearing geometry/RPM을 반영해 sampling rate·record length 계산 갱신
-7. HUST Vietnam official repository metadata로 복합결함 matrix와 raw schema 독립 검증
-8. 다채널 fusion literature lead 원문을 source-linked evidence로 전환하고, UOS v2 paired channel-ablation claim의 외부 근거 범위를 확정
-9. S1 Data와 MCC5-THU 공식 deposit의 channel schema와 timing metadata를 확인해 차별성 표의 `?` 항목을 해소
+1. 후보 네 위치를 고정한 simultaneous four-channel healthy/IR 파일럿 수집
+2. 600, 1000, 1400, 1600 RPM의 작은 grid에서 RMS·1×·BPFI 이동 검증
+3. 조건별 최소 3회 독립 run 또는 remove/remount 반복으로 재현성 확인
+4. tachometer/실측 RPM 저장과 sensor serial–DAQ channel–position manifest 확정
+5. 최고 RPM·심한 rotor/compound 후보에서 ±50 g/±5 V clipping margin 확인
+6. NI-9234/HS 13A131 primary documentation과 calibration certificate 확인
+7. survey independent verification과 closest-comparator repository metadata 보강 지속
 
 ## Open questions
 
@@ -84,11 +90,14 @@ Published dataset survey and evidence collection
 - 내부 비교 작업표의 값 중 source-linked survey와 충돌하거나 미검증인 항목의 처리 기준
 - S1 Data의 5축 신호가 supporting ZIP 안에서 동시에 저장되는지와 정확한 축·열 순서
 - MCC5-THU의 transitional condition 수가 48인지 112인지와 모든 8개 열의 공통 시간축 여부
+- Full acquisition 전에 통과해야 할 channel-gain, mounting-repeatability, target-SNR, clipping-margin 수치 기준
+- 60초 기록의 안정화 제외를 고정 30초로 할지, tachometer/RMS 기반 조건부 규칙으로 할지
 
 ## Blockers
 
-- 핵심 10개 데이터셋의 1차 상세 검토가 완료됐으나 각 데이터셋의 독립 검증 및 일부 공식 repository 메타데이터가 남아 있음
+- 첫 파일럿은 순차 단일채널·단일 RPM·단일 IR 조건이므로 동시 4채널 complementarity, RPM trend, healthy 대비, remount repeatability를 아직 검증하지 못함
+- 핵심 데이터셋의 1차 상세 검토는 완료됐으나 independent verification과 일부 공식 repository 메타데이터가 남아 있음
 
 ## Last updated
 
-2026-07-21
+2026-07-22

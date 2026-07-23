@@ -4,6 +4,8 @@
 
 This is the team's current candidate and a pilot subject, not the final acquisition layout.
 
+The 2026-07-22 sequential crossover pilot found that all four 13A131/NI-9234 channels observed the shaft peak and 30204 IR BPFI envelope peak at all four positions. Same-position RMS and spectral shape were consistent across moved sensors. Because the records were sequential rather than simultaneous, this result establishes preliminary channel health and position observability, not final four-channel complementarity or timing. See [`../pilot/2026-07-22_1400rpm_30204_ir_h/pilot_validation_report_ko.md`](../pilot/2026-07-22_1400rpm_30204_ir_h/pilot_validation_report_ko.md).
+
 ```text
    [CH1 top]                 [CH3 top]
        |                         |

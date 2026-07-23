@@ -1,0 +1,44 @@
+experiment_id: 2026-07-22_1400rpm_30204_ir_h
+acquisition_design: sequential_sensor_channel_by_position_crossover
+uos_v2_planned_master_record:
+  duration_seconds: 60
+  expected_samples_per_channel_at_25600_hz: 1536000
+  status: selected for full acquisition planning
+condition:
+  nominal_rpm: 1400
+  bearing_model: "30204"
+  bearing_fault: IR
+  rotor_condition: H
+bearing_geometry:
+  source_id: UOSV1-S01
+  location: p. 6, Table 2
+  pitch_diameter_mm: 35.8
+  rolling_element_diameter_mm: 6.20
+  contact_angle_deg: 12.6
+  rolling_element_count: 15
+analysis:
+  signal_unit: g
+  segment: final 30 seconds
+  rms_window_seconds: 5
+  spectrum: Welch averaged Hann-window FFT amplitude
+  welch_segment_seconds: 4
+  welch_overlap: 50 percent
+  frequency_bin_hz: 0.25
+  envelope_carrier_band_hz: [2000, 7000]
+  envelope_method: fourth-order Butterworth band-pass, zero-phase filtering, Hilbert magnitude
+  common_band_comparison:
+    cutoff_hz: 7000
+    method: identical eighth-order Butterworth low-pass and zero-phase filtering on both systems
+    reason: common margin below the 8 kHz Nyquist frequency of the legacy 16 kHz recordings
+  target_peak_tolerance_hz: 1.0
+  local_background_half_width_hz: 8.0
+exploratory_screening_thresholds:
+  finite_fraction: 1.0
+  range_exceedance_fraction: 0.0
+  shaft_fft_local_snr_db_min: 10.0
+  bpfi_envelope_local_snr_db_min: 6.0
+notes:
+  - Thresholds are engineering screening criteria, not calibrated acceptance limits.
+  - Sequential records do not support phase, coherence, or synchronization claims.
+  - Nominal RPM is used because no tachometer channel was provided.
+  - Common-band filtering removes one bandwidth difference but does not equalize sensor, mounting, native anti-alias response, or acquisition time.

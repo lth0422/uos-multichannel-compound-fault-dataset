@@ -10,6 +10,12 @@ requires-python = ">=3.11"
 dependencies = ["PyYAML>=6.0"]
 
 [project.optional-dependencies]
+analysis = [
+  "matplotlib>=3.7",
+  "npTDMS>=1.7",
+  "numpy>=1.24",
+  "scipy>=1.10",
+]
 test = ["pytest>=7.4"]
 
 [tool.pytest.ini_options]
