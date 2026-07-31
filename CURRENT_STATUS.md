@@ -51,7 +51,7 @@ UOS v2 pilot acquisition validation, with published-dataset survey retained as d
 
 ## In progress
 
-- 2026-08-01 clipping 결과의 원인 분리를 위한 마운팅 A/B, 저감도 reference 센서 A/B 및 rail-event 전후 baseline 개별 검토
+- 2026-08-01 clipping 결과의 원인 분리를 위한 보유 장비 반복·재부착·센서/DAQ 채널 교차시험 및 rail-event 전후 baseline 개별 검토
 - UOS v1 official repository metadata and independent verification
 - Paderborn official KAt-DataCenter metadata, README/fact sheets, and deposited MAT schema verification
 - CWRU exact MAT record shape, optional base-channel coverage, timing architecture, release year, and license verification
@@ -77,13 +77,14 @@ UOS v2 pilot acquisition validation, with published-dataset survey retained as d
 
 ## Next actions
 
-1. N204/1600/M3/IR+OR+B와 정상 대조에서 현재 mounting 대 M5 stud를 각각 3회 비교
-2. 같은 조건에 50 mV/g·±100 g 이상 reference를 적용해 실제 peak와 band별 진폭 확인
-3. 자동 zero-shift suspect 채널의 rail-event 전후 baseline을 개별 검토하고 판정법 확정
-4. 위 A/B 결과 전까지 신규 대규모 조건 수집과 hardware 변경 결정을 보류
-5. tachometer/실측 RPM 저장과 sensor serial–DAQ channel–position manifest 확정
-6. NI-9234/HS 13A131 primary documentation과 calibration certificate 확인
-7. survey independent verification과 closest-comparator repository metadata 보강 지속
+1. N204/1600/M3/IR+OR+B와 건강 대조에서 동일 장비로 완전 재부착 3회 반복
+2. 센서 개체–DAQ 채널–물리 위치를 교차하여 clipping 원인의 상대 기여 분리
+3. stud 부착이 현재 보유 부품으로 가능하면 현재 mounting과 같은 조건에서 비교
+4. 자동 zero-shift suspect 채널의 rail-event 전후 baseline을 개별 검토하고 판정법 확정
+5. 위 결과 전까지 신규 대규모 조건 수집과 hardware 변경 결정을 보류
+6. 향후 수집에 tachometer/실측 RPM과 sensor serial–DAQ channel–position manifest 저장
+7. 실제 포화 이전 절대진폭이 연구에 필수이고 rail이 계속될 때만 저감도 reference를 검토
+8. NI-9234/HS 13A131 primary documentation과 calibration certificate 확인
 
 ## Open questions
 
@@ -102,6 +103,7 @@ UOS v2 pilot acquisition validation, with published-dataset survey retained as d
 ## Blockers
 
 - 현재 100 mV/g·±50 g 센서와 약 ±5.12 V DAQ rail이 같은 지점에 있어, 이미 clipping된 신호만으로 실제 50 g 초과 진폭과 mounting 기여도를 분리할 수 없음
+- rail 유무만으로 현재 전체 116파일의 복합 결함 여부를 88.8%, 균형적인 30204/1600 subset을 95.3% 맞힐 수 있어 raw ML benchmark에는 label shortcut 교란이 존재함
 - 첫 파일럿은 순차 단일채널·단일 RPM·단일 IR 조건이므로 동시 4채널 complementarity, RPM trend, healthy 대비, remount repeatability를 아직 검증하지 못함
 - 핵심 데이터셋의 1차 상세 검토는 완료됐으나 independent verification과 일부 공식 repository 메타데이터가 남아 있음
 

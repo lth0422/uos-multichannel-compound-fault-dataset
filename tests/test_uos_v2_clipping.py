@@ -9,6 +9,14 @@ from scripts.analyze_uos_v2_clipping import (
     bearing_orders,
     parse_filename,
 )
+from scripts.analyze_uos_v2_clipping_extended import (
+    collapse_events,
+    consensus_one_x,
+    estimate_one_x,
+    local_envelope_prominence,
+    phase_concentration,
+)
+from scripts.plot_uos_v2_clipping_extended import relevant_target
 
 
 def test_parse_filename_handles_compound_fault():
@@ -37,3 +45,48 @@ def test_uos_table_2_bearing_orders():
     assert np.isclose(bearing_orders("6204")["BPFI"], 4.918716, atol=1e-6)
     assert np.isclose(bearing_orders("N204")["BPFO"], 4.286765, atol=1e-6)
     assert np.isclose(bearing_frequencies("30204", 1400)["BPFI"], 204.577366, atol=1e-6)
+
+
+def test_collapse_events_keeps_one_index_per_run():
+    assert np.array_equal(collapse_events(np.array([2, 3, 8, 10, 11, 12])), np.array([2, 8, 10]))
+
+
+def test_one_x_estimator_finds_known_rotation():
+    fs = 25600.0
+    time = np.arange(int(4 * fs)) / fs
+    values = np.sin(2 * np.pi * 23.5 * time) + 0.05 * np.sin(2 * np.pi * 80 * time)
+    result = estimate_one_x(values, fs, 1400)
+    assert abs(result["candidate_hz"] - 23.5) < 0.2
+    assert result["local_ratio_db"] > 10
+
+
+def test_consensus_marks_consistent_candidates_high():
+    estimates = [
+        {"candidate_hz": hz, "candidate_rpm": hz * 60, "local_ratio_db": 20.0}
+        for hz in (23.40, 23.42, 23.38, 23.41)
+    ]
+    assert consensus_one_x(estimates)["confidence"] == "High"
+
+
+def test_phase_concentration_detects_periodic_events():
+    fs = 1000.0
+    events = np.arange(0, 10000, 100)
+    r, p = phase_concentration(events, fs, 10.0)
+    assert r > 0.99
+    assert p < 1e-10
+
+
+def test_local_envelope_prominence_finds_target_peak():
+    freq = np.arange(0, 500, 0.1)
+    amplitude = np.ones_like(freq)
+    amplitude[np.argmin(np.abs(freq - 120.2))] = 10
+    observed, prominence = local_envelope_prominence(freq, amplitude, 120.0)
+    assert np.isclose(observed, 120.2)
+    assert np.isclose(prominence, 20.0)
+
+
+def test_relevant_target_uses_fault_tokens():
+    assert relevant_target("IR+OR+B", "BPFI")
+    assert relevant_target("IR+OR+B", "BPFO")
+    assert relevant_target("IR+OR+B", "BSF")
+    assert not relevant_target("IR", "BPFO")

@@ -12,6 +12,7 @@
 - 첫 파일럿에서 네 채널 모두 회전주파수와 BPFI 포락선 성분을 검출했지만, 단일 RPM·단일 결함·순차 측정이므로 최종 배치와 full acquisition protocol은 미확정이다.
 - UOS v2의 조건별 synchronized four-channel master record 수집 목표 길이는 60초로 결정했다. 모델 입력 window 길이, overlap, 안정화 제외 규칙과 공개 파생본 길이는 별도 검증 후 결정한다.
 - 2026-08-01 snapshot의 고유 TDMS 116개를 전수 검사한 결과 NI-9234 약 ±5.12 V rail에 도달한 표본이 확인됐다. 전체 폐기·하드웨어 유지·센서 교체 여부는 마운팅 및 저감도 reference A/B 시험 전까지 미확정이다.
+- 같은 snapshot에서 rail 포함 여부가 건강·단일 결함에는 0/56, 복합 결함에는 47/60으로 나타나 raw ML benchmark의 clipping shortcut 위험이 확인됐다. 현재 full acquisition 설정 승인은 보류하며, 보유 장비 반복·재부착·센서/DAQ 채널 교차시험을 우선한다.
 
 ## Working hypotheses
 
