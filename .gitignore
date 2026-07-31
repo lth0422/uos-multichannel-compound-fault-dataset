@@ -5,6 +5,7 @@ data/
 /datasets/
 external_data/
 raw_data/
+uosv2/
 *.mat
 *.npy
 *.npz

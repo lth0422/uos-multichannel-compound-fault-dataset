@@ -11,6 +11,7 @@
 - 첫 파일럿은 30204, IR, rotor healthy, nominal 1400 RPM에서 네 13A131/NI-9234 채널을 네 후보 위치로 각각 옮겨 측정한 순차 4×4 교차시험이다. 동시 4채널 자료가 아니다.
 - 첫 파일럿에서 네 채널 모두 회전주파수와 BPFI 포락선 성분을 검출했지만, 단일 RPM·단일 결함·순차 측정이므로 최종 배치와 full acquisition protocol은 미확정이다.
 - UOS v2의 조건별 synchronized four-channel master record 수집 목표 길이는 60초로 결정했다. 모델 입력 window 길이, overlap, 안정화 제외 규칙과 공개 파생본 길이는 별도 검증 후 결정한다.
+- 2026-08-01 snapshot의 고유 TDMS 116개를 전수 검사한 결과 NI-9234 약 ±5.12 V rail에 도달한 표본이 확인됐다. 전체 폐기·하드웨어 유지·센서 교체 여부는 마운팅 및 저감도 reference A/B 시험 전까지 미확정이다.
 
 ## Working hypotheses
 

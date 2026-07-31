@@ -6,6 +6,11 @@ UOS v2 pilot acquisition validation, with published-dataset survey retained as d
 
 ## Completed
 
+- 2026-08-01 현재 수집 TDMS 124경로를 검사하고 SHA-256 동일 중복 8쌍을 제외한 고유 116파일의 clipping을 전수 재분석했다.
+- ADC rail 4,709 samples와 CH2에서 기존 보고가 놓친 rail 92 samples를 확인하고 대표 8조건 LPF sweep을 생성했다.
+- UOS v1 원논문 Table 2의 geometry로 6204·N204/NJ204·30204 결함주파수를 계산하고 세 베어링 envelope check를 생성했다.
+- 클리핑 작업지시서의 주장과 한계를 `validation/clipping_2026-08-01/clipping_assessment_ko.md`에 정리했다.
+
 - Survey repository structure and templates bootstrapped
 - Validation and comparison-table automation added
 - Core ten dataset placeholders registered
@@ -46,6 +51,7 @@ UOS v2 pilot acquisition validation, with published-dataset survey retained as d
 
 ## In progress
 
+- 2026-08-01 clipping 결과의 원인 분리를 위한 마운팅 A/B, 저감도 reference 센서 A/B 및 rail-event 전후 baseline 개별 검토
 - UOS v1 official repository metadata and independent verification
 - Paderborn official KAt-DataCenter metadata, README/fact sheets, and deposited MAT schema verification
 - CWRU exact MAT record shape, optional base-channel coverage, timing architecture, release year, and license verification
@@ -71,11 +77,11 @@ UOS v2 pilot acquisition validation, with published-dataset survey retained as d
 
 ## Next actions
 
-1. 후보 네 위치를 고정한 simultaneous four-channel healthy/IR 파일럿 수집
-2. 600, 1000, 1400, 1600 RPM의 작은 grid에서 RMS·1×·BPFI 이동 검증
-3. 조건별 최소 3회 독립 run 또는 remove/remount 반복으로 재현성 확인
-4. tachometer/실측 RPM 저장과 sensor serial–DAQ channel–position manifest 확정
-5. 최고 RPM·심한 rotor/compound 후보에서 ±50 g/±5 V clipping margin 확인
+1. N204/1600/M3/IR+OR+B와 정상 대조에서 현재 mounting 대 M5 stud를 각각 3회 비교
+2. 같은 조건에 50 mV/g·±100 g 이상 reference를 적용해 실제 peak와 band별 진폭 확인
+3. 자동 zero-shift suspect 채널의 rail-event 전후 baseline을 개별 검토하고 판정법 확정
+4. 위 A/B 결과 전까지 신규 대규모 조건 수집과 hardware 변경 결정을 보류
+5. tachometer/실측 RPM 저장과 sensor serial–DAQ channel–position manifest 확정
 6. NI-9234/HS 13A131 primary documentation과 calibration certificate 확인
 7. survey independent verification과 closest-comparator repository metadata 보강 지속
 
@@ -95,9 +101,10 @@ UOS v2 pilot acquisition validation, with published-dataset survey retained as d
 
 ## Blockers
 
+- 현재 100 mV/g·±50 g 센서와 약 ±5.12 V DAQ rail이 같은 지점에 있어, 이미 clipping된 신호만으로 실제 50 g 초과 진폭과 mounting 기여도를 분리할 수 없음
 - 첫 파일럿은 순차 단일채널·단일 RPM·단일 IR 조건이므로 동시 4채널 complementarity, RPM trend, healthy 대비, remount repeatability를 아직 검증하지 못함
 - 핵심 데이터셋의 1차 상세 검토는 완료됐으나 independent verification과 일부 공식 repository 메타데이터가 남아 있음
 
 ## Last updated
 
-2026-07-22
+2026-08-01

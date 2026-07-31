@@ -27,6 +27,7 @@ Survey → Evidence verification → Gap analysis → Dataset design → Pilot a
 - `paper/`: 근거가 확보된 뒤 작성할 dataset paper 작업 공간
 - `design/`: 구매 장비 제약과 survey 근거를 연결하는 UOS v2 설계 기록
 - `pilot/`: UOS v2 자체 파일럿의 설정, 근거, 분석 결과와 go/no-go 판정
+- `validation/`: UOS v2 자체 수집 데이터의 품질 검증 코드 출력과 판정 보고서
 
 ## 파일 위치 안내
 
@@ -44,6 +45,7 @@ Survey → Evidence verification → Gap analysis → Dataset design → Pilot a
 | 파일럿 수치 결과 CSV | `pilot/<pilot_id>/results/*.csv` | 채널·위치별 RMS, peak frequency, SNR 및 시스템 비교 수치 |
 | 파일럿 그림 PNG | `pilot/<pilot_id>/results/figures/*.png` | 원신호, FFT, envelope spectrum, RMS 및 peak 비교 그림 |
 | 파일럿 분석 코드 | `scripts/analyze_uos_pilot.py` | 로컬 원자료에서 CSV와 PNG를 재생성하는 코드 |
+| 클리핑 품질검증 | `validation/clipping_2026-08-01/` | 전수 rail scan, LPF·포락선 결과와 객관적 판정 |
 | 검증·표 생성 코드 | `scripts/check_dataset_cards.py`, `scripts/build_comparison_table.py` | 조사 파일 검증과 전체 비교표 생성 |
 | 자동화 테스트 | `tests/` | 조사 schema, 비교표 및 파일럿 분석 코드 테스트 |
 | 로컬 논문·공식 문서 | `library/papers/`, `library/documents/` | Git에 올리지 않는 참고문헌 원문 |
