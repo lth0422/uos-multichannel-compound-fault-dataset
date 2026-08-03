@@ -9,6 +9,7 @@ from collections import Counter, defaultdict
 from pathlib import Path
 
 import matplotlib.pyplot as plt
+from matplotlib import font_manager
 import numpy as np
 
 
@@ -25,6 +26,10 @@ def relevant_target(fault: str, target: str) -> bool:
 
 
 def plot_results(results: Path, figures: Path) -> None:
+    korean_fonts = [font.name for font in font_manager.fontManager.ttflist if "NanumGothic" in font.name]
+    if korean_fonts:
+        plt.rcParams["font.family"] = korean_fonts[0]
+    plt.rcParams["axes.unicode_minus"] = False
     figures.mkdir(parents=True, exist_ok=True)
     scan = read_csv(results / "clipping_scan_file.csv")
     events = read_csv(results / "rail_event_cross_channel.csv")
@@ -43,18 +48,18 @@ def plot_results(results: Path, figures: Path) -> None:
 
     fig, axes = plt.subplots(1, 2, figsize=(12, 4.5))
     x = np.arange(len(fault_order))
-    axes[0].bar(x, totals, color="#d9d9d9", label="all files")
-    axes[0].bar(x, clipped, color="#c0392b", label="files with ADC rail")
+    axes[0].bar(x, totals, color="#d9d9d9", label="전체 파일")
+    axes[0].bar(x, clipped, color="#c0392b", label="ADC 포화 포함 파일")
     axes[0].set_xticks(x, fault_order, rotation=35, ha="right")
-    axes[0].set_ylabel("File count")
-    axes[0].set_title("Rail clipping by bearing-fault label")
+    axes[0].set_ylabel("파일 수")
+    axes[0].set_title("베어링 결함 조합별 ADC 포화 파일")
     axes[0].legend()
     keys = range(4)
     axes[1].bar(keys, [event_counter[k] for k in keys], color="#4472c4")
     axes[1].set_xticks(list(keys))
-    axes[1].set_xlabel("Other channels above their own 99.9th percentile\nwithin +/-1 ms")
-    axes[1].set_ylabel("Rail-event count")
-    axes[1].set_title("Cross-channel response at rail events")
+    axes[1].set_xlabel("±1 ms 이내 동시에 크게 반응한 다른 채널 수")
+    axes[1].set_ylabel("ADC 포화 사건 수")
+    axes[1].set_title("ADC 포화 시점의 다른 채널 반응")
     fig.tight_layout()
     fig.savefig(figures / "clipping_risk_dashboard.png", dpi=180)
     plt.close(fig)
@@ -80,11 +85,11 @@ def plot_results(results: Path, figures: Path) -> None:
 
     fig, axes = plt.subplots(1, 3, figsize=(16, 4.5))
     x = np.arange(len(band_order)); width = 0.36
-    axes[0].bar(x - width / 2, medians[False], width, label="no rail", color="#70ad47")
-    axes[0].bar(x + width / 2, medians[True], width, label="rail", color="#c0392b")
+    axes[0].bar(x - width / 2, medians[False], width, label="ADC 포화 없음", color="#70ad47")
+    axes[0].bar(x + width / 2, medians[True], width, label="ADC 포화 있음", color="#c0392b")
     axes[0].set_xticks(x, ["0.5-2k", "2-7k", "7-10k", "10-11.2k"])
-    axes[0].set_ylabel("Median band energy / raw energy (%)")
-    axes[0].set_title("Band-energy distribution")
+    axes[0].set_ylabel("원신호 대비 대역 에너지 중앙값(%)")
+    axes[0].set_title("주파수 대역별 에너지 중앙값")
     axes[0].legend()
 
     targets = ["BPFO", "BPFI", "BSF"]
@@ -94,7 +99,7 @@ def plot_results(results: Path, figures: Path) -> None:
     image = axes[1].imshow(matrix, vmin=0, vmax=100, cmap="Blues", aspect="auto")
     axes[1].set_xticks(range(3), ["2-7k", "7-10k", "10-11.2k"])
     axes[1].set_yticks(range(3), targets)
-    axes[1].set_title("Relevant target >=15 dB (%)")
+    axes[1].set_title("레이블에 포함된 결함주파수 검출률(15 dB 이상, %)")
     for i in range(3):
         for j in range(3):
             axes[1].text(j, i, f"{matrix[i,j]:.0f}", ha="center", va="center")
@@ -105,9 +110,9 @@ def plot_results(results: Path, figures: Path) -> None:
     axes[2].scatter(nominal, estimated, s=18, alpha=0.65)
     axes[2].plot([550, 1650], [550, 1650], "k--", linewidth=1)
     axes[2].set_xlim(550, 1650); axes[2].set_ylim(550, 1650)
-    axes[2].set_xlabel("Nominal RPM")
-    axes[2].set_ylabel("Vibration-derived 1x candidate (RPM)")
-    axes[2].set_title("Rotation-speed consistency")
+    axes[2].set_xlabel("설정 회전수(RPM)")
+    axes[2].set_ylabel("진동 신호에서 추정한 1× 회전수(RPM)")
+    axes[2].set_title("설정 회전수와 진동 기반 추정값 비교")
     fig.tight_layout()
     fig.savefig(figures / "physical_signal_dashboard.png", dpi=180)
     plt.close(fig)

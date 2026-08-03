@@ -272,7 +272,7 @@ def select_lpf_files(files: list[LogicalFile]) -> list[LogicalFile]:
         ("N204", "1600", "M3", "IR+OR+B"), ("N204", "1600", "H", "IR+OR+B"),
         ("30204", "1600", "H", "IR+OR+B"), ("6204", "1600", "L", "IR+OR+B"),
         ("30204", "1400", "L", "IR+OR+B"), ("30204", "600", "H", "IR+OR+B"),
-        ("30204", "1600", "H", "H"), ("30204", "1600", "L", "H"),
+        ("30204", "1600", "H", "H"), ("30204", "1600", "L", "IR+B"),
     ]
     lookup = {(m["bearing"], m["rpm"], m["rotor"], m["fault"]): f for f in files if (m := parse_filename(f.path))["bearing"] != "Unknown"}
     return [lookup[key] for key in desired if key in lookup]

@@ -1,0 +1,5 @@
+cutoff_hz,channels,majority_at_least_3_of_5_channels,exactly_0_filters_over_50g_channels,exactly_1_filters_over_50g_channels,exactly_2_filters_over_50g_channels,exactly_3_filters_over_50g_channels,exactly_4_filters_over_50g_channels,exactly_5_filters_over_50g_channels
+2000.0,47,0,47,0,0,0,0,0
+7000.0,47,1,46,0,0,1,0,0
+10000.0,47,9,37,0,1,5,3,1
+11500.0,47,18,24,4,1,7,3,8

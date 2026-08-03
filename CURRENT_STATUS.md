@@ -6,6 +6,13 @@ UOS v2 pilot acquisition validation, with published-dataset survey retained as d
 
 ## Completed
 
+- 2026-08-03 30204·6204·N204의 1400·1600 RPM·IR+OR+B 조건 중 ±50 g 초과 47채널에 Butterworth·Chebyshev I·II·Elliptic·Bessel과 5개 주파수 구간을 적용했다.
+- 2026-08-03 다중 필터 결과에서 2~7 kHz의 단일 채널만 필터 3종에서 50 g를 넘었고, IR·OR 계열은 2~7 kHz, B 계열은 7~10 kHz 검출이 상대적으로 높음을 확인했다. 필터 후 최대값은 센서 입력 진폭 판정에 사용할 수 없음을 문서화했다.
+- 2026-08-03 47채널의 누적 저역통과 시나리오를 추가했다. 10 kHz 저역통과 후 필터별 1~10채널, 필터 3/5 다수결 기준 9채널이 50 g를 넘었으며, 7 kHz 저역통과 후에는 다수결 기준 N204·1600 RPM·H·IR+OR+B·CH0 한 채널만 남았다.
+- 2026-08-03 S1-S01의 식 (1)~(9)과 Fig. 11~14를 기준으로 BPFO/BPFI/BSF 고조파, BPFI±1×, BSF±FTF 계열을 고유 116파일 전체에서 분석했다.
+- 2026-08-03 30204·1600 RPM의 단일-복합 결함을 동일 로터·채널끼리 비교하고 주파수 중첩을 표시했으며, Task B 대표 파일 오류와 L1/L2/L3 결과를 원자료 기준으로 정정했다.
+- 2026-08-03 ADC 포화 보고서를 베어링·RPM·베어링 결함·로터 조건·채널 수가 드러나도록 전면 개정하고, 베어링 정상(H)과 기계 전체 정상을 구분했다.
+- 2026-08-03 BPFO·BPFI·BSF 결과를 조건별로 분리하고, 한국어 그래프와 축·분모·색상·해석 범위 설명을 추가했다.
 - 2026-08-01 현재 수집 TDMS 124경로를 검사하고 SHA-256 동일 중복 8쌍을 제외한 고유 116파일의 clipping을 전수 재분석했다.
 - ADC rail 4,709 samples와 CH2에서 기존 보고가 놓친 rail 92 samples를 확인하고 대표 8조건 LPF sweep을 생성했다.
 - UOS v1 원논문 Table 2의 geometry로 6204·N204/NJ204·30204 결함주파수를 계산하고 세 베어링 envelope check를 생성했다.
@@ -109,4 +116,4 @@ UOS v2 pilot acquisition validation, with published-dataset survey retained as d
 
 ## Last updated
 
-2026-08-01
+2026-08-03
