@@ -15,11 +15,16 @@ import numpy as np
 from nptdms import TdmsFile
 from scipy import signal
 
+try:
+    from scripts.uos_v2_measurement_window import measurement_window
+except ModuleNotFoundError:  # Support direct execution: python scripts/analyze_uos_v2_clipping.py
+    from uos_v2_measurement_window import measurement_window
+
 
 CHANNEL_RE = re.compile(r"Channel\s+(\d+)$")
 FILE_RE = re.compile(
     r"(?P<rotor>H|L|M[123]|U[123])_(?P<fault>H|IR|OR|B|IR\+B|IR\+OR|OR\+B|IR\+OR\+B)_"
-    r"(?P<fs>\d+)_(?P<bearing>6204|30204|N204|NJ204)_(?P<rpm>\d+)\.tdms$"
+    r"(?P<fs>\d+(?:_\d+)?)_(?P<bearing>6204|30204|N204|NJ204)_(?P<rpm>\d+)\.tdms$"
 )
 LPF_CUTOFFS_HZ = (3000, 5000, 7000, 9000, 10000, 11000)
 ENVELOPE_BANDS_HZ = ((2000, 7000), (7000, 10000), (10000, 11200))
@@ -59,7 +64,9 @@ def parse_filename(path: Path) -> dict[str, str]:
     match = FILE_RE.fullmatch(path.name)
     if match is None:
         return {"rotor": "Unknown", "fault": "Unknown", "fs": "Unknown", "bearing": "Unknown", "rpm": "Unknown"}
-    return match.groupdict()
+    parsed = match.groupdict()
+    parsed["fs"] = parsed["fs"].replace("_", ".")
+    return parsed
 
 
 def bearing_orders(model: str) -> dict[str, float]:
@@ -159,7 +166,9 @@ def scan_files(files: list[LogicalFile], output_dir: Path) -> tuple[list[dict], 
         with TdmsFile.open(item.path) as tdms:
             props = dict(tdms["Test Information"].properties) if "Test Information" in tdms else {}
             for channel in _channels(tdms):
-                values = np.asarray(channel[:], dtype=np.float64)
+                fs = 1.0 / float(channel.properties["wf_increment"])
+                window = measurement_window(len(channel), fs, metadata["bearing"])
+                values = np.asarray(channel[window.start_sample:window.end_sample], dtype=np.float64)
                 match = CHANNEL_RE.search(channel.name)
                 ch = int(match.group(1)) if match else -1
                 candidate_counts[ch]
@@ -168,7 +177,7 @@ def scan_files(files: list[LogicalFile], output_dir: Path) -> tuple[list[dict], 
                 candidate_idx = np.flatnonzero(np.abs(voltage) >= 5.10)
                 for value in values[candidate_idx]:
                     candidate_counts[ch]["pos" if value > 0 else "neg"][float(value)] += 1
-                means = _block_baselines(values, 1.0 / float(channel.properties["wf_increment"]))
+                means = _block_baselines(values, fs)
                 zero_state, largest_step = _zero_shift_screen(means)
                 provisional.append({
                     "file": str(item.path), "channel": f"CH{ch}", "channel_index": ch,
@@ -178,8 +187,12 @@ def scan_files(files: list[LogicalFile], output_dir: Path) -> tuple[list[dict], 
                     "rpm_metadata": props.get("Test_properties~RPM", "Unknown"),
                     "rotor_metadata": props.get("Test_properties~RotorFaultType", "Unknown"),
                     "fault_metadata": props.get("Test_properties~BearingFaultType", "Unknown"),
-                    "sampling_rate_hz": 1.0 / float(channel.properties["wf_increment"]),
-                    "samples": len(values), "duration_s": len(values) * float(channel.properties["wf_increment"]),
+                    "sampling_rate_hz": fs,
+                    "source_samples": len(channel), "source_duration_s": len(channel) / fs,
+                    "analysis_start_sample": window.start_sample, "analysis_end_sample": window.end_sample,
+                    "analysis_start_s": window.start_s, "analysis_end_s": window.end_s,
+                    "analysis_window_policy": window.policy,
+                    "samples": len(values), "duration_s": len(values) / fs,
                     "sensitivity_v_per_g": sensitivity, "min_g": float(np.min(values)), "max_g": float(np.max(values)),
                     "n_above_50g": int(np.count_nonzero(np.abs(values) > 50.0)),
                     "candidate_indices": candidate_idx, "candidate_values": values[candidate_idx],
@@ -216,7 +229,7 @@ def scan_files(files: list[LogicalFile], output_dir: Path) -> tuple[list[dict], 
         selected = np.zeros(len(indices), dtype=bool)
         if math.isfinite(neg): selected |= values == neg
         if math.isfinite(pos): selected |= values == pos
-        rail_indices = indices[selected]
+        rail_indices = indices[selected] + int(row["analysis_start_sample"])
         events, max_run, mean_run = _max_run(rail_indices)
         row.update({"n_at_rail": len(rail_indices), "n_rail_events": events, "max_rail_run": max_run,
                     "mean_rail_run": mean_run, "rail_ratio_pct": len(rail_indices) / row["samples"] * 100.0})
@@ -254,6 +267,11 @@ def summarize_files(channel_rows: list[dict], output_dir: Path) -> list[dict]:
         output.append({
             "file": file_name, "bearing": rows[0]["bearing_filename"], "rpm": rows[0]["rpm_filename"],
             "rotor": rows[0]["rotor_filename"], "fault": rows[0]["fault_filename"],
+            "source_duration_s": rows[0]["source_duration_s"],
+            "analysis_start_s": rows[0]["analysis_start_s"],
+            "analysis_end_s": rows[0]["analysis_end_s"],
+            "analysis_duration_s": rows[0]["duration_s"],
+            "analysis_window_policy": rows[0]["analysis_window_policy"],
             "samples_all_channels": sum(r["samples"] for r in rows),
             "n_above_50g_all_channels": sum(r["n_above_50g"] for r in rows),
             "n_at_rail_all_channels": sum(r["n_at_rail"] for r in rows),
@@ -264,6 +282,21 @@ def summarize_files(channel_rows: list[dict], output_dir: Path) -> list[dict]:
             "filename_metadata_match": "Yes" if labels_match else "No",
         })
     _write_csv(output_dir / "clipping_scan_file.csv", output)
+    manifest_fields = [
+        "file", "bearing", "rpm", "rotor", "fault", "source_duration_s",
+        "analysis_start_s", "analysis_end_s", "analysis_duration_s", "analysis_window_policy",
+    ]
+    manifest_rows = []
+    for row in output:
+        manifest_row = {name: row[name] for name in manifest_fields}
+        for name in ("source_duration_s", "analysis_start_s", "analysis_end_s", "analysis_duration_s"):
+            manifest_row[name] = round(float(manifest_row[name]), 6)
+        manifest_rows.append(manifest_row)
+    _write_csv(
+        output_dir / "analysis_window_manifest.csv",
+        manifest_rows,
+        manifest_fields,
+    )
     return output
 
 
@@ -284,11 +317,13 @@ def lpf_sweep(files: list[LogicalFile], output_dir: Path) -> list[dict]:
         meta = parse_filename(item.path)
         with TdmsFile.open(item.path) as tdms:
             for channel in _channels(tdms):
-                values = np.asarray(channel[:], dtype=np.float64)
                 fs = 1.0 / float(channel.properties["wf_increment"])
+                window = measurement_window(len(channel), fs, meta["bearing"])
+                values = np.asarray(channel[window.start_sample:window.end_sample], dtype=np.float64)
                 centered = values - np.mean(values)
                 row = {"file": str(item.path), "bearing": meta["bearing"], "rpm": meta["rpm"],
                        "rotor": meta["rotor"], "fault": meta["fault"], "channel": channel.name,
+                       "analysis_start_s": window.start_s, "analysis_end_s": window.end_s,
                        "raw_peak_abs_g": float(np.max(np.abs(centered)))}
                 for cutoff in LPF_CUTOFFS_HZ:
                     sos = signal.butter(8, cutoff, btype="lowpass", fs=fs, output="sos")
@@ -319,8 +354,9 @@ def envelope_check(files: list[LogicalFile], output_dir: Path) -> list[dict]:
         targets = bearing_frequencies(meta["bearing"], float(meta["rpm"]))
         with TdmsFile.open(item.path) as tdms:
             for channel in _channels(tdms):
-                values = np.asarray(channel[:], dtype=np.float64)
                 fs = 1.0 / float(channel.properties["wf_increment"])
+                window = measurement_window(len(channel), fs, meta["bearing"])
+                values = np.asarray(channel[window.start_sample:window.end_sample], dtype=np.float64)
                 centered = values - np.mean(values)
                 for low, high in ENVELOPE_BANDS_HZ:
                     sos = signal.butter(4, (low, high), btype="bandpass", fs=fs, output="sos")
@@ -332,6 +368,7 @@ def envelope_check(files: list[LogicalFile], output_dir: Path) -> list[dict]:
                         peak_hz, ratio = _local_ratio_db(freq, amp, target)
                         rows.append({"file": str(item.path), "bearing": meta["bearing"], "rpm": meta["rpm"], "rotor": meta["rotor"],
                                      "fault_label": meta["fault"], "channel": channel.name,
+                                     "analysis_start_s": window.start_s, "analysis_end_s": window.end_s,
                                      "carrier_band_hz": f"{low}-{high}", "target": fault_name,
                                      "expected_hz": target, "observed_peak_hz": peak_hz,
                                      "local_ratio_db": ratio, "m_plus_15db": "Yes" if ratio >= 15 else "No"})

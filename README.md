@@ -45,7 +45,7 @@ Survey → Evidence verification → Gap analysis → Dataset design → Pilot a
 | 파일럿 수치 결과 CSV | `pilot/<pilot_id>/results/*.csv` | 채널·위치별 RMS, peak frequency, SNR 및 시스템 비교 수치 |
 | 파일럿 그림 PNG | `pilot/<pilot_id>/results/figures/*.png` | 원신호, FFT, envelope spectrum, RMS 및 peak 비교 그림 |
 | 파일럿 분석 코드 | `scripts/analyze_uos_pilot.py` | 로컬 원자료에서 CSV와 PNG를 재생성하는 코드 |
-| 클리핑 품질검증 | `validation/clipping_2026-08-01/` | 전수 rail scan, LPF·포락선 결과와 객관적 판정 |
+| 클리핑 품질검증 | `validation/clipping_2026-08-01/` | 공회전 제외 구간의 전수 rail scan, LPF·포락선 결과와 객관적 판정 |
 | 검증·표 생성 코드 | `scripts/check_dataset_cards.py`, `scripts/build_comparison_table.py` | 조사 파일 검증과 전체 비교표 생성 |
 | 자동화 테스트 | `tests/` | 조사 schema, 비교표 및 파일럿 분석 코드 테스트 |
 | 로컬 논문·공식 문서 | `library/papers/`, `library/documents/` | Git에 올리지 않는 참고문헌 원문 |
@@ -75,3 +75,8 @@ pytest
 비교표 생성 명령은 `survey/dataset_registry.csv`의 행 순서와 priority를 사용해 `survey/synthesis/comparison_master.csv` 및 `.md`를 갱신합니다.
 
 UOS v2 파일럿 분석 dependency와 현재 1400 RPM 파일럿 재생성 방법은 [`pilot/2026-07-22_1400rpm_30204_ir_h/README.md`](pilot/2026-07-22_1400rpm_30204_ir_h/README.md)에 기록되어 있습니다. 원시 TDMS/MAT/ZIP은 `external_data/uos_v2_pilot/`에 두며 Git에 포함하지 않습니다.
+
+현재 클리핑 조사 자료는 일반 파일의 60~180초와 30204·7분 초과 파일의
+300~420초만 사용합니다. 앞 구간은 공회전으로 제외하고 뒤 잔여 구간도
+분석하지 않습니다. 원시 TDMS는 수정하지 않으며 파일별 적용 구간은
+[`analysis_window_manifest.csv`](validation/clipping_2026-08-01/results/analysis_window_manifest.csv)에 기록합니다.

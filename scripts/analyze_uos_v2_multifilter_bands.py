@@ -1,5 +1,10 @@
 #!/usr/bin/env python3
-"""Compare five established IIR families on UOS v2 >50 g triple-fault channels."""
+"""Analyse band-wise acceleration distributions in the valid UOS v2 interval.
+
+The primary distribution scope is the complete user-confirmed 120 s measurement
+interval.  A 10 s excerpt around the largest raw peak is retained only for the
+legacy envelope and hypothetical low-pass sensitivity checks.
+"""
 
 from __future__ import annotations
 
@@ -16,6 +21,7 @@ from scipy import signal
 from scripts.analyze_uos_v2_clipping import _channels
 from scripts.analyze_uos_v2_clipping_extended import local_envelope_prominence
 from scripts.analyze_uos_v2_compound_features import compound_targets
+from scripts.uos_v2_measurement_window import measurement_window
 
 
 FILTERS = ("butter", "cheby1", "cheby2", "ellip", "bessel")
@@ -27,6 +33,8 @@ BANDS = (
     ("B4_10_11p5k", 10000.0, 11500.0, "bandpass"),
     ("B5_11p5_12p8k", 11500.0, math.nan, "highpass"),
 )
+ABS_G_THRESHOLDS = (10.0, 20.0, 30.0, 40.0, 50.0)
+ABS_G_HISTOGRAM_EDGES = (0.0, 0.1, 0.25, 0.5, 1.0, 2.0, 5.0, 10.0, 20.0, 30.0, 40.0, 50.0, math.inf)
 
 
 def _write_csv(path: Path, rows: list[dict], fields: list[str] | None = None) -> None:
@@ -68,6 +76,50 @@ def centered_excerpt(values: np.ndarray, fs: float, duration_s: float = 10.0) ->
     return excerpt, start, peak_index
 
 
+def acceleration_distribution(values: np.ndarray) -> dict[str, float | int]:
+    """Return signed and absolute acceleration statistics for one filtered signal."""
+
+    values = np.asarray(values, dtype=np.float64)
+    if values.ndim != 1 or len(values) == 0:
+        raise ValueError("values must be a non-empty one-dimensional array")
+    absolute = np.abs(values)
+    rms = float(np.sqrt(np.mean(values * values)))
+    quantiles = np.quantile(absolute, (0.5, 0.9, 0.95, 0.99, 0.999, 0.9999))
+    result: dict[str, float | int] = {
+        "distribution_samples": len(values),
+        "signed_mean_g": float(np.mean(values)),
+        "signed_std_g": float(np.std(values)),
+        "minimum_g": float(np.min(values)),
+        "maximum_g": float(np.max(values)),
+        "mean_abs_g": float(np.mean(absolute)),
+        "median_abs_g": float(quantiles[0]),
+        "p90_abs_g": float(quantiles[1]),
+        "p95_abs_g": float(quantiles[2]),
+        "p99_abs_g": float(quantiles[3]),
+        "p99_9_abs_g": float(quantiles[4]),
+        "p99_99_abs_g": float(quantiles[5]),
+        "peak_abs_g": float(np.max(absolute)),
+        "rms_g": rms,
+        "crest_factor": float(np.max(absolute) / max(rms, 1e-30)),
+    }
+    for threshold in ABS_G_THRESHOLDS:
+        label = f"{threshold:g}".replace(".", "p")
+        count = int(np.count_nonzero(absolute > threshold))
+        result[f"samples_over_{label}g"] = count
+        result[f"pct_samples_over_{label}g"] = 100.0 * count / len(values)
+    return result
+
+
+def _histogram_counts(values: np.ndarray) -> np.ndarray:
+    absolute = np.abs(np.asarray(values, dtype=np.float64))
+    counts, _ = np.histogram(absolute, bins=np.asarray(ABS_G_HISTOGRAM_EDGES, dtype=float))
+    return counts
+
+
+def _histogram_label(low: float, high: float) -> str:
+    return f"{low:g}-inf" if math.isinf(high) else f"{low:g}-{high:g}"
+
+
 def analyse(
     data_root: Path, scan_csv: Path, one_x_csv: Path, output_dir: Path
 ) -> tuple[list[dict], list[dict], list[dict]]:
@@ -79,6 +131,9 @@ def analyse(
     metrics: list[dict] = []
     envelope_rows: list[dict] = []
     cutoff_rows: list[dict] = []
+    histogram_counts: dict[tuple[str, str, str, str], np.ndarray] = defaultdict(
+        lambda: np.zeros(len(ABS_G_HISTOGRAM_EDGES) - 1, dtype=np.int64)
+    )
     for number, (file_name, channel_specs) in enumerate(sorted(by_file.items()), 1):
         path = Path(file_name)
         with TdmsFile.open(path) as tdms:
@@ -87,18 +142,26 @@ def analyse(
                 channel_index = int(spec["channel_index"])
                 channel = channels[channel_index]
                 fs = 1.0 / float(channel.properties["wf_increment"])
-                raw = np.asarray(channel[:], dtype=np.float64)
+                window = measurement_window(len(channel), fs, spec["bearing_filename"])
+                raw = np.asarray(channel[window.start_sample:window.end_sample], dtype=np.float64)
+                analysis_values = raw - np.mean(raw)
                 excerpt, start, peak_index = centered_excerpt(raw, fs)
                 shaft_hz = one_x.get(file_name, float(spec["rpm_filename"]) / 60.0)
                 targets = compound_targets(spec["bearing_filename"], shaft_hz)
-                raw_rms = float(np.sqrt(np.mean(excerpt * excerpt)))
+                raw_analysis_rms = float(np.sqrt(np.mean(analysis_values * analysis_values)))
+                raw_excerpt_rms = float(np.sqrt(np.mean(excerpt * excerpt)))
                 common = {
                     "file": file_name, "bearing": spec["bearing_filename"], "rpm": spec["rpm_filename"],
                     "rotor": spec["rotor_filename"], "fault": spec["fault_filename"],
                     "channel": spec["channel"], "sampling_rate_hz": fs,
-                    "excerpt_start_s": start / fs, "excerpt_duration_s": len(excerpt) / fs,
-                    "raw_global_peak_index": peak_index, "raw_global_peak_abs_g": float(np.max(np.abs(raw))),
-                    "raw_excerpt_rms_g": raw_rms, "raw_n_at_rail": spec["n_at_rail"],
+                    "analysis_start_s": window.start_s, "analysis_end_s": window.end_s,
+                    "analysis_duration_s": window.duration_s,
+                    "excerpt_start_s": window.start_s + start / fs,
+                    "excerpt_duration_s": len(excerpt) / fs,
+                    "raw_global_peak_index": peak_index + window.start_sample,
+                    "raw_global_peak_abs_g": float(np.max(np.abs(raw))),
+                    "raw_analysis_rms_g": raw_analysis_rms,
+                    "raw_excerpt_rms_g": raw_excerpt_rms, "raw_n_at_rail": spec["n_at_rail"],
                 }
                 for filter_name in FILTERS:
                     for cutoff_hz in CUTOFF_SCENARIOS_HZ:
@@ -120,7 +183,7 @@ def analyse(
                             "retained_p99_99_abs_g": float(np.quantile(retained_abs, 0.9999)),
                             "retained_rms_g": retained_rms,
                             "retained_energy_pct_of_raw_excerpt": (
-                                100 * retained_rms * retained_rms / max(raw_rms * raw_rms, 1e-30)
+                                100 * retained_rms * retained_rms / max(raw_excerpt_rms * raw_excerpt_rms, 1e-30)
                             ),
                             "retained_peak_over_50g": "Yes" if np.max(retained_abs) > 50 else "No",
                             "interpretation": "post_clipping_hypothetical_lowpass_output",
@@ -128,9 +191,8 @@ def analyse(
                     for band in BANDS:
                         band_name, low, high, kind = band
                         sos = design_sos(filter_name, band, fs)
-                        filtered = signal.sosfiltfilt(sos, excerpt)
-                        abs_values = np.abs(filtered)
-                        rms = float(np.sqrt(np.mean(filtered * filtered)))
+                        filtered_analysis = signal.sosfiltfilt(sos, analysis_values)
+                        distribution = acceleration_distribution(filtered_analysis)
                         metrics.append({
                             **common, "filter": filter_name, "order_single_pass": 4,
                             "application": "sosfiltfilt_zero_phase", "cheby1_rp_db": 0.5 if filter_name == "cheby1" else "NA",
@@ -140,16 +202,25 @@ def analyse(
                             "bessel_norm": "phase" if filter_name == "bessel" else "NA",
                             "band": band_name, "low_hz": low,
                             "high_hz": fs / 2 if kind == "highpass" else high,
-                            "band_peak_abs_g": float(np.max(abs_values)),
-                            "band_p99_9_abs_g": float(np.quantile(abs_values, 0.999)),
-                            "band_p99_99_abs_g": float(np.quantile(abs_values, 0.9999)),
-                            "band_rms_g": rms, "band_energy_pct_of_raw_excerpt": 100 * rms * rms / max(raw_rms * raw_rms, 1e-30),
-                            "band_peak_over_50g": "Yes" if np.max(abs_values) > 50 else "No",
+                            "distribution_scope": "complete_user_confirmed_measurement_interval",
+                            **distribution,
+                            "band_peak_abs_g": distribution["peak_abs_g"],
+                            "band_p99_9_abs_g": distribution["p99_9_abs_g"],
+                            "band_p99_99_abs_g": distribution["p99_99_abs_g"],
+                            "band_rms_g": distribution["rms_g"],
+                            "band_energy_pct_of_raw_analysis": (
+                                100 * float(distribution["rms_g"]) ** 2 / max(raw_analysis_rms ** 2, 1e-30)
+                            ),
+                            "band_peak_over_50g": "Yes" if float(distribution["peak_abs_g"]) > 50 else "No",
                             "physical_interpretation": "DAQ_transition_diagnostic_only" if band_name.startswith("B5") else
                                 ("sensor_outside_nominal_range" if band_name.startswith("B4") else "in_sensor_nominal_range"),
                         })
+                        counts = _histogram_counts(filtered_analysis)
+                        histogram_counts[(filter_name, band_name, "All", "All")] += counts
+                        histogram_counts[(filter_name, band_name, spec["bearing_filename"], spec["rpm_filename"])] += counts
                         if band_name.startswith("B5"):
                             continue
+                        filtered = signal.sosfiltfilt(sos, excerpt)
                         env = np.abs(signal.hilbert(filtered))
                         freq, psd = signal.welch(env, fs=fs, nperseg=len(env), noverlap=0, scaling="spectrum")
                         amplitude = np.sqrt(psd)
@@ -164,7 +235,27 @@ def analyse(
                                 "at_least_15_db": "Yes" if prominence >= 15 else "No",
                             })
         print(f"multifilter {number}/{len(by_file)}: {file_name}", flush=True)
+    histogram_rows: list[dict] = []
+    for (filter_name, band_name, bearing, rpm), counts in sorted(histogram_counts.items()):
+        total = int(np.sum(counts))
+        for index, count in enumerate(counts):
+            low = ABS_G_HISTOGRAM_EDGES[index]
+            high = ABS_G_HISTOGRAM_EDGES[index + 1]
+            histogram_rows.append({
+                "filter": filter_name,
+                "band": band_name,
+                "bearing": bearing,
+                "rpm": rpm,
+                "abs_g_bin": _histogram_label(low, high),
+                "bin_low_g": low,
+                "bin_high_g": "inf" if math.isinf(high) else high,
+                "samples": int(count),
+                "total_samples": total,
+                "sample_pct": 100.0 * int(count) / max(total, 1),
+                "interpretation": "post_filter_sample_distribution_not_reconstructed_sensor_input",
+            })
     _write_csv(output_dir / "multifilter_band_metrics.csv", metrics)
+    _write_csv(output_dir / "multifilter_band_g_histogram.csv", histogram_rows)
     _write_csv(output_dir / "multifilter_envelope_features.csv", envelope_rows)
     _write_csv(output_dir / "multifilter_cutoff_scenarios.csv", cutoff_rows)
     return metrics, envelope_rows, cutoff_rows
@@ -238,8 +329,12 @@ def summarize(metrics: list[dict], envelope_rows: list[dict], output_dir: Path) 
                                "peak_over_50g_channels": int(np.count_nonzero(peaks > 50)),
                                "median_peak_g": float(np.median(peaks)), "max_peak_g": float(np.max(peaks)),
                                "median_rms_g": float(np.median(rms)),
+                               "median_p99_9_g": float(np.median(
+                                   [float(row["p99_9_abs_g"]) for row in rows])),
+                               "median_pct_samples_over_50g": float(np.median(
+                                   [float(row["pct_samples_over_50g"]) for row in rows])),
                                "median_energy_pct": float(np.median(
-                                   [float(row["band_energy_pct_of_raw_excerpt"]) for row in rows]))})
+                                   [float(row["band_energy_pct_of_raw_analysis"]) for row in rows]))})
     _write_csv(output_dir / "multifilter_band_summary.csv", metric_summary)
 
     env_groups: dict[tuple, list[dict]] = defaultdict(list)

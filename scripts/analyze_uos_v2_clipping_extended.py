@@ -23,6 +23,7 @@ from scripts.analyze_uos_v2_clipping import (
     discover_unique_files,
     parse_filename,
 )
+from scripts.uos_v2_measurement_window import measurement_window
 
 
 RAILS_G = {
@@ -152,14 +153,17 @@ def analyse_files(data_root: Path, output_dir: Path) -> tuple[list[dict], list[d
         nominal_rpm = float(meta["rpm"])
         with TdmsFile.open(item.path) as tdms:
             channels = _channels(tdms)
-            arrays = [np.asarray(ch[:], dtype=np.float64) for ch in channels]
             fs = 1.0 / float(channels[0].properties["wf_increment"])
+            window = measurement_window(len(channels[0]), fs, meta["bearing"])
+            arrays = [np.asarray(ch[window.start_sample:window.end_sample], dtype=np.float64) for ch in channels]
             estimates = []
             for ch_i, values in enumerate(arrays):
                 estimate = estimate_one_x(values, fs, nominal_rpm)
                 estimates.append(estimate)
                 rpm_rows.append({"file": str(item.path), **meta, "channel": f"CH{ch_i}",
-                                 "nominal_rpm": nominal_rpm, **estimate})
+                                 "nominal_rpm": nominal_rpm,
+                                 "analysis_start_s": window.start_s, "analysis_end_s": window.end_s,
+                                 **estimate})
             consensus = consensus_one_x(estimates)
             for row in rpm_rows[-len(arrays):]:
                 row.update(consensus)
@@ -184,8 +188,12 @@ def analyse_files(data_root: Path, output_dir: Path) -> tuple[list[dict], list[d
                             response_count += ratio >= 1.0
                             response_ratios.append(ratio)
                     event_rows.append({"file": str(item.path), **meta, "source_channel": f"CH{source_ch}",
-                                       "event_number": event_n, "sample_index": int(index),
-                                       "time_s": index / fs, "other_channels_above_own_p999": response_count,
+                                       "event_number": event_n,
+                                       "sample_index": int(index + window.start_sample),
+                                       "time_s": (index + window.start_sample) / fs,
+                                       "analysis_elapsed_s": index / fs,
+                                       "analysis_start_s": window.start_s, "analysis_end_s": window.end_s,
+                                       "other_channels_above_own_p999": response_count,
                                        "max_other_channel_p999_ratio": max(response_ratios, default=math.nan),
                                        "window_ms": 1.0})
 
@@ -198,6 +206,8 @@ def analyse_files(data_root: Path, output_dir: Path) -> tuple[list[dict], list[d
                         r, p = phase_concentration(events, fs, target)
                         periodicity_rows.append({"file": str(item.path), **meta,
                                                  "source_channel": f"CH{source_ch}", "rail_events": len(events),
+                                                 "analysis_start_s": window.start_s,
+                                                 "analysis_end_s": window.end_s,
                                                  "one_x_confidence": consensus["confidence"],
                                                  "target": name, "target_hz": target,
                                                  "phase_concentration_r": r, "rayleigh_p_approx": p})
@@ -229,7 +239,7 @@ def clipping_label_association(scan_csv: Path, output_dir: Path) -> list[dict]:
 
 
 def band_and_envelope_analysis(data_root: Path, rpm_csv: Path, output_dir: Path) -> tuple[list[dict], list[dict]]:
-    """Analyse a fixed first 10 s excerpt from every logical recording/channel."""
+    """Analyse the first 10 s of the user-confirmed measurement interval."""
     with rpm_csv.open(encoding="utf-8") as handle:
         consensus = {row["file"]: float(row["consensus_hz"]) for row in csv.DictReader(handle)}
     band_rows: list[dict] = []
@@ -242,8 +252,9 @@ def band_and_envelope_analysis(data_root: Path, rpm_csv: Path, output_dir: Path)
         with TdmsFile.open(item.path) as tdms:
             for ch_i, channel in enumerate(_channels(tdms)):
                 fs = 1.0 / float(channel.properties["wf_increment"])
-                count = min(len(channel), int(round(10 * fs)))
-                x = np.asarray(channel[:count], dtype=np.float64)
+                window = measurement_window(len(channel), fs, meta["bearing"])
+                count = min(window.end_sample - window.start_sample, int(round(10 * fs)))
+                x = np.asarray(channel[window.start_sample:window.start_sample + count], dtype=np.float64)
                 x -= np.mean(x)
                 total_ms = float(np.mean(x * x))
                 for low, high in BANDS_HZ:
@@ -251,7 +262,7 @@ def band_and_envelope_analysis(data_root: Path, rpm_csv: Path, output_dir: Path)
                     filtered = signal.sosfiltfilt(sos, x)
                     band_ms = float(np.mean(filtered * filtered))
                     common = {"file": str(item.path), **meta, "channel": f"CH{ch_i}",
-                              "excerpt_start_s": 0, "excerpt_duration_s": count / fs,
+                              "excerpt_start_s": window.start_s, "excerpt_duration_s": count / fs,
                               "band_hz": f"{low:g}-{high:g}", "band_rms_g": math.sqrt(band_ms),
                               "band_energy_pct_of_centered_raw": 100 * band_ms / max(total_ms, 1e-30)}
                     band_rows.append(common)

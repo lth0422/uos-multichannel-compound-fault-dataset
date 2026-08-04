@@ -1,5 +1,13 @@
 # 2026-08-01 UOS v2 클리핑 재검토
 
+## 분석구간
+
+- 일반 파일: 앞 60초 공회전을 제외하고 60~180초만 사용함
+- 30204이면서 길이가 7분을 넘는 파일: 앞 300초 공회전을 제외하고 300~420초만 사용함
+- 유효 측정구간 뒤의 잔여 신호도 분석에서 제외함
+- 원시 TDMS는 자르거나 덮어쓰지 않음
+- 실제 적용 구간은 [`results/analysis_window_manifest.csv`](results/analysis_window_manifest.csv)에 파일별로 기록함
+
 ## 먼저 볼 파일
 
 - [`clipping_assessment_ko.md`](clipping_assessment_ko.md): 분석 결과와 객관적 판단
@@ -10,6 +18,7 @@
 - [`figures/physical_signal_dashboard.png`](figures/physical_signal_dashboard.png): 대역 에너지·포락선 검출·1× 후보 요약
 - [`results/clipping_scan_file.csv`](results/clipping_scan_file.csv): 파일별 요약
 - [`results/clipping_scan_channel.csv`](results/clipping_scan_channel.csv): 채널별 레일·범위·메타데이터 결과
+- [`results/analysis_window_manifest.csv`](results/analysis_window_manifest.csv): 원시 길이와 공회전 제외 후 실제 분석 시작·종료 시각
 - [`results/rail_values.csv`](results/rail_values.csv): 채널별 디지털 레일과 전압 환산
 - [`results/expected_bearing_frequencies.csv`](results/expected_bearing_frequencies.csv): 세 베어링의 RPM별 BPFO·BPFI·BSF·FTF
 - [`results/lpf_sweep.csv`](results/lpf_sweep.csv): 대표 8개 조건의 3–11 kHz 저역통과 스윕
@@ -18,8 +27,8 @@
 - [`results/one_x_candidates.csv`](results/one_x_candidates.csv): 명목 RPM 주변의 채널별 1× 후보와 파일 합의값
 - [`results/rail_event_cross_channel.csv`](results/rail_event_cross_channel.csv): rail 사건 시각의 다른 채널 반응
 - [`results/rail_event_periodicity.csv`](results/rail_event_periodicity.csv): rail 사건과 회전·결함주기의 위상 집중도
-- [`results/band_metrics_10s.csv`](results/band_metrics_10s.csv): 전 파일 첫 10초의 대역별 RMS·에너지 비율
-- [`results/envelope_validation_10s.csv`](results/envelope_validation_10s.csv): 전 파일 첫 10초의 계산 결함주파수 포락선 검증
+- [`results/band_metrics_10s.csv`](results/band_metrics_10s.csv): 파일별 유효 측정구간 중 앞 10초의 대역별 RMS·에너지 비율
+- [`results/envelope_validation_10s.csv`](results/envelope_validation_10s.csv): 파일별 유효 측정구간 중 앞 10초의 계산 결함주파수 포락선 검증
 - [`results/clipping_label_association.csv`](results/clipping_label_association.csv): clipping과 bearing/RPM/rotor/fault 레이블의 연관성
 - [`results/compound_feature_validation_10s.csv`](results/compound_feature_validation_10s.csv): 전 파일의 S1 기반 고조파·측파대 전체 결과
 - [`results/compound_feature_condition_summary.csv`](results/compound_feature_condition_summary.csv): 베어링·RPM·결함·대역·주파수별 요약
@@ -27,17 +36,21 @@
 - [`results/single_compound_feature_comparison_summary.csv`](results/single_compound_feature_comparison_summary.csv): 단일-복합 짝 비교 요약
 - [`results/task_b_lpf_interpretation.csv`](results/task_b_lpf_interpretation.csv): Task B 분기와 비단조·오버슈트 선별
 - [`results/task_b_c_combined.csv`](results/task_b_c_combined.csv): Task B 지목 대역과 확장 결함 계열 결합 결과
-- [`results/multifilter_band_metrics.csv`](results/multifilter_band_metrics.csv): ±50 g 초과 3중 결함 채널의 필터·대역별 최대값·분위수·RMS·에너지
+- [`results/multifilter_band_metrics.csv`](results/multifilter_band_metrics.csv): ±50 g 초과 3중 결함 채널의 유효 120초 전체 필터·대역별 g 분포·분위수·RMS·초과율
+- [`results/multifilter_band_g_histogram.csv`](results/multifilter_band_g_histogram.csv): 전체 및 베어링·RPM별 절대 g 구간의 표본 수와 비율
 - [`results/multifilter_band_summary.csv`](results/multifilter_band_summary.csv): 필터·대역별 50 g 초과 채널 수 요약
 - [`results/multifilter_envelope_features.csv`](results/multifilter_envelope_features.csv): 0~11.5 kHz 대역의 필터별 결함주파수 계열 결과
 - [`results/multifilter_component_summary.csv`](results/multifilter_component_summary.csv): 필터·대역·IR/OR/B 계열별 검출률 요약
 - [`results/multifilter_cutoff_scenarios.csv`](results/multifilter_cutoff_scenarios.csv): 2·7·10·11.5 kHz 누적 저역통과의 채널별 결과
 - [`results/multifilter_cutoff_consensus_summary.csv`](results/multifilter_cutoff_consensus_summary.csv): 필터 5종의 저역통과 50 g 판정 다수결 요약
-- [`figures/multifilter_band_peak_summary.png`](figures/multifilter_band_peak_summary.png): 필터별 50 g 초과 수와 최대값 중앙값
+- [`figures/multifilter_band_peak_summary.png`](figures/multifilter_band_peak_summary.png): 필터별 50 g 초과 수와 CH0·CH1 최대값 중앙값 분리 비교
+- [`figures/multifilter_band_g_distribution.png`](figures/multifilter_band_g_distribution.png): Butterworth 대역별 120초 절대 g 분포와 기준 초과율
 - [`figures/multifilter_envelope_detection_summary.png`](figures/multifilter_envelope_detection_summary.png): 필터별 IR·OR·B 포락선 계열 검출률
 - [`figures/multifilter_cutoff_scenario_summary.png`](figures/multifilter_cutoff_scenario_summary.png): 고주파 감쇠 단계별 50 g 초과 채널 수
 
 원시 파일을 수정하지 않고 다음 명령으로 재생성한다.
+
+공통 구간 선택은 `scripts/uos_v2_measurement_window.py`에서 수행한다.
 
 ```bash
 python -m pip install -e '.[analysis,test]'

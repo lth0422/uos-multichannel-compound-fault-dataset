@@ -27,6 +27,8 @@ from scripts.plot_uos_v2_task_b_lpf import combine_task_b_c, interpret_row
 from scripts.analyze_uos_v2_multifilter_bands import (
     BANDS,
     FILTERS,
+    _histogram_counts,
+    acceleration_distribution,
     centered_excerpt,
     design_sos,
     summarize_cutoff_scenarios,
@@ -34,13 +36,26 @@ from scripts.analyze_uos_v2_multifilter_bands import (
 from scripts.plot_uos_v2_multifilter_bands import (
     BANDS as PLOT_BANDS,
     FILTERS as PLOT_FILTERS,
+    _channel_median_matrix,
     _matrix,
+)
+from scripts.uos_v2_measurement_window import measurement_window
+from scripts.analyze_uos_v2_sampling_rate_clipping import (
+    _rate_label,
+    distribution_metrics as sampling_rate_distribution_metrics,
+    sampling_rate_measurement_window,
 )
 
 
 def test_parse_filename_handles_compound_fault():
     result = parse_filename(Path("M3_IR+OR+B_25600_30204_1600.tdms"))
     assert result == {"rotor": "M3", "fault": "IR+OR+B", "fs": "25600", "bearing": "30204", "rpm": "1600"}
+
+
+def test_parse_filename_handles_fractional_native_rate():
+    result = parse_filename(Path("M3_IR+OR+B_17066_67_N204_1600.tdms"))
+    assert result["fs"] == "17066.67"
+    assert result["bearing"] == "N204"
 
 
 def test_max_run_counts_sparse_and_consecutive_events():
@@ -169,6 +184,23 @@ def test_centered_excerpt_contains_global_peak():
     assert start <= peak < start + len(excerpt)
 
 
+def test_acceleration_distribution_reports_quantiles_and_threshold_counts():
+    values = np.array([-50.0, -20.0, 0.0, 10.0, 60.0])
+    result = acceleration_distribution(values)
+    assert result["distribution_samples"] == 5
+    assert result["peak_abs_g"] == 60.0
+    assert result["median_abs_g"] == 20.0
+    assert result["samples_over_50g"] == 1
+    assert result["pct_samples_over_50g"] == 20.0
+
+
+def test_acceleration_histogram_accounts_for_every_sample():
+    values = np.array([0.0, 0.2, 1.5, 9.0, 25.0, 55.0])
+    counts = _histogram_counts(values)
+    assert int(np.sum(counts)) == len(values)
+    assert counts[-1] == 1
+
+
 def test_multifilter_plot_matrix_preserves_declared_order():
     rows = [
         {"filter": filter_name, "band": band, "value": str(i * 10 + j)}
@@ -179,6 +211,22 @@ def test_multifilter_plot_matrix_preserves_declared_order():
     assert values.shape == (5, 5)
     assert values[0, 0] == 0
     assert values[-1, -1] == 44
+
+
+def test_channel_median_matrix_separates_ch0_and_ch1():
+    rows = []
+    for filter_name in PLOT_FILTERS:
+        for band in PLOT_BANDS:
+            rows.extend([
+                {"filter": filter_name, "band": band, "channel": "CH0", "band_peak_abs_g": "10"},
+                {"filter": filter_name, "band": band, "channel": "CH0", "band_peak_abs_g": "20"},
+                {"filter": filter_name, "band": band, "channel": "CH1", "band_peak_abs_g": "40"},
+            ])
+    ch0 = _channel_median_matrix(rows, "CH0")
+    ch1 = _channel_median_matrix(rows, "CH1")
+    assert ch0.shape == (5, 5)
+    assert np.all(ch0 == 15)
+    assert np.all(ch1 == 40)
 
 
 def test_cutoff_scenario_summary_counts_above_and_below_50g(tmp_path):
@@ -195,3 +243,43 @@ def test_cutoff_scenario_summary_counts_above_and_below_50g(tmp_path):
     with (tmp_path / "multifilter_cutoff_consensus_summary.csv").open(encoding="utf-8") as handle:
         consensus = list(csv.DictReader(handle))
     assert consensus[0]["majority_at_least_3_of_5_channels"] == "1"
+
+
+def test_measurement_window_discards_first_minute_for_ordinary_recording():
+    window = measurement_window(total_samples=200 * 25600, fs=25600.0, bearing="N204")
+    assert window.start_s == 60.0
+    assert window.end_s == 180.0
+    assert window.policy == "discard_first_60s_keep_next_120s"
+
+
+def test_measurement_window_discards_five_minutes_for_long_30204_recording():
+    window = measurement_window(total_samples=431 * 25600, fs=25600.0, bearing="30204")
+    assert window.start_s == 300.0
+    assert window.end_s == 420.0
+    assert window.policy == "discard_first_300s_keep_next_120s"
+
+
+def test_measurement_window_rejects_recording_shorter_than_required_interval():
+    with np.testing.assert_raises(ValueError):
+        measurement_window(total_samples=170 * 25600, fs=25600.0, bearing="6204")
+
+
+def test_sampling_rate_label_preserves_fractional_native_rate():
+    assert _rate_label(12800.0) == "12.8 kHz"
+    assert _rate_label(17066.666666666668) == "17.0667 kHz"
+    assert _rate_label(25600.0) == "25.6 kHz"
+
+
+def test_sampling_rate_distribution_metrics_use_absolute_tail():
+    metrics = sampling_rate_distribution_metrics(np.array([-4.0, 0.0, 3.0]), "x")
+    assert metrics["x_peak_abs_g"] == 4.0
+    assert metrics["x_rms_g"] == np.sqrt(25.0 / 3.0)
+    assert metrics["x_p99_99_abs_g"] <= 4.0
+
+
+def test_sampling_rate_windows_keep_equal_sample_counts_after_idle():
+    expected_durations = {12800.0: 240.0, 17066.666666666668: 180.0, 25600.0: 120.0}
+    for rate, duration in expected_durations.items():
+        window = sampling_rate_measurement_window(int((60 + duration + 1) * rate), rate)
+        assert window.end_sample - window.start_sample == 3_072_000
+        assert np.isclose(window.duration_s, duration)

@@ -21,6 +21,7 @@ from scipy import signal
 
 from scripts.analyze_uos_v2_clipping import _channels, bearing_orders, discover_unique_files, parse_filename
 from scripts.analyze_uos_v2_clipping_extended import local_envelope_prominence
+from scripts.uos_v2_measurement_window import measurement_window
 
 
 CARRIER_BANDS_HZ = ((2000, 7000), (7000, 10000), (10000, 11200))
@@ -98,8 +99,9 @@ def analyse(data_root: Path, one_x_csv: Path, output_dir: Path) -> list[dict]:
         with TdmsFile.open(item.path) as tdms:
             for channel_index, channel in enumerate(_channels(tdms)):
                 fs = 1.0 / float(channel.properties["wf_increment"])
-                count = min(len(channel), int(round(10 * fs)))
-                values = np.asarray(channel[:count], dtype=np.float64)
+                window = measurement_window(len(channel), fs, meta["bearing"])
+                count = min(window.end_sample - window.start_sample, int(round(10 * fs)))
+                values = np.asarray(channel[window.start_sample:window.start_sample + count], dtype=np.float64)
                 values -= np.mean(values)
                 for low, high in CARRIER_BANDS_HZ:
                     sos = signal.butter(4, (low, high), btype="bandpass", fs=fs, output="sos")
@@ -112,7 +114,7 @@ def analyse(data_root: Path, one_x_csv: Path, output_dir: Path) -> list[dict]:
                             freq, amplitude, target["frequency_hz"])
                         rows.append({
                             "file": str(item.path), **meta, "channel": f"CH{channel_index}",
-                            "excerpt_start_s": 0, "excerpt_duration_s": count / fs,
+                            "excerpt_start_s": window.start_s, "excerpt_duration_s": count / fs,
                             "shaft_hz_candidate": shaft_hz, "carrier_band_hz": f"{low}-{high}",
                             **target, "expected_for_label": "Yes" if component_expected(meta["fault"], target["component"]) else "No",
                             "observed_peak_hz": observed, "local_prominence_db": prominence,

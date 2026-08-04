@@ -11,8 +11,10 @@
 - 첫 파일럿은 30204, IR, rotor healthy, nominal 1400 RPM에서 네 13A131/NI-9234 채널을 네 후보 위치로 각각 옮겨 측정한 순차 4×4 교차시험이다. 동시 4채널 자료가 아니다.
 - 첫 파일럿에서 네 채널 모두 회전주파수와 BPFI 포락선 성분을 검출했지만, 단일 RPM·단일 결함·순차 측정이므로 최종 배치와 full acquisition protocol은 미확정이다.
 - UOS v2의 조건별 synchronized four-channel master record 수집 목표 길이는 60초로 결정했다. 모델 입력 window 길이, overlap, 안정화 제외 규칙과 공개 파생본 길이는 별도 검증 후 결정한다.
+- 2026-08-03 사용자 확인에 따라 현재 clipping 조사 원자료의 유효 측정구간은 일반 파일의 60~180초, 30204이면서 7분을 넘는 장시간 파일의 300~420초다. 앞 구간은 공회전이므로 제외하고 뒤 잔여 구간도 자르며 원시 TDMS는 수정하지 않는다.
 - 2026-08-01 snapshot의 고유 TDMS 116개를 전수 검사한 결과 NI-9234 약 ±5.12 V rail에 도달한 표본이 확인됐다. 전체 폐기·하드웨어 유지·센서 교체 여부는 마운팅 및 저감도 reference A/B 시험 전까지 미확정이다.
-- 같은 snapshot에서 rail 포함 여부가 건강·단일 결함에는 0/56, 복합 결함에는 47/60으로 나타나 raw ML benchmark의 clipping shortcut 위험이 확인됐다. 현재 full acquisition 설정 승인은 보류하며, 보유 장비 반복·재부착·센서/DAQ 채널 교차시험을 우선한다.
+- 공회전 제외 측정구간에서 rail 포함 여부가 건강·단일 결함에는 0/56, 복합 결함에는 45/60으로 나타나 raw ML benchmark의 clipping shortcut 위험이 확인됐다. 현재 full acquisition 설정 승인은 보류하며, 보유 장비 반복·재부착·센서/DAQ 채널 교차시험을 우선한다.
+- 2026-08-04 N204·1600 RPM·IR+OR+B에서 12.8·17.0667·25.6 kHz를 비교했다. 공회전 60초 이후 rate별 3,072,000표본을 사용했으며 실제 rate는 설정과 일치했다. 낮은 rate에서 rail 횟수는 크게 감소했지만 모든 rate의 4/4파일에서 exact rail이 남아 sampling rate 저하만으로 clipping이 해결되지 않았다.
 
 ## Working hypotheses
 
