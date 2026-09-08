@@ -1,0 +1,2 @@
+component,raw_fft_at_least_one_harmonic_channels,raw_fft_at_least_two_harmonics_channels,envelope_fft_at_least_one_harmonic_channels,envelope_fft_at_least_two_harmonics_channels,total_channels
+B,39,5,64,16,192

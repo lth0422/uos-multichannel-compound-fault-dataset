@@ -1,0 +1,769 @@
+file,bearing,rpm,rotor,fault,repeat,target_type,label,frequency_hz,component,harmonic,kind
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_600/H_IR+OR+B_25600_30204_600.tdms,30204,600,H,IR+OR+B,1,primary,1X,10.000000000000004,ROT,1,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_600/H_IR+OR+B_25600_30204_600.tdms,30204,600,H,IR+OR+B,1,primary,BPFI 1X,87.67601380730498,IR,1,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_600/H_IR+OR+B_25600_30204_600.tdms,30204,600,H,IR+OR+B,1,primary,BPFI 2X,175.35202761460997,IR,2,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_600/H_IR+OR+B_25600_30204_600.tdms,30204,600,H,IR+OR+B,1,primary,BPFI 3X,263.02804142191496,IR,3,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_600/H_IR+OR+B_25600_30204_600.tdms,30204,600,H,IR+OR+B,1,primary,BPFO 1X,62.32398619269506,OR,1,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_600/H_IR+OR+B_25600_30204_600.tdms,30204,600,H,IR+OR+B,1,primary,BPFO 2X,124.64797238539012,OR,2,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_600/H_IR+OR+B_25600_30204_600.tdms,30204,600,H,IR+OR+B,1,primary,BPFO 3X,186.97195857808518,OR,3,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_600/H_IR+OR+B_25600_30204_600.tdms,30204,600,H,IR+OR+B,1,primary,BSF 1X,28.046252118661098,B,1,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_600/H_IR+OR+B_25600_30204_600.tdms,30204,600,H,IR+OR+B,1,primary,BSF 2X,56.092504237322196,B,2,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_600/H_IR+OR+B_25600_30204_600.tdms,30204,600,H,IR+OR+B,1,primary,BSF 3X,84.13875635598329,B,3,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_600/H_IR+OR+B_25600_30204_600.tdms,30204,600,H,IR+OR+B,1,interaction_candidate,|BPFI-BPFO|,25.352027614609923,compound,,difference
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_600/H_IR+OR+B_25600_30204_600.tdms,30204,600,H,IR+OR+B,1,interaction_candidate,BPFI+BPFO,150.00000000000006,compound,,sum
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_600/H_IR+OR+B_25600_30204_600.tdms,30204,600,H,IR+OR+B,1,interaction_candidate,|BPFI-BSF|,59.62976168864388,compound,,difference
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_600/H_IR+OR+B_25600_30204_600.tdms,30204,600,H,IR+OR+B,1,interaction_candidate,BPFI+BSF,115.72226592596608,compound,,sum
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_600/H_IR+OR+B_25600_30204_600.tdms,30204,600,H,IR+OR+B,1,interaction_candidate,|BPFO-BSF|,34.27773407403396,compound,,difference
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_600/H_IR+OR+B_25600_30204_600.tdms,30204,600,H,IR+OR+B,1,interaction_candidate,BPFO+BSF,90.37023831135616,compound,,sum
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_600/L_IR+OR+B_25600_30204_600.tdms,30204,600,L,IR+OR+B,1,primary,1X,10.000000000000004,ROT,1,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_600/L_IR+OR+B_25600_30204_600.tdms,30204,600,L,IR+OR+B,1,primary,BPFI 1X,87.67601380730498,IR,1,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_600/L_IR+OR+B_25600_30204_600.tdms,30204,600,L,IR+OR+B,1,primary,BPFI 2X,175.35202761460997,IR,2,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_600/L_IR+OR+B_25600_30204_600.tdms,30204,600,L,IR+OR+B,1,primary,BPFI 3X,263.02804142191496,IR,3,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_600/L_IR+OR+B_25600_30204_600.tdms,30204,600,L,IR+OR+B,1,primary,BPFO 1X,62.32398619269506,OR,1,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_600/L_IR+OR+B_25600_30204_600.tdms,30204,600,L,IR+OR+B,1,primary,BPFO 2X,124.64797238539012,OR,2,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_600/L_IR+OR+B_25600_30204_600.tdms,30204,600,L,IR+OR+B,1,primary,BPFO 3X,186.97195857808518,OR,3,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_600/L_IR+OR+B_25600_30204_600.tdms,30204,600,L,IR+OR+B,1,primary,BSF 1X,28.046252118661098,B,1,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_600/L_IR+OR+B_25600_30204_600.tdms,30204,600,L,IR+OR+B,1,primary,BSF 2X,56.092504237322196,B,2,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_600/L_IR+OR+B_25600_30204_600.tdms,30204,600,L,IR+OR+B,1,primary,BSF 3X,84.13875635598329,B,3,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_600/L_IR+OR+B_25600_30204_600.tdms,30204,600,L,IR+OR+B,1,interaction_candidate,|BPFI-BPFO|,25.352027614609923,compound,,difference
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_600/L_IR+OR+B_25600_30204_600.tdms,30204,600,L,IR+OR+B,1,interaction_candidate,BPFI+BPFO,150.00000000000006,compound,,sum
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_600/L_IR+OR+B_25600_30204_600.tdms,30204,600,L,IR+OR+B,1,interaction_candidate,|BPFI-BSF|,59.62976168864388,compound,,difference
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_600/L_IR+OR+B_25600_30204_600.tdms,30204,600,L,IR+OR+B,1,interaction_candidate,BPFI+BSF,115.72226592596608,compound,,sum
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_600/L_IR+OR+B_25600_30204_600.tdms,30204,600,L,IR+OR+B,1,interaction_candidate,|BPFO-BSF|,34.27773407403396,compound,,difference
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_600/L_IR+OR+B_25600_30204_600.tdms,30204,600,L,IR+OR+B,1,interaction_candidate,BPFO+BSF,90.37023831135616,compound,,sum
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_600/M1_IR+OR+B_25600_30204_600.tdms,30204,600,M1,IR+OR+B,1,primary,1X,10.062500000000005,ROT,1,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_600/M1_IR+OR+B_25600_30204_600.tdms,30204,600,M1,IR+OR+B,1,primary,BPFI 1X,88.22398889360065,IR,1,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_600/M1_IR+OR+B_25600_30204_600.tdms,30204,600,M1,IR+OR+B,1,primary,BPFI 2X,176.4479777872013,IR,2,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_600/M1_IR+OR+B_25600_30204_600.tdms,30204,600,M1,IR+OR+B,1,primary,BPFI 3X,264.6719666808019,IR,3,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_600/M1_IR+OR+B_25600_30204_600.tdms,30204,600,M1,IR+OR+B,1,primary,BPFO 1X,62.713511106399416,OR,1,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_600/M1_IR+OR+B_25600_30204_600.tdms,30204,600,M1,IR+OR+B,1,primary,BPFO 2X,125.42702221279883,OR,2,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_600/M1_IR+OR+B_25600_30204_600.tdms,30204,600,M1,IR+OR+B,1,primary,BPFO 3X,188.14053331919825,OR,3,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_600/M1_IR+OR+B_25600_30204_600.tdms,30204,600,M1,IR+OR+B,1,primary,BSF 1X,28.221541194402736,B,1,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_600/M1_IR+OR+B_25600_30204_600.tdms,30204,600,M1,IR+OR+B,1,primary,BSF 2X,56.44308238880547,B,2,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_600/M1_IR+OR+B_25600_30204_600.tdms,30204,600,M1,IR+OR+B,1,primary,BSF 3X,84.66462358320821,B,3,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_600/M1_IR+OR+B_25600_30204_600.tdms,30204,600,M1,IR+OR+B,1,interaction_candidate,|BPFI-BPFO|,25.510477787201232,compound,,difference
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_600/M1_IR+OR+B_25600_30204_600.tdms,30204,600,M1,IR+OR+B,1,interaction_candidate,BPFI+BPFO,150.93750000000006,compound,,sum
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_600/M1_IR+OR+B_25600_30204_600.tdms,30204,600,M1,IR+OR+B,1,interaction_candidate,|BPFI-BSF|,60.002447699197916,compound,,difference
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_600/M1_IR+OR+B_25600_30204_600.tdms,30204,600,M1,IR+OR+B,1,interaction_candidate,BPFI+BSF,116.44553008800338,compound,,sum
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_600/M1_IR+OR+B_25600_30204_600.tdms,30204,600,M1,IR+OR+B,1,interaction_candidate,|BPFO-BSF|,34.49196991199668,compound,,difference
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_600/M1_IR+OR+B_25600_30204_600.tdms,30204,600,M1,IR+OR+B,1,interaction_candidate,BPFO+BSF,90.93505230080216,compound,,sum
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_600/M2_IR+OR+B_25600_30204_600.tdms,30204,600,M2,IR+OR+B,1,primary,1X,10.000000000000004,ROT,1,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_600/M2_IR+OR+B_25600_30204_600.tdms,30204,600,M2,IR+OR+B,1,primary,BPFI 1X,87.67601380730498,IR,1,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_600/M2_IR+OR+B_25600_30204_600.tdms,30204,600,M2,IR+OR+B,1,primary,BPFI 2X,175.35202761460997,IR,2,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_600/M2_IR+OR+B_25600_30204_600.tdms,30204,600,M2,IR+OR+B,1,primary,BPFI 3X,263.02804142191496,IR,3,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_600/M2_IR+OR+B_25600_30204_600.tdms,30204,600,M2,IR+OR+B,1,primary,BPFO 1X,62.32398619269506,OR,1,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_600/M2_IR+OR+B_25600_30204_600.tdms,30204,600,M2,IR+OR+B,1,primary,BPFO 2X,124.64797238539012,OR,2,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_600/M2_IR+OR+B_25600_30204_600.tdms,30204,600,M2,IR+OR+B,1,primary,BPFO 3X,186.97195857808518,OR,3,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_600/M2_IR+OR+B_25600_30204_600.tdms,30204,600,M2,IR+OR+B,1,primary,BSF 1X,28.046252118661098,B,1,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_600/M2_IR+OR+B_25600_30204_600.tdms,30204,600,M2,IR+OR+B,1,primary,BSF 2X,56.092504237322196,B,2,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_600/M2_IR+OR+B_25600_30204_600.tdms,30204,600,M2,IR+OR+B,1,primary,BSF 3X,84.13875635598329,B,3,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_600/M2_IR+OR+B_25600_30204_600.tdms,30204,600,M2,IR+OR+B,1,interaction_candidate,|BPFI-BPFO|,25.352027614609923,compound,,difference
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_600/M2_IR+OR+B_25600_30204_600.tdms,30204,600,M2,IR+OR+B,1,interaction_candidate,BPFI+BPFO,150.00000000000006,compound,,sum
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_600/M2_IR+OR+B_25600_30204_600.tdms,30204,600,M2,IR+OR+B,1,interaction_candidate,|BPFI-BSF|,59.62976168864388,compound,,difference
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_600/M2_IR+OR+B_25600_30204_600.tdms,30204,600,M2,IR+OR+B,1,interaction_candidate,BPFI+BSF,115.72226592596608,compound,,sum
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_600/M2_IR+OR+B_25600_30204_600.tdms,30204,600,M2,IR+OR+B,1,interaction_candidate,|BPFO-BSF|,34.27773407403396,compound,,difference
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_600/M2_IR+OR+B_25600_30204_600.tdms,30204,600,M2,IR+OR+B,1,interaction_candidate,BPFO+BSF,90.37023831135616,compound,,sum
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_600/M3_IR+OR+B_25600_30204_600.tdms,30204,600,M3,IR+OR+B,1,primary,1X,9.937500000000004,ROT,1,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_600/M3_IR+OR+B_25600_30204_600.tdms,30204,600,M3,IR+OR+B,1,primary,BPFI 1X,87.12803872100933,IR,1,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_600/M3_IR+OR+B_25600_30204_600.tdms,30204,600,M3,IR+OR+B,1,primary,BPFI 2X,174.25607744201866,IR,2,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_600/M3_IR+OR+B_25600_30204_600.tdms,30204,600,M3,IR+OR+B,1,primary,BPFI 3X,261.384116163028,IR,3,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_600/M3_IR+OR+B_25600_30204_600.tdms,30204,600,M3,IR+OR+B,1,primary,BPFO 1X,61.93446127899072,OR,1,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_600/M3_IR+OR+B_25600_30204_600.tdms,30204,600,M3,IR+OR+B,1,primary,BPFO 2X,123.86892255798143,OR,2,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_600/M3_IR+OR+B_25600_30204_600.tdms,30204,600,M3,IR+OR+B,1,primary,BPFO 3X,185.80338383697216,OR,3,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_600/M3_IR+OR+B_25600_30204_600.tdms,30204,600,M3,IR+OR+B,1,primary,BSF 1X,27.870963042919467,B,1,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_600/M3_IR+OR+B_25600_30204_600.tdms,30204,600,M3,IR+OR+B,1,primary,BSF 2X,55.741926085838934,B,2,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_600/M3_IR+OR+B_25600_30204_600.tdms,30204,600,M3,IR+OR+B,1,primary,BSF 3X,83.6128891287584,B,3,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_600/M3_IR+OR+B_25600_30204_600.tdms,30204,600,M3,IR+OR+B,1,interaction_candidate,|BPFI-BPFO|,25.193577442018615,compound,,difference
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_600/M3_IR+OR+B_25600_30204_600.tdms,30204,600,M3,IR+OR+B,1,interaction_candidate,BPFI+BPFO,149.06250000000006,compound,,sum
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_600/M3_IR+OR+B_25600_30204_600.tdms,30204,600,M3,IR+OR+B,1,interaction_candidate,|BPFI-BSF|,59.25707567808986,compound,,difference
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_600/M3_IR+OR+B_25600_30204_600.tdms,30204,600,M3,IR+OR+B,1,interaction_candidate,BPFI+BSF,114.9990017639288,compound,,sum
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_600/M3_IR+OR+B_25600_30204_600.tdms,30204,600,M3,IR+OR+B,1,interaction_candidate,|BPFO-BSF|,34.063498236071254,compound,,difference
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_600/M3_IR+OR+B_25600_30204_600.tdms,30204,600,M3,IR+OR+B,1,interaction_candidate,BPFO+BSF,89.80542432191018,compound,,sum
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_600/U1_IR+OR+B_25600_30204_600.tdms,30204,600,U1,IR+OR+B,1,primary,1X,10.000000000000004,ROT,1,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_600/U1_IR+OR+B_25600_30204_600.tdms,30204,600,U1,IR+OR+B,1,primary,BPFI 1X,87.67601380730498,IR,1,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_600/U1_IR+OR+B_25600_30204_600.tdms,30204,600,U1,IR+OR+B,1,primary,BPFI 2X,175.35202761460997,IR,2,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_600/U1_IR+OR+B_25600_30204_600.tdms,30204,600,U1,IR+OR+B,1,primary,BPFI 3X,263.02804142191496,IR,3,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_600/U1_IR+OR+B_25600_30204_600.tdms,30204,600,U1,IR+OR+B,1,primary,BPFO 1X,62.32398619269506,OR,1,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_600/U1_IR+OR+B_25600_30204_600.tdms,30204,600,U1,IR+OR+B,1,primary,BPFO 2X,124.64797238539012,OR,2,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_600/U1_IR+OR+B_25600_30204_600.tdms,30204,600,U1,IR+OR+B,1,primary,BPFO 3X,186.97195857808518,OR,3,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_600/U1_IR+OR+B_25600_30204_600.tdms,30204,600,U1,IR+OR+B,1,primary,BSF 1X,28.046252118661098,B,1,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_600/U1_IR+OR+B_25600_30204_600.tdms,30204,600,U1,IR+OR+B,1,primary,BSF 2X,56.092504237322196,B,2,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_600/U1_IR+OR+B_25600_30204_600.tdms,30204,600,U1,IR+OR+B,1,primary,BSF 3X,84.13875635598329,B,3,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_600/U1_IR+OR+B_25600_30204_600.tdms,30204,600,U1,IR+OR+B,1,interaction_candidate,|BPFI-BPFO|,25.352027614609923,compound,,difference
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_600/U1_IR+OR+B_25600_30204_600.tdms,30204,600,U1,IR+OR+B,1,interaction_candidate,BPFI+BPFO,150.00000000000006,compound,,sum
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_600/U1_IR+OR+B_25600_30204_600.tdms,30204,600,U1,IR+OR+B,1,interaction_candidate,|BPFI-BSF|,59.62976168864388,compound,,difference
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_600/U1_IR+OR+B_25600_30204_600.tdms,30204,600,U1,IR+OR+B,1,interaction_candidate,BPFI+BSF,115.72226592596608,compound,,sum
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_600/U1_IR+OR+B_25600_30204_600.tdms,30204,600,U1,IR+OR+B,1,interaction_candidate,|BPFO-BSF|,34.27773407403396,compound,,difference
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_600/U1_IR+OR+B_25600_30204_600.tdms,30204,600,U1,IR+OR+B,1,interaction_candidate,BPFO+BSF,90.37023831135616,compound,,sum
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_600/U2_IR+OR+B_25600_30204_600.tdms,30204,600,U2,IR+OR+B,1,primary,1X,10.000000000000004,ROT,1,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_600/U2_IR+OR+B_25600_30204_600.tdms,30204,600,U2,IR+OR+B,1,primary,BPFI 1X,87.67601380730498,IR,1,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_600/U2_IR+OR+B_25600_30204_600.tdms,30204,600,U2,IR+OR+B,1,primary,BPFI 2X,175.35202761460997,IR,2,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_600/U2_IR+OR+B_25600_30204_600.tdms,30204,600,U2,IR+OR+B,1,primary,BPFI 3X,263.02804142191496,IR,3,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_600/U2_IR+OR+B_25600_30204_600.tdms,30204,600,U2,IR+OR+B,1,primary,BPFO 1X,62.32398619269506,OR,1,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_600/U2_IR+OR+B_25600_30204_600.tdms,30204,600,U2,IR+OR+B,1,primary,BPFO 2X,124.64797238539012,OR,2,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_600/U2_IR+OR+B_25600_30204_600.tdms,30204,600,U2,IR+OR+B,1,primary,BPFO 3X,186.97195857808518,OR,3,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_600/U2_IR+OR+B_25600_30204_600.tdms,30204,600,U2,IR+OR+B,1,primary,BSF 1X,28.046252118661098,B,1,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_600/U2_IR+OR+B_25600_30204_600.tdms,30204,600,U2,IR+OR+B,1,primary,BSF 2X,56.092504237322196,B,2,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_600/U2_IR+OR+B_25600_30204_600.tdms,30204,600,U2,IR+OR+B,1,primary,BSF 3X,84.13875635598329,B,3,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_600/U2_IR+OR+B_25600_30204_600.tdms,30204,600,U2,IR+OR+B,1,interaction_candidate,|BPFI-BPFO|,25.352027614609923,compound,,difference
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_600/U2_IR+OR+B_25600_30204_600.tdms,30204,600,U2,IR+OR+B,1,interaction_candidate,BPFI+BPFO,150.00000000000006,compound,,sum
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_600/U2_IR+OR+B_25600_30204_600.tdms,30204,600,U2,IR+OR+B,1,interaction_candidate,|BPFI-BSF|,59.62976168864388,compound,,difference
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_600/U2_IR+OR+B_25600_30204_600.tdms,30204,600,U2,IR+OR+B,1,interaction_candidate,BPFI+BSF,115.72226592596608,compound,,sum
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_600/U2_IR+OR+B_25600_30204_600.tdms,30204,600,U2,IR+OR+B,1,interaction_candidate,|BPFO-BSF|,34.27773407403396,compound,,difference
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_600/U2_IR+OR+B_25600_30204_600.tdms,30204,600,U2,IR+OR+B,1,interaction_candidate,BPFO+BSF,90.37023831135616,compound,,sum
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_600/U3_IR+OR+B_25600_30204_600.tdms,30204,600,U3,IR+OR+B,1,primary,1X,10.000000000000004,ROT,1,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_600/U3_IR+OR+B_25600_30204_600.tdms,30204,600,U3,IR+OR+B,1,primary,BPFI 1X,87.67601380730498,IR,1,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_600/U3_IR+OR+B_25600_30204_600.tdms,30204,600,U3,IR+OR+B,1,primary,BPFI 2X,175.35202761460997,IR,2,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_600/U3_IR+OR+B_25600_30204_600.tdms,30204,600,U3,IR+OR+B,1,primary,BPFI 3X,263.02804142191496,IR,3,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_600/U3_IR+OR+B_25600_30204_600.tdms,30204,600,U3,IR+OR+B,1,primary,BPFO 1X,62.32398619269506,OR,1,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_600/U3_IR+OR+B_25600_30204_600.tdms,30204,600,U3,IR+OR+B,1,primary,BPFO 2X,124.64797238539012,OR,2,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_600/U3_IR+OR+B_25600_30204_600.tdms,30204,600,U3,IR+OR+B,1,primary,BPFO 3X,186.97195857808518,OR,3,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_600/U3_IR+OR+B_25600_30204_600.tdms,30204,600,U3,IR+OR+B,1,primary,BSF 1X,28.046252118661098,B,1,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_600/U3_IR+OR+B_25600_30204_600.tdms,30204,600,U3,IR+OR+B,1,primary,BSF 2X,56.092504237322196,B,2,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_600/U3_IR+OR+B_25600_30204_600.tdms,30204,600,U3,IR+OR+B,1,primary,BSF 3X,84.13875635598329,B,3,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_600/U3_IR+OR+B_25600_30204_600.tdms,30204,600,U3,IR+OR+B,1,interaction_candidate,|BPFI-BPFO|,25.352027614609923,compound,,difference
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_600/U3_IR+OR+B_25600_30204_600.tdms,30204,600,U3,IR+OR+B,1,interaction_candidate,BPFI+BPFO,150.00000000000006,compound,,sum
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_600/U3_IR+OR+B_25600_30204_600.tdms,30204,600,U3,IR+OR+B,1,interaction_candidate,|BPFI-BSF|,59.62976168864388,compound,,difference
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_600/U3_IR+OR+B_25600_30204_600.tdms,30204,600,U3,IR+OR+B,1,interaction_candidate,BPFI+BSF,115.72226592596608,compound,,sum
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_600/U3_IR+OR+B_25600_30204_600.tdms,30204,600,U3,IR+OR+B,1,interaction_candidate,|BPFO-BSF|,34.27773407403396,compound,,difference
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_600/U3_IR+OR+B_25600_30204_600.tdms,30204,600,U3,IR+OR+B,1,interaction_candidate,BPFO+BSF,90.37023831135616,compound,,sum
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_800/H_IR+OR+B_25600_30204_800.tdms,30204,800,H,IR+OR+B,1,primary,1X,13.312500000000005,ROT,1,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_800/H_IR+OR+B_25600_30204_800.tdms,30204,800,H,IR+OR+B,1,primary,BPFI 1X,116.71869338097476,IR,1,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_800/H_IR+OR+B_25600_30204_800.tdms,30204,800,H,IR+OR+B,1,primary,BPFI 2X,233.4373867619495,IR,2,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_800/H_IR+OR+B_25600_30204_800.tdms,30204,800,H,IR+OR+B,1,primary,BPFI 3X,350.1560801429243,IR,3,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_800/H_IR+OR+B_25600_30204_800.tdms,30204,800,H,IR+OR+B,1,primary,BPFO 1X,82.9688066190253,OR,1,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_800/H_IR+OR+B_25600_30204_800.tdms,30204,800,H,IR+OR+B,1,primary,BPFO 2X,165.9376132380506,OR,2,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_800/H_IR+OR+B_25600_30204_800.tdms,30204,800,H,IR+OR+B,1,primary,BPFO 3X,248.9064198570759,OR,3,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_800/H_IR+OR+B_25600_30204_800.tdms,30204,800,H,IR+OR+B,1,primary,BSF 1X,37.33657313296759,B,1,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_800/H_IR+OR+B_25600_30204_800.tdms,30204,800,H,IR+OR+B,1,primary,BSF 2X,74.67314626593517,B,2,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_800/H_IR+OR+B_25600_30204_800.tdms,30204,800,H,IR+OR+B,1,primary,BSF 3X,112.00971939890276,B,3,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_800/H_IR+OR+B_25600_30204_800.tdms,30204,800,H,IR+OR+B,1,interaction_candidate,|BPFI-BPFO|,33.749886761949455,compound,,difference
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_800/H_IR+OR+B_25600_30204_800.tdms,30204,800,H,IR+OR+B,1,interaction_candidate,BPFI+BPFO,199.68750000000006,compound,,sum
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_800/H_IR+OR+B_25600_30204_800.tdms,30204,800,H,IR+OR+B,1,interaction_candidate,|BPFI-BSF|,79.38212024800717,compound,,difference
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_800/H_IR+OR+B_25600_30204_800.tdms,30204,800,H,IR+OR+B,1,interaction_candidate,BPFI+BSF,154.05526651394234,compound,,sum
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_800/H_IR+OR+B_25600_30204_800.tdms,30204,800,H,IR+OR+B,1,interaction_candidate,|BPFO-BSF|,45.632233486057714,compound,,difference
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_800/H_IR+OR+B_25600_30204_800.tdms,30204,800,H,IR+OR+B,1,interaction_candidate,BPFO+BSF,120.30537975199289,compound,,sum
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_800/L_IR+OR+B_25600_30204_800.tdms,30204,800,L,IR+OR+B,1,primary,1X,13.312500000000005,ROT,1,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_800/L_IR+OR+B_25600_30204_800.tdms,30204,800,L,IR+OR+B,1,primary,BPFI 1X,116.71869338097476,IR,1,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_800/L_IR+OR+B_25600_30204_800.tdms,30204,800,L,IR+OR+B,1,primary,BPFI 2X,233.4373867619495,IR,2,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_800/L_IR+OR+B_25600_30204_800.tdms,30204,800,L,IR+OR+B,1,primary,BPFI 3X,350.1560801429243,IR,3,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_800/L_IR+OR+B_25600_30204_800.tdms,30204,800,L,IR+OR+B,1,primary,BPFO 1X,82.9688066190253,OR,1,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_800/L_IR+OR+B_25600_30204_800.tdms,30204,800,L,IR+OR+B,1,primary,BPFO 2X,165.9376132380506,OR,2,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_800/L_IR+OR+B_25600_30204_800.tdms,30204,800,L,IR+OR+B,1,primary,BPFO 3X,248.9064198570759,OR,3,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_800/L_IR+OR+B_25600_30204_800.tdms,30204,800,L,IR+OR+B,1,primary,BSF 1X,37.33657313296759,B,1,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_800/L_IR+OR+B_25600_30204_800.tdms,30204,800,L,IR+OR+B,1,primary,BSF 2X,74.67314626593517,B,2,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_800/L_IR+OR+B_25600_30204_800.tdms,30204,800,L,IR+OR+B,1,primary,BSF 3X,112.00971939890276,B,3,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_800/L_IR+OR+B_25600_30204_800.tdms,30204,800,L,IR+OR+B,1,interaction_candidate,|BPFI-BPFO|,33.749886761949455,compound,,difference
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_800/L_IR+OR+B_25600_30204_800.tdms,30204,800,L,IR+OR+B,1,interaction_candidate,BPFI+BPFO,199.68750000000006,compound,,sum
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_800/L_IR+OR+B_25600_30204_800.tdms,30204,800,L,IR+OR+B,1,interaction_candidate,|BPFI-BSF|,79.38212024800717,compound,,difference
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_800/L_IR+OR+B_25600_30204_800.tdms,30204,800,L,IR+OR+B,1,interaction_candidate,BPFI+BSF,154.05526651394234,compound,,sum
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_800/L_IR+OR+B_25600_30204_800.tdms,30204,800,L,IR+OR+B,1,interaction_candidate,|BPFO-BSF|,45.632233486057714,compound,,difference
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_800/L_IR+OR+B_25600_30204_800.tdms,30204,800,L,IR+OR+B,1,interaction_candidate,BPFO+BSF,120.30537975199289,compound,,sum
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_800/M1_IR+OR+B_25600_30204_800.tdms,30204,800,M1,IR+OR+B,1,primary,1X,13.312500000000005,ROT,1,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_800/M1_IR+OR+B_25600_30204_800.tdms,30204,800,M1,IR+OR+B,1,primary,BPFI 1X,116.71869338097476,IR,1,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_800/M1_IR+OR+B_25600_30204_800.tdms,30204,800,M1,IR+OR+B,1,primary,BPFI 2X,233.4373867619495,IR,2,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_800/M1_IR+OR+B_25600_30204_800.tdms,30204,800,M1,IR+OR+B,1,primary,BPFI 3X,350.1560801429243,IR,3,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_800/M1_IR+OR+B_25600_30204_800.tdms,30204,800,M1,IR+OR+B,1,primary,BPFO 1X,82.9688066190253,OR,1,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_800/M1_IR+OR+B_25600_30204_800.tdms,30204,800,M1,IR+OR+B,1,primary,BPFO 2X,165.9376132380506,OR,2,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_800/M1_IR+OR+B_25600_30204_800.tdms,30204,800,M1,IR+OR+B,1,primary,BPFO 3X,248.9064198570759,OR,3,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_800/M1_IR+OR+B_25600_30204_800.tdms,30204,800,M1,IR+OR+B,1,primary,BSF 1X,37.33657313296759,B,1,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_800/M1_IR+OR+B_25600_30204_800.tdms,30204,800,M1,IR+OR+B,1,primary,BSF 2X,74.67314626593517,B,2,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_800/M1_IR+OR+B_25600_30204_800.tdms,30204,800,M1,IR+OR+B,1,primary,BSF 3X,112.00971939890276,B,3,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_800/M1_IR+OR+B_25600_30204_800.tdms,30204,800,M1,IR+OR+B,1,interaction_candidate,|BPFI-BPFO|,33.749886761949455,compound,,difference
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_800/M1_IR+OR+B_25600_30204_800.tdms,30204,800,M1,IR+OR+B,1,interaction_candidate,BPFI+BPFO,199.68750000000006,compound,,sum
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_800/M1_IR+OR+B_25600_30204_800.tdms,30204,800,M1,IR+OR+B,1,interaction_candidate,|BPFI-BSF|,79.38212024800717,compound,,difference
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_800/M1_IR+OR+B_25600_30204_800.tdms,30204,800,M1,IR+OR+B,1,interaction_candidate,BPFI+BSF,154.05526651394234,compound,,sum
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_800/M1_IR+OR+B_25600_30204_800.tdms,30204,800,M1,IR+OR+B,1,interaction_candidate,|BPFO-BSF|,45.632233486057714,compound,,difference
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_800/M1_IR+OR+B_25600_30204_800.tdms,30204,800,M1,IR+OR+B,1,interaction_candidate,BPFO+BSF,120.30537975199289,compound,,sum
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_800/M2_IR+OR+B_25600_30204_800.tdms,30204,800,M2,IR+OR+B,1,primary,1X,13.312500000000005,ROT,1,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_800/M2_IR+OR+B_25600_30204_800.tdms,30204,800,M2,IR+OR+B,1,primary,BPFI 1X,116.71869338097476,IR,1,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_800/M2_IR+OR+B_25600_30204_800.tdms,30204,800,M2,IR+OR+B,1,primary,BPFI 2X,233.4373867619495,IR,2,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_800/M2_IR+OR+B_25600_30204_800.tdms,30204,800,M2,IR+OR+B,1,primary,BPFI 3X,350.1560801429243,IR,3,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_800/M2_IR+OR+B_25600_30204_800.tdms,30204,800,M2,IR+OR+B,1,primary,BPFO 1X,82.9688066190253,OR,1,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_800/M2_IR+OR+B_25600_30204_800.tdms,30204,800,M2,IR+OR+B,1,primary,BPFO 2X,165.9376132380506,OR,2,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_800/M2_IR+OR+B_25600_30204_800.tdms,30204,800,M2,IR+OR+B,1,primary,BPFO 3X,248.9064198570759,OR,3,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_800/M2_IR+OR+B_25600_30204_800.tdms,30204,800,M2,IR+OR+B,1,primary,BSF 1X,37.33657313296759,B,1,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_800/M2_IR+OR+B_25600_30204_800.tdms,30204,800,M2,IR+OR+B,1,primary,BSF 2X,74.67314626593517,B,2,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_800/M2_IR+OR+B_25600_30204_800.tdms,30204,800,M2,IR+OR+B,1,primary,BSF 3X,112.00971939890276,B,3,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_800/M2_IR+OR+B_25600_30204_800.tdms,30204,800,M2,IR+OR+B,1,interaction_candidate,|BPFI-BPFO|,33.749886761949455,compound,,difference
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_800/M2_IR+OR+B_25600_30204_800.tdms,30204,800,M2,IR+OR+B,1,interaction_candidate,BPFI+BPFO,199.68750000000006,compound,,sum
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_800/M2_IR+OR+B_25600_30204_800.tdms,30204,800,M2,IR+OR+B,1,interaction_candidate,|BPFI-BSF|,79.38212024800717,compound,,difference
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_800/M2_IR+OR+B_25600_30204_800.tdms,30204,800,M2,IR+OR+B,1,interaction_candidate,BPFI+BSF,154.05526651394234,compound,,sum
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_800/M2_IR+OR+B_25600_30204_800.tdms,30204,800,M2,IR+OR+B,1,interaction_candidate,|BPFO-BSF|,45.632233486057714,compound,,difference
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_800/M2_IR+OR+B_25600_30204_800.tdms,30204,800,M2,IR+OR+B,1,interaction_candidate,BPFO+BSF,120.30537975199289,compound,,sum
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_800/M3_IR+OR+B_25600_30204_800.tdms,30204,800,M3,IR+OR+B,1,primary,1X,13.312500000000005,ROT,1,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_800/M3_IR+OR+B_25600_30204_800.tdms,30204,800,M3,IR+OR+B,1,primary,BPFI 1X,116.71869338097476,IR,1,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_800/M3_IR+OR+B_25600_30204_800.tdms,30204,800,M3,IR+OR+B,1,primary,BPFI 2X,233.4373867619495,IR,2,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_800/M3_IR+OR+B_25600_30204_800.tdms,30204,800,M3,IR+OR+B,1,primary,BPFI 3X,350.1560801429243,IR,3,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_800/M3_IR+OR+B_25600_30204_800.tdms,30204,800,M3,IR+OR+B,1,primary,BPFO 1X,82.9688066190253,OR,1,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_800/M3_IR+OR+B_25600_30204_800.tdms,30204,800,M3,IR+OR+B,1,primary,BPFO 2X,165.9376132380506,OR,2,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_800/M3_IR+OR+B_25600_30204_800.tdms,30204,800,M3,IR+OR+B,1,primary,BPFO 3X,248.9064198570759,OR,3,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_800/M3_IR+OR+B_25600_30204_800.tdms,30204,800,M3,IR+OR+B,1,primary,BSF 1X,37.33657313296759,B,1,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_800/M3_IR+OR+B_25600_30204_800.tdms,30204,800,M3,IR+OR+B,1,primary,BSF 2X,74.67314626593517,B,2,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_800/M3_IR+OR+B_25600_30204_800.tdms,30204,800,M3,IR+OR+B,1,primary,BSF 3X,112.00971939890276,B,3,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_800/M3_IR+OR+B_25600_30204_800.tdms,30204,800,M3,IR+OR+B,1,interaction_candidate,|BPFI-BPFO|,33.749886761949455,compound,,difference
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_800/M3_IR+OR+B_25600_30204_800.tdms,30204,800,M3,IR+OR+B,1,interaction_candidate,BPFI+BPFO,199.68750000000006,compound,,sum
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_800/M3_IR+OR+B_25600_30204_800.tdms,30204,800,M3,IR+OR+B,1,interaction_candidate,|BPFI-BSF|,79.38212024800717,compound,,difference
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_800/M3_IR+OR+B_25600_30204_800.tdms,30204,800,M3,IR+OR+B,1,interaction_candidate,BPFI+BSF,154.05526651394234,compound,,sum
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_800/M3_IR+OR+B_25600_30204_800.tdms,30204,800,M3,IR+OR+B,1,interaction_candidate,|BPFO-BSF|,45.632233486057714,compound,,difference
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_800/M3_IR+OR+B_25600_30204_800.tdms,30204,800,M3,IR+OR+B,1,interaction_candidate,BPFO+BSF,120.30537975199289,compound,,sum
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_800/U1_IR+OR+B_25600_30204_800.tdms,30204,800,U1,IR+OR+B,1,primary,1X,13.375000000000005,ROT,1,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_800/U1_IR+OR+B_25600_30204_800.tdms,30204,800,U1,IR+OR+B,1,primary,BPFI 1X,117.26666846727042,IR,1,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_800/U1_IR+OR+B_25600_30204_800.tdms,30204,800,U1,IR+OR+B,1,primary,BPFI 2X,234.53333693454084,IR,2,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_800/U1_IR+OR+B_25600_30204_800.tdms,30204,800,U1,IR+OR+B,1,primary,BPFI 3X,351.8000054018113,IR,3,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_800/U1_IR+OR+B_25600_30204_800.tdms,30204,800,U1,IR+OR+B,1,primary,BPFO 1X,83.35833153272965,OR,1,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_800/U1_IR+OR+B_25600_30204_800.tdms,30204,800,U1,IR+OR+B,1,primary,BPFO 2X,166.7166630654593,OR,2,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_800/U1_IR+OR+B_25600_30204_800.tdms,30204,800,U1,IR+OR+B,1,primary,BPFO 3X,250.07499459818894,OR,3,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_800/U1_IR+OR+B_25600_30204_800.tdms,30204,800,U1,IR+OR+B,1,primary,BSF 1X,37.51186220870922,B,1,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_800/U1_IR+OR+B_25600_30204_800.tdms,30204,800,U1,IR+OR+B,1,primary,BSF 2X,75.02372441741844,B,2,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_800/U1_IR+OR+B_25600_30204_800.tdms,30204,800,U1,IR+OR+B,1,primary,BSF 3X,112.53558662612765,B,3,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_800/U1_IR+OR+B_25600_30204_800.tdms,30204,800,U1,IR+OR+B,1,interaction_candidate,|BPFI-BPFO|,33.90833693454077,compound,,difference
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_800/U1_IR+OR+B_25600_30204_800.tdms,30204,800,U1,IR+OR+B,1,interaction_candidate,BPFI+BPFO,200.62500000000006,compound,,sum
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_800/U1_IR+OR+B_25600_30204_800.tdms,30204,800,U1,IR+OR+B,1,interaction_candidate,|BPFI-BSF|,79.7548062585612,compound,,difference
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_800/U1_IR+OR+B_25600_30204_800.tdms,30204,800,U1,IR+OR+B,1,interaction_candidate,BPFI+BSF,154.77853067597965,compound,,sum
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_800/U1_IR+OR+B_25600_30204_800.tdms,30204,800,U1,IR+OR+B,1,interaction_candidate,|BPFO-BSF|,45.84646932402043,compound,,difference
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_800/U1_IR+OR+B_25600_30204_800.tdms,30204,800,U1,IR+OR+B,1,interaction_candidate,BPFO+BSF,120.87019374143887,compound,,sum
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_800/U2_IR+OR+B_25600_30204_800.tdms,30204,800,U2,IR+OR+B,1,primary,1X,13.375000000000005,ROT,1,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_800/U2_IR+OR+B_25600_30204_800.tdms,30204,800,U2,IR+OR+B,1,primary,BPFI 1X,117.26666846727042,IR,1,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_800/U2_IR+OR+B_25600_30204_800.tdms,30204,800,U2,IR+OR+B,1,primary,BPFI 2X,234.53333693454084,IR,2,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_800/U2_IR+OR+B_25600_30204_800.tdms,30204,800,U2,IR+OR+B,1,primary,BPFI 3X,351.8000054018113,IR,3,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_800/U2_IR+OR+B_25600_30204_800.tdms,30204,800,U2,IR+OR+B,1,primary,BPFO 1X,83.35833153272965,OR,1,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_800/U2_IR+OR+B_25600_30204_800.tdms,30204,800,U2,IR+OR+B,1,primary,BPFO 2X,166.7166630654593,OR,2,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_800/U2_IR+OR+B_25600_30204_800.tdms,30204,800,U2,IR+OR+B,1,primary,BPFO 3X,250.07499459818894,OR,3,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_800/U2_IR+OR+B_25600_30204_800.tdms,30204,800,U2,IR+OR+B,1,primary,BSF 1X,37.51186220870922,B,1,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_800/U2_IR+OR+B_25600_30204_800.tdms,30204,800,U2,IR+OR+B,1,primary,BSF 2X,75.02372441741844,B,2,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_800/U2_IR+OR+B_25600_30204_800.tdms,30204,800,U2,IR+OR+B,1,primary,BSF 3X,112.53558662612765,B,3,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_800/U2_IR+OR+B_25600_30204_800.tdms,30204,800,U2,IR+OR+B,1,interaction_candidate,|BPFI-BPFO|,33.90833693454077,compound,,difference
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_800/U2_IR+OR+B_25600_30204_800.tdms,30204,800,U2,IR+OR+B,1,interaction_candidate,BPFI+BPFO,200.62500000000006,compound,,sum
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_800/U2_IR+OR+B_25600_30204_800.tdms,30204,800,U2,IR+OR+B,1,interaction_candidate,|BPFI-BSF|,79.7548062585612,compound,,difference
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_800/U2_IR+OR+B_25600_30204_800.tdms,30204,800,U2,IR+OR+B,1,interaction_candidate,BPFI+BSF,154.77853067597965,compound,,sum
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_800/U2_IR+OR+B_25600_30204_800.tdms,30204,800,U2,IR+OR+B,1,interaction_candidate,|BPFO-BSF|,45.84646932402043,compound,,difference
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_800/U2_IR+OR+B_25600_30204_800.tdms,30204,800,U2,IR+OR+B,1,interaction_candidate,BPFO+BSF,120.87019374143887,compound,,sum
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_800/U3_IR+OR+B_25600_30204_800.tdms,30204,800,U3,IR+OR+B,1,primary,1X,13.375000000000005,ROT,1,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_800/U3_IR+OR+B_25600_30204_800.tdms,30204,800,U3,IR+OR+B,1,primary,BPFI 1X,117.26666846727042,IR,1,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_800/U3_IR+OR+B_25600_30204_800.tdms,30204,800,U3,IR+OR+B,1,primary,BPFI 2X,234.53333693454084,IR,2,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_800/U3_IR+OR+B_25600_30204_800.tdms,30204,800,U3,IR+OR+B,1,primary,BPFI 3X,351.8000054018113,IR,3,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_800/U3_IR+OR+B_25600_30204_800.tdms,30204,800,U3,IR+OR+B,1,primary,BPFO 1X,83.35833153272965,OR,1,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_800/U3_IR+OR+B_25600_30204_800.tdms,30204,800,U3,IR+OR+B,1,primary,BPFO 2X,166.7166630654593,OR,2,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_800/U3_IR+OR+B_25600_30204_800.tdms,30204,800,U3,IR+OR+B,1,primary,BPFO 3X,250.07499459818894,OR,3,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_800/U3_IR+OR+B_25600_30204_800.tdms,30204,800,U3,IR+OR+B,1,primary,BSF 1X,37.51186220870922,B,1,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_800/U3_IR+OR+B_25600_30204_800.tdms,30204,800,U3,IR+OR+B,1,primary,BSF 2X,75.02372441741844,B,2,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_800/U3_IR+OR+B_25600_30204_800.tdms,30204,800,U3,IR+OR+B,1,primary,BSF 3X,112.53558662612765,B,3,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_800/U3_IR+OR+B_25600_30204_800.tdms,30204,800,U3,IR+OR+B,1,interaction_candidate,|BPFI-BPFO|,33.90833693454077,compound,,difference
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_800/U3_IR+OR+B_25600_30204_800.tdms,30204,800,U3,IR+OR+B,1,interaction_candidate,BPFI+BPFO,200.62500000000006,compound,,sum
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_800/U3_IR+OR+B_25600_30204_800.tdms,30204,800,U3,IR+OR+B,1,interaction_candidate,|BPFI-BSF|,79.7548062585612,compound,,difference
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_800/U3_IR+OR+B_25600_30204_800.tdms,30204,800,U3,IR+OR+B,1,interaction_candidate,BPFI+BSF,154.77853067597965,compound,,sum
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_800/U3_IR+OR+B_25600_30204_800.tdms,30204,800,U3,IR+OR+B,1,interaction_candidate,|BPFO-BSF|,45.84646932402043,compound,,difference
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_800/U3_IR+OR+B_25600_30204_800.tdms,30204,800,U3,IR+OR+B,1,interaction_candidate,BPFO+BSF,120.87019374143887,compound,,sum
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1000/H_IR+OR+B_25600_30204_1000.tdms,30204,1000,H,IR+OR+B,1,primary,1X,16.687500000000007,ROT,1,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1000/H_IR+OR+B_25600_30204_1000.tdms,30204,1000,H,IR+OR+B,1,primary,BPFI 1X,146.3093480409402,IR,1,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1000/H_IR+OR+B_25600_30204_1000.tdms,30204,1000,H,IR+OR+B,1,primary,BPFI 2X,292.6186960818804,IR,2,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1000/H_IR+OR+B_25600_30204_1000.tdms,30204,1000,H,IR+OR+B,1,primary,BPFI 3X,438.92804412282055,IR,3,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1000/H_IR+OR+B_25600_30204_1000.tdms,30204,1000,H,IR+OR+B,1,primary,BPFO 1X,104.00315195905989,OR,1,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1000/H_IR+OR+B_25600_30204_1000.tdms,30204,1000,H,IR+OR+B,1,primary,BPFO 2X,208.00630391811978,OR,2,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1000/H_IR+OR+B_25600_30204_1000.tdms,30204,1000,H,IR+OR+B,1,primary,BPFO 3X,312.0094558771797,OR,3,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1000/H_IR+OR+B_25600_30204_1000.tdms,30204,1000,H,IR+OR+B,1,primary,BSF 1X,46.80218322301571,B,1,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1000/H_IR+OR+B_25600_30204_1000.tdms,30204,1000,H,IR+OR+B,1,primary,BSF 2X,93.60436644603142,B,2,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1000/H_IR+OR+B_25600_30204_1000.tdms,30204,1000,H,IR+OR+B,1,primary,BSF 3X,140.40654966904714,B,3,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1000/H_IR+OR+B_25600_30204_1000.tdms,30204,1000,H,IR+OR+B,1,interaction_candidate,|BPFI-BPFO|,42.3061960818803,compound,,difference
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1000/H_IR+OR+B_25600_30204_1000.tdms,30204,1000,H,IR+OR+B,1,interaction_candidate,BPFI+BPFO,250.31250000000009,compound,,sum
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1000/H_IR+OR+B_25600_30204_1000.tdms,30204,1000,H,IR+OR+B,1,interaction_candidate,|BPFI-BSF|,99.50716481792449,compound,,difference
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1000/H_IR+OR+B_25600_30204_1000.tdms,30204,1000,H,IR+OR+B,1,interaction_candidate,BPFI+BSF,193.1115312639559,compound,,sum
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1000/H_IR+OR+B_25600_30204_1000.tdms,30204,1000,H,IR+OR+B,1,interaction_candidate,|BPFO-BSF|,57.20096873604418,compound,,difference
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1000/H_IR+OR+B_25600_30204_1000.tdms,30204,1000,H,IR+OR+B,1,interaction_candidate,BPFO+BSF,150.8053351820756,compound,,sum
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1000/L_IR+OR+B_25600_30204_1000.tdms,30204,1000,L,IR+OR+B,1,primary,1X,16.750000000000007,ROT,1,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1000/L_IR+OR+B_25600_30204_1000.tdms,30204,1000,L,IR+OR+B,1,primary,BPFI 1X,146.85732312723584,IR,1,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1000/L_IR+OR+B_25600_30204_1000.tdms,30204,1000,L,IR+OR+B,1,primary,BPFI 2X,293.7146462544717,IR,2,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1000/L_IR+OR+B_25600_30204_1000.tdms,30204,1000,L,IR+OR+B,1,primary,BPFI 3X,440.5719693817075,IR,3,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1000/L_IR+OR+B_25600_30204_1000.tdms,30204,1000,L,IR+OR+B,1,primary,BPFO 1X,104.39267687276424,OR,1,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1000/L_IR+OR+B_25600_30204_1000.tdms,30204,1000,L,IR+OR+B,1,primary,BPFO 2X,208.78535374552848,OR,2,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1000/L_IR+OR+B_25600_30204_1000.tdms,30204,1000,L,IR+OR+B,1,primary,BPFO 3X,313.1780306182927,OR,3,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1000/L_IR+OR+B_25600_30204_1000.tdms,30204,1000,L,IR+OR+B,1,primary,BSF 1X,46.97747229875734,B,1,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1000/L_IR+OR+B_25600_30204_1000.tdms,30204,1000,L,IR+OR+B,1,primary,BSF 2X,93.95494459751468,B,2,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1000/L_IR+OR+B_25600_30204_1000.tdms,30204,1000,L,IR+OR+B,1,primary,BSF 3X,140.93241689627203,B,3,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1000/L_IR+OR+B_25600_30204_1000.tdms,30204,1000,L,IR+OR+B,1,interaction_candidate,|BPFI-BPFO|,42.4646462544716,compound,,difference
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1000/L_IR+OR+B_25600_30204_1000.tdms,30204,1000,L,IR+OR+B,1,interaction_candidate,BPFI+BPFO,251.25000000000009,compound,,sum
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1000/L_IR+OR+B_25600_30204_1000.tdms,30204,1000,L,IR+OR+B,1,interaction_candidate,|BPFI-BSF|,99.87985082847851,compound,,difference
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1000/L_IR+OR+B_25600_30204_1000.tdms,30204,1000,L,IR+OR+B,1,interaction_candidate,BPFI+BSF,193.83479542599318,compound,,sum
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1000/L_IR+OR+B_25600_30204_1000.tdms,30204,1000,L,IR+OR+B,1,interaction_candidate,|BPFO-BSF|,57.4152045740069,compound,,difference
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1000/L_IR+OR+B_25600_30204_1000.tdms,30204,1000,L,IR+OR+B,1,interaction_candidate,BPFO+BSF,151.37014917152158,compound,,sum
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1000/M1_IR+OR+B_25600_30204_1000.tdms,30204,1000,M1,IR+OR+B,1,primary,1X,16.687500000000007,ROT,1,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1000/M1_IR+OR+B_25600_30204_1000.tdms,30204,1000,M1,IR+OR+B,1,primary,BPFI 1X,146.3093480409402,IR,1,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1000/M1_IR+OR+B_25600_30204_1000.tdms,30204,1000,M1,IR+OR+B,1,primary,BPFI 2X,292.6186960818804,IR,2,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1000/M1_IR+OR+B_25600_30204_1000.tdms,30204,1000,M1,IR+OR+B,1,primary,BPFI 3X,438.92804412282055,IR,3,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1000/M1_IR+OR+B_25600_30204_1000.tdms,30204,1000,M1,IR+OR+B,1,primary,BPFO 1X,104.00315195905989,OR,1,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1000/M1_IR+OR+B_25600_30204_1000.tdms,30204,1000,M1,IR+OR+B,1,primary,BPFO 2X,208.00630391811978,OR,2,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1000/M1_IR+OR+B_25600_30204_1000.tdms,30204,1000,M1,IR+OR+B,1,primary,BPFO 3X,312.0094558771797,OR,3,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1000/M1_IR+OR+B_25600_30204_1000.tdms,30204,1000,M1,IR+OR+B,1,primary,BSF 1X,46.80218322301571,B,1,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1000/M1_IR+OR+B_25600_30204_1000.tdms,30204,1000,M1,IR+OR+B,1,primary,BSF 2X,93.60436644603142,B,2,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1000/M1_IR+OR+B_25600_30204_1000.tdms,30204,1000,M1,IR+OR+B,1,primary,BSF 3X,140.40654966904714,B,3,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1000/M1_IR+OR+B_25600_30204_1000.tdms,30204,1000,M1,IR+OR+B,1,interaction_candidate,|BPFI-BPFO|,42.3061960818803,compound,,difference
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1000/M1_IR+OR+B_25600_30204_1000.tdms,30204,1000,M1,IR+OR+B,1,interaction_candidate,BPFI+BPFO,250.31250000000009,compound,,sum
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1000/M1_IR+OR+B_25600_30204_1000.tdms,30204,1000,M1,IR+OR+B,1,interaction_candidate,|BPFI-BSF|,99.50716481792449,compound,,difference
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1000/M1_IR+OR+B_25600_30204_1000.tdms,30204,1000,M1,IR+OR+B,1,interaction_candidate,BPFI+BSF,193.1115312639559,compound,,sum
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1000/M1_IR+OR+B_25600_30204_1000.tdms,30204,1000,M1,IR+OR+B,1,interaction_candidate,|BPFO-BSF|,57.20096873604418,compound,,difference
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1000/M1_IR+OR+B_25600_30204_1000.tdms,30204,1000,M1,IR+OR+B,1,interaction_candidate,BPFO+BSF,150.8053351820756,compound,,sum
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1000/M2_IR+OR+B_25600_30204_1000.tdms,30204,1000,M2,IR+OR+B,1,primary,1X,16.687500000000007,ROT,1,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1000/M2_IR+OR+B_25600_30204_1000.tdms,30204,1000,M2,IR+OR+B,1,primary,BPFI 1X,146.3093480409402,IR,1,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1000/M2_IR+OR+B_25600_30204_1000.tdms,30204,1000,M2,IR+OR+B,1,primary,BPFI 2X,292.6186960818804,IR,2,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1000/M2_IR+OR+B_25600_30204_1000.tdms,30204,1000,M2,IR+OR+B,1,primary,BPFI 3X,438.92804412282055,IR,3,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1000/M2_IR+OR+B_25600_30204_1000.tdms,30204,1000,M2,IR+OR+B,1,primary,BPFO 1X,104.00315195905989,OR,1,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1000/M2_IR+OR+B_25600_30204_1000.tdms,30204,1000,M2,IR+OR+B,1,primary,BPFO 2X,208.00630391811978,OR,2,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1000/M2_IR+OR+B_25600_30204_1000.tdms,30204,1000,M2,IR+OR+B,1,primary,BPFO 3X,312.0094558771797,OR,3,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1000/M2_IR+OR+B_25600_30204_1000.tdms,30204,1000,M2,IR+OR+B,1,primary,BSF 1X,46.80218322301571,B,1,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1000/M2_IR+OR+B_25600_30204_1000.tdms,30204,1000,M2,IR+OR+B,1,primary,BSF 2X,93.60436644603142,B,2,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1000/M2_IR+OR+B_25600_30204_1000.tdms,30204,1000,M2,IR+OR+B,1,primary,BSF 3X,140.40654966904714,B,3,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1000/M2_IR+OR+B_25600_30204_1000.tdms,30204,1000,M2,IR+OR+B,1,interaction_candidate,|BPFI-BPFO|,42.3061960818803,compound,,difference
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1000/M2_IR+OR+B_25600_30204_1000.tdms,30204,1000,M2,IR+OR+B,1,interaction_candidate,BPFI+BPFO,250.31250000000009,compound,,sum
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1000/M2_IR+OR+B_25600_30204_1000.tdms,30204,1000,M2,IR+OR+B,1,interaction_candidate,|BPFI-BSF|,99.50716481792449,compound,,difference
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1000/M2_IR+OR+B_25600_30204_1000.tdms,30204,1000,M2,IR+OR+B,1,interaction_candidate,BPFI+BSF,193.1115312639559,compound,,sum
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1000/M2_IR+OR+B_25600_30204_1000.tdms,30204,1000,M2,IR+OR+B,1,interaction_candidate,|BPFO-BSF|,57.20096873604418,compound,,difference
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1000/M2_IR+OR+B_25600_30204_1000.tdms,30204,1000,M2,IR+OR+B,1,interaction_candidate,BPFO+BSF,150.8053351820756,compound,,sum
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1000/M3_IR+OR+B_25600_30204_1000.tdms,30204,1000,M3,IR+OR+B,1,primary,1X,16.687500000000007,ROT,1,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1000/M3_IR+OR+B_25600_30204_1000.tdms,30204,1000,M3,IR+OR+B,1,primary,BPFI 1X,146.3093480409402,IR,1,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1000/M3_IR+OR+B_25600_30204_1000.tdms,30204,1000,M3,IR+OR+B,1,primary,BPFI 2X,292.6186960818804,IR,2,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1000/M3_IR+OR+B_25600_30204_1000.tdms,30204,1000,M3,IR+OR+B,1,primary,BPFI 3X,438.92804412282055,IR,3,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1000/M3_IR+OR+B_25600_30204_1000.tdms,30204,1000,M3,IR+OR+B,1,primary,BPFO 1X,104.00315195905989,OR,1,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1000/M3_IR+OR+B_25600_30204_1000.tdms,30204,1000,M3,IR+OR+B,1,primary,BPFO 2X,208.00630391811978,OR,2,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1000/M3_IR+OR+B_25600_30204_1000.tdms,30204,1000,M3,IR+OR+B,1,primary,BPFO 3X,312.0094558771797,OR,3,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1000/M3_IR+OR+B_25600_30204_1000.tdms,30204,1000,M3,IR+OR+B,1,primary,BSF 1X,46.80218322301571,B,1,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1000/M3_IR+OR+B_25600_30204_1000.tdms,30204,1000,M3,IR+OR+B,1,primary,BSF 2X,93.60436644603142,B,2,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1000/M3_IR+OR+B_25600_30204_1000.tdms,30204,1000,M3,IR+OR+B,1,primary,BSF 3X,140.40654966904714,B,3,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1000/M3_IR+OR+B_25600_30204_1000.tdms,30204,1000,M3,IR+OR+B,1,interaction_candidate,|BPFI-BPFO|,42.3061960818803,compound,,difference
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1000/M3_IR+OR+B_25600_30204_1000.tdms,30204,1000,M3,IR+OR+B,1,interaction_candidate,BPFI+BPFO,250.31250000000009,compound,,sum
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1000/M3_IR+OR+B_25600_30204_1000.tdms,30204,1000,M3,IR+OR+B,1,interaction_candidate,|BPFI-BSF|,99.50716481792449,compound,,difference
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1000/M3_IR+OR+B_25600_30204_1000.tdms,30204,1000,M3,IR+OR+B,1,interaction_candidate,BPFI+BSF,193.1115312639559,compound,,sum
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1000/M3_IR+OR+B_25600_30204_1000.tdms,30204,1000,M3,IR+OR+B,1,interaction_candidate,|BPFO-BSF|,57.20096873604418,compound,,difference
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1000/M3_IR+OR+B_25600_30204_1000.tdms,30204,1000,M3,IR+OR+B,1,interaction_candidate,BPFO+BSF,150.8053351820756,compound,,sum
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1000/U1_IR+OR+B_25600_30204_1000.tdms,30204,1000,U1,IR+OR+B,1,primary,1X,16.625000000000007,ROT,1,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1000/U1_IR+OR+B_25600_30204_1000.tdms,30204,1000,U1,IR+OR+B,1,primary,BPFI 1X,145.76137295464454,IR,1,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1000/U1_IR+OR+B_25600_30204_1000.tdms,30204,1000,U1,IR+OR+B,1,primary,BPFI 2X,291.5227459092891,IR,2,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1000/U1_IR+OR+B_25600_30204_1000.tdms,30204,1000,U1,IR+OR+B,1,primary,BPFI 3X,437.2841188639336,IR,3,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1000/U1_IR+OR+B_25600_30204_1000.tdms,30204,1000,U1,IR+OR+B,1,primary,BPFO 1X,103.61362704535554,OR,1,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1000/U1_IR+OR+B_25600_30204_1000.tdms,30204,1000,U1,IR+OR+B,1,primary,BPFO 2X,207.22725409071109,OR,2,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1000/U1_IR+OR+B_25600_30204_1000.tdms,30204,1000,U1,IR+OR+B,1,primary,BPFO 3X,310.8408811360666,OR,3,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1000/U1_IR+OR+B_25600_30204_1000.tdms,30204,1000,U1,IR+OR+B,1,primary,BSF 1X,46.62689414727408,B,1,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1000/U1_IR+OR+B_25600_30204_1000.tdms,30204,1000,U1,IR+OR+B,1,primary,BSF 2X,93.25378829454816,B,2,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1000/U1_IR+OR+B_25600_30204_1000.tdms,30204,1000,U1,IR+OR+B,1,primary,BSF 3X,139.88068244182224,B,3,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1000/U1_IR+OR+B_25600_30204_1000.tdms,30204,1000,U1,IR+OR+B,1,interaction_candidate,|BPFI-BPFO|,42.147745909289,compound,,difference
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1000/U1_IR+OR+B_25600_30204_1000.tdms,30204,1000,U1,IR+OR+B,1,interaction_candidate,BPFI+BPFO,249.37500000000009,compound,,sum
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1000/U1_IR+OR+B_25600_30204_1000.tdms,30204,1000,U1,IR+OR+B,1,interaction_candidate,|BPFI-BSF|,99.13447880737047,compound,,difference
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1000/U1_IR+OR+B_25600_30204_1000.tdms,30204,1000,U1,IR+OR+B,1,interaction_candidate,BPFI+BSF,192.38826710191861,compound,,sum
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1000/U1_IR+OR+B_25600_30204_1000.tdms,30204,1000,U1,IR+OR+B,1,interaction_candidate,|BPFO-BSF|,56.98673289808146,compound,,difference
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1000/U1_IR+OR+B_25600_30204_1000.tdms,30204,1000,U1,IR+OR+B,1,interaction_candidate,BPFO+BSF,150.24052119262961,compound,,sum
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1000/U2_IR+OR+B_25600_30204_1000.tdms,30204,1000,U2,IR+OR+B,1,primary,1X,16.625000000000007,ROT,1,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1000/U2_IR+OR+B_25600_30204_1000.tdms,30204,1000,U2,IR+OR+B,1,primary,BPFI 1X,145.76137295464454,IR,1,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1000/U2_IR+OR+B_25600_30204_1000.tdms,30204,1000,U2,IR+OR+B,1,primary,BPFI 2X,291.5227459092891,IR,2,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1000/U2_IR+OR+B_25600_30204_1000.tdms,30204,1000,U2,IR+OR+B,1,primary,BPFI 3X,437.2841188639336,IR,3,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1000/U2_IR+OR+B_25600_30204_1000.tdms,30204,1000,U2,IR+OR+B,1,primary,BPFO 1X,103.61362704535554,OR,1,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1000/U2_IR+OR+B_25600_30204_1000.tdms,30204,1000,U2,IR+OR+B,1,primary,BPFO 2X,207.22725409071109,OR,2,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1000/U2_IR+OR+B_25600_30204_1000.tdms,30204,1000,U2,IR+OR+B,1,primary,BPFO 3X,310.8408811360666,OR,3,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1000/U2_IR+OR+B_25600_30204_1000.tdms,30204,1000,U2,IR+OR+B,1,primary,BSF 1X,46.62689414727408,B,1,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1000/U2_IR+OR+B_25600_30204_1000.tdms,30204,1000,U2,IR+OR+B,1,primary,BSF 2X,93.25378829454816,B,2,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1000/U2_IR+OR+B_25600_30204_1000.tdms,30204,1000,U2,IR+OR+B,1,primary,BSF 3X,139.88068244182224,B,3,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1000/U2_IR+OR+B_25600_30204_1000.tdms,30204,1000,U2,IR+OR+B,1,interaction_candidate,|BPFI-BPFO|,42.147745909289,compound,,difference
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1000/U2_IR+OR+B_25600_30204_1000.tdms,30204,1000,U2,IR+OR+B,1,interaction_candidate,BPFI+BPFO,249.37500000000009,compound,,sum
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1000/U2_IR+OR+B_25600_30204_1000.tdms,30204,1000,U2,IR+OR+B,1,interaction_candidate,|BPFI-BSF|,99.13447880737047,compound,,difference
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1000/U2_IR+OR+B_25600_30204_1000.tdms,30204,1000,U2,IR+OR+B,1,interaction_candidate,BPFI+BSF,192.38826710191861,compound,,sum
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1000/U2_IR+OR+B_25600_30204_1000.tdms,30204,1000,U2,IR+OR+B,1,interaction_candidate,|BPFO-BSF|,56.98673289808146,compound,,difference
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1000/U2_IR+OR+B_25600_30204_1000.tdms,30204,1000,U2,IR+OR+B,1,interaction_candidate,BPFO+BSF,150.24052119262961,compound,,sum
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1000/U3_IR+OR+B_25600_30204_1000.tdms,30204,1000,U3,IR+OR+B,1,primary,1X,16.687500000000007,ROT,1,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1000/U3_IR+OR+B_25600_30204_1000.tdms,30204,1000,U3,IR+OR+B,1,primary,BPFI 1X,146.3093480409402,IR,1,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1000/U3_IR+OR+B_25600_30204_1000.tdms,30204,1000,U3,IR+OR+B,1,primary,BPFI 2X,292.6186960818804,IR,2,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1000/U3_IR+OR+B_25600_30204_1000.tdms,30204,1000,U3,IR+OR+B,1,primary,BPFI 3X,438.92804412282055,IR,3,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1000/U3_IR+OR+B_25600_30204_1000.tdms,30204,1000,U3,IR+OR+B,1,primary,BPFO 1X,104.00315195905989,OR,1,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1000/U3_IR+OR+B_25600_30204_1000.tdms,30204,1000,U3,IR+OR+B,1,primary,BPFO 2X,208.00630391811978,OR,2,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1000/U3_IR+OR+B_25600_30204_1000.tdms,30204,1000,U3,IR+OR+B,1,primary,BPFO 3X,312.0094558771797,OR,3,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1000/U3_IR+OR+B_25600_30204_1000.tdms,30204,1000,U3,IR+OR+B,1,primary,BSF 1X,46.80218322301571,B,1,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1000/U3_IR+OR+B_25600_30204_1000.tdms,30204,1000,U3,IR+OR+B,1,primary,BSF 2X,93.60436644603142,B,2,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1000/U3_IR+OR+B_25600_30204_1000.tdms,30204,1000,U3,IR+OR+B,1,primary,BSF 3X,140.40654966904714,B,3,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1000/U3_IR+OR+B_25600_30204_1000.tdms,30204,1000,U3,IR+OR+B,1,interaction_candidate,|BPFI-BPFO|,42.3061960818803,compound,,difference
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1000/U3_IR+OR+B_25600_30204_1000.tdms,30204,1000,U3,IR+OR+B,1,interaction_candidate,BPFI+BPFO,250.31250000000009,compound,,sum
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1000/U3_IR+OR+B_25600_30204_1000.tdms,30204,1000,U3,IR+OR+B,1,interaction_candidate,|BPFI-BSF|,99.50716481792449,compound,,difference
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1000/U3_IR+OR+B_25600_30204_1000.tdms,30204,1000,U3,IR+OR+B,1,interaction_candidate,BPFI+BSF,193.1115312639559,compound,,sum
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1000/U3_IR+OR+B_25600_30204_1000.tdms,30204,1000,U3,IR+OR+B,1,interaction_candidate,|BPFO-BSF|,57.20096873604418,compound,,difference
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1000/U3_IR+OR+B_25600_30204_1000.tdms,30204,1000,U3,IR+OR+B,1,interaction_candidate,BPFO+BSF,150.8053351820756,compound,,sum
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1200/H_IR+OR+B_25600_30204_1200.tdms,30204,1200,H,IR+OR+B,1,primary,1X,19.968750000000007,ROT,1,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1200/H_IR+OR+B_25600_30204_1200.tdms,30204,1200,H,IR+OR+B,1,primary,BPFI 1X,175.07804007146214,IR,1,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1200/H_IR+OR+B_25600_30204_1200.tdms,30204,1200,H,IR+OR+B,1,primary,BPFI 2X,350.1560801429243,IR,2,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1200/H_IR+OR+B_25600_30204_1200.tdms,30204,1200,H,IR+OR+B,1,primary,BPFI 3X,525.2341202143864,IR,3,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1200/H_IR+OR+B_25600_30204_1200.tdms,30204,1200,H,IR+OR+B,1,primary,BPFO 1X,124.45320992853796,OR,1,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1200/H_IR+OR+B_25600_30204_1200.tdms,30204,1200,H,IR+OR+B,1,primary,BPFO 2X,248.90641985707592,OR,2,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1200/H_IR+OR+B_25600_30204_1200.tdms,30204,1200,H,IR+OR+B,1,primary,BPFO 3X,373.3596297856139,OR,3,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1200/H_IR+OR+B_25600_30204_1200.tdms,30204,1200,H,IR+OR+B,1,primary,BSF 1X,56.00485969945138,B,1,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1200/H_IR+OR+B_25600_30204_1200.tdms,30204,1200,H,IR+OR+B,1,primary,BSF 2X,112.00971939890276,B,2,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1200/H_IR+OR+B_25600_30204_1200.tdms,30204,1200,H,IR+OR+B,1,primary,BSF 3X,168.01457909835415,B,3,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1200/H_IR+OR+B_25600_30204_1200.tdms,30204,1200,H,IR+OR+B,1,interaction_candidate,|BPFI-BPFO|,50.62483014292418,compound,,difference
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1200/H_IR+OR+B_25600_30204_1200.tdms,30204,1200,H,IR+OR+B,1,interaction_candidate,BPFI+BPFO,299.5312500000001,compound,,sum
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1200/H_IR+OR+B_25600_30204_1200.tdms,30204,1200,H,IR+OR+B,1,interaction_candidate,|BPFI-BSF|,119.07318037201077,compound,,difference
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1200/H_IR+OR+B_25600_30204_1200.tdms,30204,1200,H,IR+OR+B,1,interaction_candidate,BPFI+BSF,231.0828997709135,compound,,sum
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1200/H_IR+OR+B_25600_30204_1200.tdms,30204,1200,H,IR+OR+B,1,interaction_candidate,|BPFO-BSF|,68.44835022908657,compound,,difference
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1200/H_IR+OR+B_25600_30204_1200.tdms,30204,1200,H,IR+OR+B,1,interaction_candidate,BPFO+BSF,180.45806962798935,compound,,sum
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1200/L_IR+OR+B_25600_30204_1200.tdms,30204,1200,L,IR+OR+B,1,primary,1X,20.000000000000007,ROT,1,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1200/L_IR+OR+B_25600_30204_1200.tdms,30204,1200,L,IR+OR+B,1,primary,BPFI 1X,175.35202761460997,IR,1,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1200/L_IR+OR+B_25600_30204_1200.tdms,30204,1200,L,IR+OR+B,1,primary,BPFI 2X,350.70405522921993,IR,2,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1200/L_IR+OR+B_25600_30204_1200.tdms,30204,1200,L,IR+OR+B,1,primary,BPFI 3X,526.0560828438299,IR,3,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1200/L_IR+OR+B_25600_30204_1200.tdms,30204,1200,L,IR+OR+B,1,primary,BPFO 1X,124.64797238539012,OR,1,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1200/L_IR+OR+B_25600_30204_1200.tdms,30204,1200,L,IR+OR+B,1,primary,BPFO 2X,249.29594477078024,OR,2,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1200/L_IR+OR+B_25600_30204_1200.tdms,30204,1200,L,IR+OR+B,1,primary,BPFO 3X,373.94391715617036,OR,3,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1200/L_IR+OR+B_25600_30204_1200.tdms,30204,1200,L,IR+OR+B,1,primary,BSF 1X,56.092504237322196,B,1,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1200/L_IR+OR+B_25600_30204_1200.tdms,30204,1200,L,IR+OR+B,1,primary,BSF 2X,112.18500847464439,B,2,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1200/L_IR+OR+B_25600_30204_1200.tdms,30204,1200,L,IR+OR+B,1,primary,BSF 3X,168.27751271196658,B,3,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1200/L_IR+OR+B_25600_30204_1200.tdms,30204,1200,L,IR+OR+B,1,interaction_candidate,|BPFI-BPFO|,50.70405522921985,compound,,difference
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1200/L_IR+OR+B_25600_30204_1200.tdms,30204,1200,L,IR+OR+B,1,interaction_candidate,BPFI+BPFO,300.0000000000001,compound,,sum
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1200/L_IR+OR+B_25600_30204_1200.tdms,30204,1200,L,IR+OR+B,1,interaction_candidate,|BPFI-BSF|,119.25952337728776,compound,,difference
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1200/L_IR+OR+B_25600_30204_1200.tdms,30204,1200,L,IR+OR+B,1,interaction_candidate,BPFI+BSF,231.44453185193217,compound,,sum
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1200/L_IR+OR+B_25600_30204_1200.tdms,30204,1200,L,IR+OR+B,1,interaction_candidate,|BPFO-BSF|,68.55546814806792,compound,,difference
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1200/L_IR+OR+B_25600_30204_1200.tdms,30204,1200,L,IR+OR+B,1,interaction_candidate,BPFO+BSF,180.74047662271232,compound,,sum
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1200/M1_IR+OR+B_25600_30204_1200.tdms,30204,1200,M1,IR+OR+B,1,primary,1X,20.000000000000007,ROT,1,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1200/M1_IR+OR+B_25600_30204_1200.tdms,30204,1200,M1,IR+OR+B,1,primary,BPFI 1X,175.35202761460997,IR,1,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1200/M1_IR+OR+B_25600_30204_1200.tdms,30204,1200,M1,IR+OR+B,1,primary,BPFI 2X,350.70405522921993,IR,2,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1200/M1_IR+OR+B_25600_30204_1200.tdms,30204,1200,M1,IR+OR+B,1,primary,BPFI 3X,526.0560828438299,IR,3,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1200/M1_IR+OR+B_25600_30204_1200.tdms,30204,1200,M1,IR+OR+B,1,primary,BPFO 1X,124.64797238539012,OR,1,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1200/M1_IR+OR+B_25600_30204_1200.tdms,30204,1200,M1,IR+OR+B,1,primary,BPFO 2X,249.29594477078024,OR,2,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1200/M1_IR+OR+B_25600_30204_1200.tdms,30204,1200,M1,IR+OR+B,1,primary,BPFO 3X,373.94391715617036,OR,3,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1200/M1_IR+OR+B_25600_30204_1200.tdms,30204,1200,M1,IR+OR+B,1,primary,BSF 1X,56.092504237322196,B,1,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1200/M1_IR+OR+B_25600_30204_1200.tdms,30204,1200,M1,IR+OR+B,1,primary,BSF 2X,112.18500847464439,B,2,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1200/M1_IR+OR+B_25600_30204_1200.tdms,30204,1200,M1,IR+OR+B,1,primary,BSF 3X,168.27751271196658,B,3,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1200/M1_IR+OR+B_25600_30204_1200.tdms,30204,1200,M1,IR+OR+B,1,interaction_candidate,|BPFI-BPFO|,50.70405522921985,compound,,difference
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1200/M1_IR+OR+B_25600_30204_1200.tdms,30204,1200,M1,IR+OR+B,1,interaction_candidate,BPFI+BPFO,300.0000000000001,compound,,sum
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1200/M1_IR+OR+B_25600_30204_1200.tdms,30204,1200,M1,IR+OR+B,1,interaction_candidate,|BPFI-BSF|,119.25952337728776,compound,,difference
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1200/M1_IR+OR+B_25600_30204_1200.tdms,30204,1200,M1,IR+OR+B,1,interaction_candidate,BPFI+BSF,231.44453185193217,compound,,sum
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1200/M1_IR+OR+B_25600_30204_1200.tdms,30204,1200,M1,IR+OR+B,1,interaction_candidate,|BPFO-BSF|,68.55546814806792,compound,,difference
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1200/M1_IR+OR+B_25600_30204_1200.tdms,30204,1200,M1,IR+OR+B,1,interaction_candidate,BPFO+BSF,180.74047662271232,compound,,sum
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1200/M2_IR+OR+B_25600_30204_1200.tdms,30204,1200,M2,IR+OR+B,1,primary,1X,20.06250000000001,ROT,1,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1200/M2_IR+OR+B_25600_30204_1200.tdms,30204,1200,M2,IR+OR+B,1,primary,BPFI 1X,175.90000270090565,IR,1,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1200/M2_IR+OR+B_25600_30204_1200.tdms,30204,1200,M2,IR+OR+B,1,primary,BPFI 2X,351.8000054018113,IR,2,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1200/M2_IR+OR+B_25600_30204_1200.tdms,30204,1200,M2,IR+OR+B,1,primary,BPFI 3X,527.700008102717,IR,3,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1200/M2_IR+OR+B_25600_30204_1200.tdms,30204,1200,M2,IR+OR+B,1,primary,BPFO 1X,125.0374972990945,OR,1,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1200/M2_IR+OR+B_25600_30204_1200.tdms,30204,1200,M2,IR+OR+B,1,primary,BPFO 2X,250.074994598189,OR,2,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1200/M2_IR+OR+B_25600_30204_1200.tdms,30204,1200,M2,IR+OR+B,1,primary,BPFO 3X,375.11249189728346,OR,3,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1200/M2_IR+OR+B_25600_30204_1200.tdms,30204,1200,M2,IR+OR+B,1,primary,BSF 1X,56.26779331306384,B,1,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1200/M2_IR+OR+B_25600_30204_1200.tdms,30204,1200,M2,IR+OR+B,1,primary,BSF 2X,112.53558662612768,B,2,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1200/M2_IR+OR+B_25600_30204_1200.tdms,30204,1200,M2,IR+OR+B,1,primary,BSF 3X,168.80337993919153,B,3,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1200/M2_IR+OR+B_25600_30204_1200.tdms,30204,1200,M2,IR+OR+B,1,interaction_candidate,|BPFI-BPFO|,50.86250540181115,compound,,difference
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1200/M2_IR+OR+B_25600_30204_1200.tdms,30204,1200,M2,IR+OR+B,1,interaction_candidate,BPFI+BPFO,300.9375000000001,compound,,sum
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1200/M2_IR+OR+B_25600_30204_1200.tdms,30204,1200,M2,IR+OR+B,1,interaction_candidate,|BPFI-BSF|,119.63220938784181,compound,,difference
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1200/M2_IR+OR+B_25600_30204_1200.tdms,30204,1200,M2,IR+OR+B,1,interaction_candidate,BPFI+BSF,232.16779601396948,compound,,sum
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1200/M2_IR+OR+B_25600_30204_1200.tdms,30204,1200,M2,IR+OR+B,1,interaction_candidate,|BPFO-BSF|,68.76970398603066,compound,,difference
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1200/M2_IR+OR+B_25600_30204_1200.tdms,30204,1200,M2,IR+OR+B,1,interaction_candidate,BPFO+BSF,181.30529061215833,compound,,sum
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1200/M3_IR+OR+B_25600_30204_1200.tdms,30204,1200,M3,IR+OR+B,1,primary,1X,19.937500000000007,ROT,1,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1200/M3_IR+OR+B_25600_30204_1200.tdms,30204,1200,M3,IR+OR+B,1,primary,BPFI 1X,174.80405252831432,IR,1,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1200/M3_IR+OR+B_25600_30204_1200.tdms,30204,1200,M3,IR+OR+B,1,primary,BPFI 2X,349.60810505662863,IR,2,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1200/M3_IR+OR+B_25600_30204_1200.tdms,30204,1200,M3,IR+OR+B,1,primary,BPFI 3X,524.412157584943,IR,3,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1200/M3_IR+OR+B_25600_30204_1200.tdms,30204,1200,M3,IR+OR+B,1,primary,BPFO 1X,124.25844747168578,OR,1,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1200/M3_IR+OR+B_25600_30204_1200.tdms,30204,1200,M3,IR+OR+B,1,primary,BPFO 2X,248.51689494337157,OR,2,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1200/M3_IR+OR+B_25600_30204_1200.tdms,30204,1200,M3,IR+OR+B,1,primary,BPFO 3X,372.77534241505737,OR,3,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1200/M3_IR+OR+B_25600_30204_1200.tdms,30204,1200,M3,IR+OR+B,1,primary,BSF 1X,55.917215161580565,B,1,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1200/M3_IR+OR+B_25600_30204_1200.tdms,30204,1200,M3,IR+OR+B,1,primary,BSF 2X,111.83443032316113,B,2,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1200/M3_IR+OR+B_25600_30204_1200.tdms,30204,1200,M3,IR+OR+B,1,primary,BSF 3X,167.7516454847417,B,3,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1200/M3_IR+OR+B_25600_30204_1200.tdms,30204,1200,M3,IR+OR+B,1,interaction_candidate,|BPFI-BPFO|,50.54560505662853,compound,,difference
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1200/M3_IR+OR+B_25600_30204_1200.tdms,30204,1200,M3,IR+OR+B,1,interaction_candidate,BPFI+BPFO,299.0625000000001,compound,,sum
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1200/M3_IR+OR+B_25600_30204_1200.tdms,30204,1200,M3,IR+OR+B,1,interaction_candidate,|BPFI-BSF|,118.88683736673374,compound,,difference
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1200/M3_IR+OR+B_25600_30204_1200.tdms,30204,1200,M3,IR+OR+B,1,interaction_candidate,BPFI+BSF,230.7212676898949,compound,,sum
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1200/M3_IR+OR+B_25600_30204_1200.tdms,30204,1200,M3,IR+OR+B,1,interaction_candidate,|BPFO-BSF|,68.34123231010523,compound,,difference
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1200/M3_IR+OR+B_25600_30204_1200.tdms,30204,1200,M3,IR+OR+B,1,interaction_candidate,BPFO+BSF,180.17566263326634,compound,,sum
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1200/U1_IR+OR+B_25600_30204_1200.tdms,30204,1200,U1,IR+OR+B,1,primary,1X,20.000000000000007,ROT,1,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1200/U1_IR+OR+B_25600_30204_1200.tdms,30204,1200,U1,IR+OR+B,1,primary,BPFI 1X,175.35202761460997,IR,1,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1200/U1_IR+OR+B_25600_30204_1200.tdms,30204,1200,U1,IR+OR+B,1,primary,BPFI 2X,350.70405522921993,IR,2,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1200/U1_IR+OR+B_25600_30204_1200.tdms,30204,1200,U1,IR+OR+B,1,primary,BPFI 3X,526.0560828438299,IR,3,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1200/U1_IR+OR+B_25600_30204_1200.tdms,30204,1200,U1,IR+OR+B,1,primary,BPFO 1X,124.64797238539012,OR,1,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1200/U1_IR+OR+B_25600_30204_1200.tdms,30204,1200,U1,IR+OR+B,1,primary,BPFO 2X,249.29594477078024,OR,2,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1200/U1_IR+OR+B_25600_30204_1200.tdms,30204,1200,U1,IR+OR+B,1,primary,BPFO 3X,373.94391715617036,OR,3,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1200/U1_IR+OR+B_25600_30204_1200.tdms,30204,1200,U1,IR+OR+B,1,primary,BSF 1X,56.092504237322196,B,1,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1200/U1_IR+OR+B_25600_30204_1200.tdms,30204,1200,U1,IR+OR+B,1,primary,BSF 2X,112.18500847464439,B,2,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1200/U1_IR+OR+B_25600_30204_1200.tdms,30204,1200,U1,IR+OR+B,1,primary,BSF 3X,168.27751271196658,B,3,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1200/U1_IR+OR+B_25600_30204_1200.tdms,30204,1200,U1,IR+OR+B,1,interaction_candidate,|BPFI-BPFO|,50.70405522921985,compound,,difference
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1200/U1_IR+OR+B_25600_30204_1200.tdms,30204,1200,U1,IR+OR+B,1,interaction_candidate,BPFI+BPFO,300.0000000000001,compound,,sum
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1200/U1_IR+OR+B_25600_30204_1200.tdms,30204,1200,U1,IR+OR+B,1,interaction_candidate,|BPFI-BSF|,119.25952337728776,compound,,difference
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1200/U1_IR+OR+B_25600_30204_1200.tdms,30204,1200,U1,IR+OR+B,1,interaction_candidate,BPFI+BSF,231.44453185193217,compound,,sum
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1200/U1_IR+OR+B_25600_30204_1200.tdms,30204,1200,U1,IR+OR+B,1,interaction_candidate,|BPFO-BSF|,68.55546814806792,compound,,difference
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1200/U1_IR+OR+B_25600_30204_1200.tdms,30204,1200,U1,IR+OR+B,1,interaction_candidate,BPFO+BSF,180.74047662271232,compound,,sum
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1200/U2_IR+OR+B_25600_30204_1200.tdms,30204,1200,U2,IR+OR+B,1,primary,1X,20.000000000000007,ROT,1,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1200/U2_IR+OR+B_25600_30204_1200.tdms,30204,1200,U2,IR+OR+B,1,primary,BPFI 1X,175.35202761460997,IR,1,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1200/U2_IR+OR+B_25600_30204_1200.tdms,30204,1200,U2,IR+OR+B,1,primary,BPFI 2X,350.70405522921993,IR,2,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1200/U2_IR+OR+B_25600_30204_1200.tdms,30204,1200,U2,IR+OR+B,1,primary,BPFI 3X,526.0560828438299,IR,3,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1200/U2_IR+OR+B_25600_30204_1200.tdms,30204,1200,U2,IR+OR+B,1,primary,BPFO 1X,124.64797238539012,OR,1,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1200/U2_IR+OR+B_25600_30204_1200.tdms,30204,1200,U2,IR+OR+B,1,primary,BPFO 2X,249.29594477078024,OR,2,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1200/U2_IR+OR+B_25600_30204_1200.tdms,30204,1200,U2,IR+OR+B,1,primary,BPFO 3X,373.94391715617036,OR,3,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1200/U2_IR+OR+B_25600_30204_1200.tdms,30204,1200,U2,IR+OR+B,1,primary,BSF 1X,56.092504237322196,B,1,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1200/U2_IR+OR+B_25600_30204_1200.tdms,30204,1200,U2,IR+OR+B,1,primary,BSF 2X,112.18500847464439,B,2,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1200/U2_IR+OR+B_25600_30204_1200.tdms,30204,1200,U2,IR+OR+B,1,primary,BSF 3X,168.27751271196658,B,3,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1200/U2_IR+OR+B_25600_30204_1200.tdms,30204,1200,U2,IR+OR+B,1,interaction_candidate,|BPFI-BPFO|,50.70405522921985,compound,,difference
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1200/U2_IR+OR+B_25600_30204_1200.tdms,30204,1200,U2,IR+OR+B,1,interaction_candidate,BPFI+BPFO,300.0000000000001,compound,,sum
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1200/U2_IR+OR+B_25600_30204_1200.tdms,30204,1200,U2,IR+OR+B,1,interaction_candidate,|BPFI-BSF|,119.25952337728776,compound,,difference
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1200/U2_IR+OR+B_25600_30204_1200.tdms,30204,1200,U2,IR+OR+B,1,interaction_candidate,BPFI+BSF,231.44453185193217,compound,,sum
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1200/U2_IR+OR+B_25600_30204_1200.tdms,30204,1200,U2,IR+OR+B,1,interaction_candidate,|BPFO-BSF|,68.55546814806792,compound,,difference
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1200/U2_IR+OR+B_25600_30204_1200.tdms,30204,1200,U2,IR+OR+B,1,interaction_candidate,BPFO+BSF,180.74047662271232,compound,,sum
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1200/U3_IR+OR+B_25600_30204_1200.tdms,30204,1200,U3,IR+OR+B,1,primary,1X,20.000000000000007,ROT,1,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1200/U3_IR+OR+B_25600_30204_1200.tdms,30204,1200,U3,IR+OR+B,1,primary,BPFI 1X,175.35202761460997,IR,1,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1200/U3_IR+OR+B_25600_30204_1200.tdms,30204,1200,U3,IR+OR+B,1,primary,BPFI 2X,350.70405522921993,IR,2,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1200/U3_IR+OR+B_25600_30204_1200.tdms,30204,1200,U3,IR+OR+B,1,primary,BPFI 3X,526.0560828438299,IR,3,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1200/U3_IR+OR+B_25600_30204_1200.tdms,30204,1200,U3,IR+OR+B,1,primary,BPFO 1X,124.64797238539012,OR,1,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1200/U3_IR+OR+B_25600_30204_1200.tdms,30204,1200,U3,IR+OR+B,1,primary,BPFO 2X,249.29594477078024,OR,2,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1200/U3_IR+OR+B_25600_30204_1200.tdms,30204,1200,U3,IR+OR+B,1,primary,BPFO 3X,373.94391715617036,OR,3,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1200/U3_IR+OR+B_25600_30204_1200.tdms,30204,1200,U3,IR+OR+B,1,primary,BSF 1X,56.092504237322196,B,1,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1200/U3_IR+OR+B_25600_30204_1200.tdms,30204,1200,U3,IR+OR+B,1,primary,BSF 2X,112.18500847464439,B,2,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1200/U3_IR+OR+B_25600_30204_1200.tdms,30204,1200,U3,IR+OR+B,1,primary,BSF 3X,168.27751271196658,B,3,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1200/U3_IR+OR+B_25600_30204_1200.tdms,30204,1200,U3,IR+OR+B,1,interaction_candidate,|BPFI-BPFO|,50.70405522921985,compound,,difference
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1200/U3_IR+OR+B_25600_30204_1200.tdms,30204,1200,U3,IR+OR+B,1,interaction_candidate,BPFI+BPFO,300.0000000000001,compound,,sum
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1200/U3_IR+OR+B_25600_30204_1200.tdms,30204,1200,U3,IR+OR+B,1,interaction_candidate,|BPFI-BSF|,119.25952337728776,compound,,difference
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1200/U3_IR+OR+B_25600_30204_1200.tdms,30204,1200,U3,IR+OR+B,1,interaction_candidate,BPFI+BSF,231.44453185193217,compound,,sum
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1200/U3_IR+OR+B_25600_30204_1200.tdms,30204,1200,U3,IR+OR+B,1,interaction_candidate,|BPFO-BSF|,68.55546814806792,compound,,difference
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1200/U3_IR+OR+B_25600_30204_1200.tdms,30204,1200,U3,IR+OR+B,1,interaction_candidate,BPFO+BSF,180.74047662271232,compound,,sum
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1400/H_IR+OR+B_25600_30204_1400.tdms,30204,1400,H,IR+OR+B,1,primary,1X,23.37500000000001,ROT,1,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1400/H_IR+OR+B_25600_30204_1400.tdms,30204,1400,H,IR+OR+B,1,primary,BPFI 1X,204.94268227457542,IR,1,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1400/H_IR+OR+B_25600_30204_1400.tdms,30204,1400,H,IR+OR+B,1,primary,BPFI 2X,409.88536454915084,IR,2,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1400/H_IR+OR+B_25600_30204_1400.tdms,30204,1400,H,IR+OR+B,1,primary,BPFI 3X,614.8280468237263,IR,3,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1400/H_IR+OR+B_25600_30204_1400.tdms,30204,1400,H,IR+OR+B,1,primary,BPFO 1X,145.68231772542472,OR,1,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1400/H_IR+OR+B_25600_30204_1400.tdms,30204,1400,H,IR+OR+B,1,primary,BPFO 2X,291.36463545084945,OR,2,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1400/H_IR+OR+B_25600_30204_1400.tdms,30204,1400,H,IR+OR+B,1,primary,BPFO 3X,437.0469531762742,OR,3,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1400/H_IR+OR+B_25600_30204_1400.tdms,30204,1400,H,IR+OR+B,1,primary,BSF 1X,65.55811432737032,B,1,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1400/H_IR+OR+B_25600_30204_1400.tdms,30204,1400,H,IR+OR+B,1,primary,BSF 2X,131.11622865474064,B,2,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1400/H_IR+OR+B_25600_30204_1400.tdms,30204,1400,H,IR+OR+B,1,primary,BSF 3X,196.67434298211094,B,3,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1400/H_IR+OR+B_25600_30204_1400.tdms,30204,1400,H,IR+OR+B,1,interaction_candidate,|BPFI-BPFO|,59.260364549150694,compound,,difference
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1400/H_IR+OR+B_25600_30204_1400.tdms,30204,1400,H,IR+OR+B,1,interaction_candidate,BPFI+BPFO,350.6250000000001,compound,,sum
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1400/H_IR+OR+B_25600_30204_1400.tdms,30204,1400,H,IR+OR+B,1,interaction_candidate,|BPFI-BSF|,139.38456794720508,compound,,difference
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1400/H_IR+OR+B_25600_30204_1400.tdms,30204,1400,H,IR+OR+B,1,interaction_candidate,BPFI+BSF,270.50079660194575,compound,,sum
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1400/H_IR+OR+B_25600_30204_1400.tdms,30204,1400,H,IR+OR+B,1,interaction_candidate,|BPFO-BSF|,80.1242033980544,compound,,difference
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1400/H_IR+OR+B_25600_30204_1400.tdms,30204,1400,H,IR+OR+B,1,interaction_candidate,BPFO+BSF,211.24043205279503,compound,,sum
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1400/L_IR+OR+B_25600_30204_1400.tdms,30204,1400,L,IR+OR+B,1,primary,1X,23.31250000000001,ROT,1,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1400/L_IR+OR+B_25600_30204_1400.tdms,30204,1400,L,IR+OR+B,1,primary,BPFI 1X,204.39470718827977,IR,1,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1400/L_IR+OR+B_25600_30204_1400.tdms,30204,1400,L,IR+OR+B,1,primary,BPFI 2X,408.78941437655953,IR,2,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1400/L_IR+OR+B_25600_30204_1400.tdms,30204,1400,L,IR+OR+B,1,primary,BPFI 3X,613.1841215648393,IR,3,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1400/L_IR+OR+B_25600_30204_1400.tdms,30204,1400,L,IR+OR+B,1,primary,BPFO 1X,145.29279281172037,OR,1,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1400/L_IR+OR+B_25600_30204_1400.tdms,30204,1400,L,IR+OR+B,1,primary,BPFO 2X,290.58558562344075,OR,2,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1400/L_IR+OR+B_25600_30204_1400.tdms,30204,1400,L,IR+OR+B,1,primary,BPFO 3X,435.87837843516115,OR,3,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1400/L_IR+OR+B_25600_30204_1400.tdms,30204,1400,L,IR+OR+B,1,primary,BSF 1X,65.38282525162869,B,1,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1400/L_IR+OR+B_25600_30204_1400.tdms,30204,1400,L,IR+OR+B,1,primary,BSF 2X,130.76565050325738,B,2,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1400/L_IR+OR+B_25600_30204_1400.tdms,30204,1400,L,IR+OR+B,1,primary,BSF 3X,196.14847575488608,B,3,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1400/L_IR+OR+B_25600_30204_1400.tdms,30204,1400,L,IR+OR+B,1,interaction_candidate,|BPFI-BPFO|,59.10191437655939,compound,,difference
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1400/L_IR+OR+B_25600_30204_1400.tdms,30204,1400,L,IR+OR+B,1,interaction_candidate,BPFI+BPFO,349.6875000000001,compound,,sum
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1400/L_IR+OR+B_25600_30204_1400.tdms,30204,1400,L,IR+OR+B,1,interaction_candidate,|BPFI-BSF|,139.0118819366511,compound,,difference
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1400/L_IR+OR+B_25600_30204_1400.tdms,30204,1400,L,IR+OR+B,1,interaction_candidate,BPFI+BSF,269.77753243990844,compound,,sum
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1400/L_IR+OR+B_25600_30204_1400.tdms,30204,1400,L,IR+OR+B,1,interaction_candidate,|BPFO-BSF|,79.90996756009169,compound,,difference
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1400/L_IR+OR+B_25600_30204_1400.tdms,30204,1400,L,IR+OR+B,1,interaction_candidate,BPFO+BSF,210.67561806334908,compound,,sum
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1400/M1_IR+OR+B_25600_30204_1400.tdms,30204,1400,M1,IR+OR+B,1,primary,1X,23.37500000000001,ROT,1,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1400/M1_IR+OR+B_25600_30204_1400.tdms,30204,1400,M1,IR+OR+B,1,primary,BPFI 1X,204.94268227457542,IR,1,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1400/M1_IR+OR+B_25600_30204_1400.tdms,30204,1400,M1,IR+OR+B,1,primary,BPFI 2X,409.88536454915084,IR,2,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1400/M1_IR+OR+B_25600_30204_1400.tdms,30204,1400,M1,IR+OR+B,1,primary,BPFI 3X,614.8280468237263,IR,3,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1400/M1_IR+OR+B_25600_30204_1400.tdms,30204,1400,M1,IR+OR+B,1,primary,BPFO 1X,145.68231772542472,OR,1,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1400/M1_IR+OR+B_25600_30204_1400.tdms,30204,1400,M1,IR+OR+B,1,primary,BPFO 2X,291.36463545084945,OR,2,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1400/M1_IR+OR+B_25600_30204_1400.tdms,30204,1400,M1,IR+OR+B,1,primary,BPFO 3X,437.0469531762742,OR,3,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1400/M1_IR+OR+B_25600_30204_1400.tdms,30204,1400,M1,IR+OR+B,1,primary,BSF 1X,65.55811432737032,B,1,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1400/M1_IR+OR+B_25600_30204_1400.tdms,30204,1400,M1,IR+OR+B,1,primary,BSF 2X,131.11622865474064,B,2,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1400/M1_IR+OR+B_25600_30204_1400.tdms,30204,1400,M1,IR+OR+B,1,primary,BSF 3X,196.67434298211094,B,3,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1400/M1_IR+OR+B_25600_30204_1400.tdms,30204,1400,M1,IR+OR+B,1,interaction_candidate,|BPFI-BPFO|,59.260364549150694,compound,,difference
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1400/M1_IR+OR+B_25600_30204_1400.tdms,30204,1400,M1,IR+OR+B,1,interaction_candidate,BPFI+BPFO,350.6250000000001,compound,,sum
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1400/M1_IR+OR+B_25600_30204_1400.tdms,30204,1400,M1,IR+OR+B,1,interaction_candidate,|BPFI-BSF|,139.38456794720508,compound,,difference
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1400/M1_IR+OR+B_25600_30204_1400.tdms,30204,1400,M1,IR+OR+B,1,interaction_candidate,BPFI+BSF,270.50079660194575,compound,,sum
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1400/M1_IR+OR+B_25600_30204_1400.tdms,30204,1400,M1,IR+OR+B,1,interaction_candidate,|BPFO-BSF|,80.1242033980544,compound,,difference
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1400/M1_IR+OR+B_25600_30204_1400.tdms,30204,1400,M1,IR+OR+B,1,interaction_candidate,BPFO+BSF,211.24043205279503,compound,,sum
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1400/M2_IR+OR+B_25600_30204_1400.tdms,30204,1400,M2,IR+OR+B,1,primary,1X,23.37500000000001,ROT,1,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1400/M2_IR+OR+B_25600_30204_1400.tdms,30204,1400,M2,IR+OR+B,1,primary,BPFI 1X,204.94268227457542,IR,1,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1400/M2_IR+OR+B_25600_30204_1400.tdms,30204,1400,M2,IR+OR+B,1,primary,BPFI 2X,409.88536454915084,IR,2,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1400/M2_IR+OR+B_25600_30204_1400.tdms,30204,1400,M2,IR+OR+B,1,primary,BPFI 3X,614.8280468237263,IR,3,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1400/M2_IR+OR+B_25600_30204_1400.tdms,30204,1400,M2,IR+OR+B,1,primary,BPFO 1X,145.68231772542472,OR,1,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1400/M2_IR+OR+B_25600_30204_1400.tdms,30204,1400,M2,IR+OR+B,1,primary,BPFO 2X,291.36463545084945,OR,2,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1400/M2_IR+OR+B_25600_30204_1400.tdms,30204,1400,M2,IR+OR+B,1,primary,BPFO 3X,437.0469531762742,OR,3,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1400/M2_IR+OR+B_25600_30204_1400.tdms,30204,1400,M2,IR+OR+B,1,primary,BSF 1X,65.55811432737032,B,1,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1400/M2_IR+OR+B_25600_30204_1400.tdms,30204,1400,M2,IR+OR+B,1,primary,BSF 2X,131.11622865474064,B,2,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1400/M2_IR+OR+B_25600_30204_1400.tdms,30204,1400,M2,IR+OR+B,1,primary,BSF 3X,196.67434298211094,B,3,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1400/M2_IR+OR+B_25600_30204_1400.tdms,30204,1400,M2,IR+OR+B,1,interaction_candidate,|BPFI-BPFO|,59.260364549150694,compound,,difference
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1400/M2_IR+OR+B_25600_30204_1400.tdms,30204,1400,M2,IR+OR+B,1,interaction_candidate,BPFI+BPFO,350.6250000000001,compound,,sum
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1400/M2_IR+OR+B_25600_30204_1400.tdms,30204,1400,M2,IR+OR+B,1,interaction_candidate,|BPFI-BSF|,139.38456794720508,compound,,difference
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1400/M2_IR+OR+B_25600_30204_1400.tdms,30204,1400,M2,IR+OR+B,1,interaction_candidate,BPFI+BSF,270.50079660194575,compound,,sum
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1400/M2_IR+OR+B_25600_30204_1400.tdms,30204,1400,M2,IR+OR+B,1,interaction_candidate,|BPFO-BSF|,80.1242033980544,compound,,difference
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1400/M2_IR+OR+B_25600_30204_1400.tdms,30204,1400,M2,IR+OR+B,1,interaction_candidate,BPFO+BSF,211.24043205279503,compound,,sum
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1400/M3_IR+OR+B_25600_30204_1400.tdms,30204,1400,M3,IR+OR+B,1,primary,1X,23.31250000000001,ROT,1,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1400/M3_IR+OR+B_25600_30204_1400.tdms,30204,1400,M3,IR+OR+B,1,primary,BPFI 1X,204.39470718827977,IR,1,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1400/M3_IR+OR+B_25600_30204_1400.tdms,30204,1400,M3,IR+OR+B,1,primary,BPFI 2X,408.78941437655953,IR,2,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1400/M3_IR+OR+B_25600_30204_1400.tdms,30204,1400,M3,IR+OR+B,1,primary,BPFI 3X,613.1841215648393,IR,3,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1400/M3_IR+OR+B_25600_30204_1400.tdms,30204,1400,M3,IR+OR+B,1,primary,BPFO 1X,145.29279281172037,OR,1,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1400/M3_IR+OR+B_25600_30204_1400.tdms,30204,1400,M3,IR+OR+B,1,primary,BPFO 2X,290.58558562344075,OR,2,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1400/M3_IR+OR+B_25600_30204_1400.tdms,30204,1400,M3,IR+OR+B,1,primary,BPFO 3X,435.87837843516115,OR,3,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1400/M3_IR+OR+B_25600_30204_1400.tdms,30204,1400,M3,IR+OR+B,1,primary,BSF 1X,65.38282525162869,B,1,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1400/M3_IR+OR+B_25600_30204_1400.tdms,30204,1400,M3,IR+OR+B,1,primary,BSF 2X,130.76565050325738,B,2,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1400/M3_IR+OR+B_25600_30204_1400.tdms,30204,1400,M3,IR+OR+B,1,primary,BSF 3X,196.14847575488608,B,3,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1400/M3_IR+OR+B_25600_30204_1400.tdms,30204,1400,M3,IR+OR+B,1,interaction_candidate,|BPFI-BPFO|,59.10191437655939,compound,,difference
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1400/M3_IR+OR+B_25600_30204_1400.tdms,30204,1400,M3,IR+OR+B,1,interaction_candidate,BPFI+BPFO,349.6875000000001,compound,,sum
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1400/M3_IR+OR+B_25600_30204_1400.tdms,30204,1400,M3,IR+OR+B,1,interaction_candidate,|BPFI-BSF|,139.0118819366511,compound,,difference
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1400/M3_IR+OR+B_25600_30204_1400.tdms,30204,1400,M3,IR+OR+B,1,interaction_candidate,BPFI+BSF,269.77753243990844,compound,,sum
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1400/M3_IR+OR+B_25600_30204_1400.tdms,30204,1400,M3,IR+OR+B,1,interaction_candidate,|BPFO-BSF|,79.90996756009169,compound,,difference
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1400/M3_IR+OR+B_25600_30204_1400.tdms,30204,1400,M3,IR+OR+B,1,interaction_candidate,BPFO+BSF,210.67561806334908,compound,,sum
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1400/U1_IR+OR+B_25600_30204_1400.tdms,30204,1400,U1,IR+OR+B,1,primary,1X,23.31250000000001,ROT,1,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1400/U1_IR+OR+B_25600_30204_1400.tdms,30204,1400,U1,IR+OR+B,1,primary,BPFI 1X,204.39470718827977,IR,1,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1400/U1_IR+OR+B_25600_30204_1400.tdms,30204,1400,U1,IR+OR+B,1,primary,BPFI 2X,408.78941437655953,IR,2,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1400/U1_IR+OR+B_25600_30204_1400.tdms,30204,1400,U1,IR+OR+B,1,primary,BPFI 3X,613.1841215648393,IR,3,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1400/U1_IR+OR+B_25600_30204_1400.tdms,30204,1400,U1,IR+OR+B,1,primary,BPFO 1X,145.29279281172037,OR,1,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1400/U1_IR+OR+B_25600_30204_1400.tdms,30204,1400,U1,IR+OR+B,1,primary,BPFO 2X,290.58558562344075,OR,2,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1400/U1_IR+OR+B_25600_30204_1400.tdms,30204,1400,U1,IR+OR+B,1,primary,BPFO 3X,435.87837843516115,OR,3,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1400/U1_IR+OR+B_25600_30204_1400.tdms,30204,1400,U1,IR+OR+B,1,primary,BSF 1X,65.38282525162869,B,1,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1400/U1_IR+OR+B_25600_30204_1400.tdms,30204,1400,U1,IR+OR+B,1,primary,BSF 2X,130.76565050325738,B,2,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1400/U1_IR+OR+B_25600_30204_1400.tdms,30204,1400,U1,IR+OR+B,1,primary,BSF 3X,196.14847575488608,B,3,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1400/U1_IR+OR+B_25600_30204_1400.tdms,30204,1400,U1,IR+OR+B,1,interaction_candidate,|BPFI-BPFO|,59.10191437655939,compound,,difference
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1400/U1_IR+OR+B_25600_30204_1400.tdms,30204,1400,U1,IR+OR+B,1,interaction_candidate,BPFI+BPFO,349.6875000000001,compound,,sum
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1400/U1_IR+OR+B_25600_30204_1400.tdms,30204,1400,U1,IR+OR+B,1,interaction_candidate,|BPFI-BSF|,139.0118819366511,compound,,difference
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1400/U1_IR+OR+B_25600_30204_1400.tdms,30204,1400,U1,IR+OR+B,1,interaction_candidate,BPFI+BSF,269.77753243990844,compound,,sum
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1400/U1_IR+OR+B_25600_30204_1400.tdms,30204,1400,U1,IR+OR+B,1,interaction_candidate,|BPFO-BSF|,79.90996756009169,compound,,difference
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1400/U1_IR+OR+B_25600_30204_1400.tdms,30204,1400,U1,IR+OR+B,1,interaction_candidate,BPFO+BSF,210.67561806334908,compound,,sum
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1400/U2_IR+OR+B_25600_30204_1400.tdms,30204,1400,U2,IR+OR+B,1,primary,1X,23.31250000000001,ROT,1,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1400/U2_IR+OR+B_25600_30204_1400.tdms,30204,1400,U2,IR+OR+B,1,primary,BPFI 1X,204.39470718827977,IR,1,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1400/U2_IR+OR+B_25600_30204_1400.tdms,30204,1400,U2,IR+OR+B,1,primary,BPFI 2X,408.78941437655953,IR,2,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1400/U2_IR+OR+B_25600_30204_1400.tdms,30204,1400,U2,IR+OR+B,1,primary,BPFI 3X,613.1841215648393,IR,3,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1400/U2_IR+OR+B_25600_30204_1400.tdms,30204,1400,U2,IR+OR+B,1,primary,BPFO 1X,145.29279281172037,OR,1,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1400/U2_IR+OR+B_25600_30204_1400.tdms,30204,1400,U2,IR+OR+B,1,primary,BPFO 2X,290.58558562344075,OR,2,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1400/U2_IR+OR+B_25600_30204_1400.tdms,30204,1400,U2,IR+OR+B,1,primary,BPFO 3X,435.87837843516115,OR,3,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1400/U2_IR+OR+B_25600_30204_1400.tdms,30204,1400,U2,IR+OR+B,1,primary,BSF 1X,65.38282525162869,B,1,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1400/U2_IR+OR+B_25600_30204_1400.tdms,30204,1400,U2,IR+OR+B,1,primary,BSF 2X,130.76565050325738,B,2,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1400/U2_IR+OR+B_25600_30204_1400.tdms,30204,1400,U2,IR+OR+B,1,primary,BSF 3X,196.14847575488608,B,3,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1400/U2_IR+OR+B_25600_30204_1400.tdms,30204,1400,U2,IR+OR+B,1,interaction_candidate,|BPFI-BPFO|,59.10191437655939,compound,,difference
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1400/U2_IR+OR+B_25600_30204_1400.tdms,30204,1400,U2,IR+OR+B,1,interaction_candidate,BPFI+BPFO,349.6875000000001,compound,,sum
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1400/U2_IR+OR+B_25600_30204_1400.tdms,30204,1400,U2,IR+OR+B,1,interaction_candidate,|BPFI-BSF|,139.0118819366511,compound,,difference
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1400/U2_IR+OR+B_25600_30204_1400.tdms,30204,1400,U2,IR+OR+B,1,interaction_candidate,BPFI+BSF,269.77753243990844,compound,,sum
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1400/U2_IR+OR+B_25600_30204_1400.tdms,30204,1400,U2,IR+OR+B,1,interaction_candidate,|BPFO-BSF|,79.90996756009169,compound,,difference
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1400/U2_IR+OR+B_25600_30204_1400.tdms,30204,1400,U2,IR+OR+B,1,interaction_candidate,BPFO+BSF,210.67561806334908,compound,,sum
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1400/U3_IR+OR+B_25600_30204_1400.tdms,30204,1400,U3,IR+OR+B,1,primary,1X,23.31250000000001,ROT,1,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1400/U3_IR+OR+B_25600_30204_1400.tdms,30204,1400,U3,IR+OR+B,1,primary,BPFI 1X,204.39470718827977,IR,1,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1400/U3_IR+OR+B_25600_30204_1400.tdms,30204,1400,U3,IR+OR+B,1,primary,BPFI 2X,408.78941437655953,IR,2,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1400/U3_IR+OR+B_25600_30204_1400.tdms,30204,1400,U3,IR+OR+B,1,primary,BPFI 3X,613.1841215648393,IR,3,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1400/U3_IR+OR+B_25600_30204_1400.tdms,30204,1400,U3,IR+OR+B,1,primary,BPFO 1X,145.29279281172037,OR,1,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1400/U3_IR+OR+B_25600_30204_1400.tdms,30204,1400,U3,IR+OR+B,1,primary,BPFO 2X,290.58558562344075,OR,2,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1400/U3_IR+OR+B_25600_30204_1400.tdms,30204,1400,U3,IR+OR+B,1,primary,BPFO 3X,435.87837843516115,OR,3,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1400/U3_IR+OR+B_25600_30204_1400.tdms,30204,1400,U3,IR+OR+B,1,primary,BSF 1X,65.38282525162869,B,1,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1400/U3_IR+OR+B_25600_30204_1400.tdms,30204,1400,U3,IR+OR+B,1,primary,BSF 2X,130.76565050325738,B,2,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1400/U3_IR+OR+B_25600_30204_1400.tdms,30204,1400,U3,IR+OR+B,1,primary,BSF 3X,196.14847575488608,B,3,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1400/U3_IR+OR+B_25600_30204_1400.tdms,30204,1400,U3,IR+OR+B,1,interaction_candidate,|BPFI-BPFO|,59.10191437655939,compound,,difference
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1400/U3_IR+OR+B_25600_30204_1400.tdms,30204,1400,U3,IR+OR+B,1,interaction_candidate,BPFI+BPFO,349.6875000000001,compound,,sum
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1400/U3_IR+OR+B_25600_30204_1400.tdms,30204,1400,U3,IR+OR+B,1,interaction_candidate,|BPFI-BSF|,139.0118819366511,compound,,difference
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1400/U3_IR+OR+B_25600_30204_1400.tdms,30204,1400,U3,IR+OR+B,1,interaction_candidate,BPFI+BSF,269.77753243990844,compound,,sum
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1400/U3_IR+OR+B_25600_30204_1400.tdms,30204,1400,U3,IR+OR+B,1,interaction_candidate,|BPFO-BSF|,79.90996756009169,compound,,difference
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1400/U3_IR+OR+B_25600_30204_1400.tdms,30204,1400,U3,IR+OR+B,1,interaction_candidate,BPFO+BSF,210.67561806334908,compound,,sum
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1600/H_IR+OR+B_25600_30204_1600.tdms,30204,1600,H,IR+OR+B,1,primary,1X,26.62500000000001,ROT,1,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1600/H_IR+OR+B_25600_30204_1600.tdms,30204,1600,H,IR+OR+B,1,primary,BPFI 1X,233.4373867619495,IR,1,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1600/H_IR+OR+B_25600_30204_1600.tdms,30204,1600,H,IR+OR+B,1,primary,BPFI 2X,466.874773523899,IR,2,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1600/H_IR+OR+B_25600_30204_1600.tdms,30204,1600,H,IR+OR+B,1,primary,BPFI 3X,700.3121602858486,IR,3,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1600/H_IR+OR+B_25600_30204_1600.tdms,30204,1600,H,IR+OR+B,1,primary,BPFO 1X,165.9376132380506,OR,1,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1600/H_IR+OR+B_25600_30204_1600.tdms,30204,1600,H,IR+OR+B,1,primary,BPFO 2X,331.8752264761012,OR,2,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1600/H_IR+OR+B_25600_30204_1600.tdms,30204,1600,H,IR+OR+B,1,primary,BPFO 3X,497.8128397141518,OR,3,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1600/H_IR+OR+B_25600_30204_1600.tdms,30204,1600,H,IR+OR+B,1,primary,BSF 1X,74.67314626593517,B,1,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1600/H_IR+OR+B_25600_30204_1600.tdms,30204,1600,H,IR+OR+B,1,primary,BSF 2X,149.34629253187035,B,2,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1600/H_IR+OR+B_25600_30204_1600.tdms,30204,1600,H,IR+OR+B,1,primary,BSF 3X,224.01943879780552,B,3,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1600/H_IR+OR+B_25600_30204_1600.tdms,30204,1600,H,IR+OR+B,1,interaction_candidate,|BPFI-BPFO|,67.49977352389891,compound,,difference
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1600/H_IR+OR+B_25600_30204_1600.tdms,30204,1600,H,IR+OR+B,1,interaction_candidate,BPFI+BPFO,399.3750000000001,compound,,sum
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1600/H_IR+OR+B_25600_30204_1600.tdms,30204,1600,H,IR+OR+B,1,interaction_candidate,|BPFI-BSF|,158.76424049601434,compound,,difference
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1600/H_IR+OR+B_25600_30204_1600.tdms,30204,1600,H,IR+OR+B,1,interaction_candidate,BPFI+BSF,308.1105330278847,compound,,sum
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1600/H_IR+OR+B_25600_30204_1600.tdms,30204,1600,H,IR+OR+B,1,interaction_candidate,|BPFO-BSF|,91.26446697211543,compound,,difference
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1600/H_IR+OR+B_25600_30204_1600.tdms,30204,1600,H,IR+OR+B,1,interaction_candidate,BPFO+BSF,240.61075950398578,compound,,sum
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1600/L_IR+OR+B_25600_30204_1600.tdms,30204,1600,L,IR+OR+B,1,primary,1X,26.68750000000001,ROT,1,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1600/L_IR+OR+B_25600_30204_1600.tdms,30204,1600,L,IR+OR+B,1,primary,BPFI 1X,233.9853618482452,IR,1,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1600/L_IR+OR+B_25600_30204_1600.tdms,30204,1600,L,IR+OR+B,1,primary,BPFI 2X,467.9707236964904,IR,2,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1600/L_IR+OR+B_25600_30204_1600.tdms,30204,1600,L,IR+OR+B,1,primary,BPFI 3X,701.9560855447355,IR,3,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1600/L_IR+OR+B_25600_30204_1600.tdms,30204,1600,L,IR+OR+B,1,primary,BPFO 1X,166.32713815175495,OR,1,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1600/L_IR+OR+B_25600_30204_1600.tdms,30204,1600,L,IR+OR+B,1,primary,BPFO 2X,332.6542763035099,OR,2,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1600/L_IR+OR+B_25600_30204_1600.tdms,30204,1600,L,IR+OR+B,1,primary,BPFO 3X,498.9814144552648,OR,3,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1600/L_IR+OR+B_25600_30204_1600.tdms,30204,1600,L,IR+OR+B,1,primary,BSF 1X,74.8484353416768,B,1,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1600/L_IR+OR+B_25600_30204_1600.tdms,30204,1600,L,IR+OR+B,1,primary,BSF 2X,149.6968706833536,B,2,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1600/L_IR+OR+B_25600_30204_1600.tdms,30204,1600,L,IR+OR+B,1,primary,BSF 3X,224.5453060250304,B,3,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1600/L_IR+OR+B_25600_30204_1600.tdms,30204,1600,L,IR+OR+B,1,interaction_candidate,|BPFI-BPFO|,67.65822369649024,compound,,difference
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1600/L_IR+OR+B_25600_30204_1600.tdms,30204,1600,L,IR+OR+B,1,interaction_candidate,BPFI+BPFO,400.3125000000001,compound,,sum
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1600/L_IR+OR+B_25600_30204_1600.tdms,30204,1600,L,IR+OR+B,1,interaction_candidate,|BPFI-BSF|,159.1369265065684,compound,,difference
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1600/L_IR+OR+B_25600_30204_1600.tdms,30204,1600,L,IR+OR+B,1,interaction_candidate,BPFI+BSF,308.833797189922,compound,,sum
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1600/L_IR+OR+B_25600_30204_1600.tdms,30204,1600,L,IR+OR+B,1,interaction_candidate,|BPFO-BSF|,91.47870281007815,compound,,difference
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1600/L_IR+OR+B_25600_30204_1600.tdms,30204,1600,L,IR+OR+B,1,interaction_candidate,BPFO+BSF,241.17557349343176,compound,,sum
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1600/M1_IR+OR+B_25600_30204_1600.tdms,30204,1600,M1,IR+OR+B,1,primary,1X,26.62500000000001,ROT,1,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1600/M1_IR+OR+B_25600_30204_1600.tdms,30204,1600,M1,IR+OR+B,1,primary,BPFI 1X,233.4373867619495,IR,1,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1600/M1_IR+OR+B_25600_30204_1600.tdms,30204,1600,M1,IR+OR+B,1,primary,BPFI 2X,466.874773523899,IR,2,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1600/M1_IR+OR+B_25600_30204_1600.tdms,30204,1600,M1,IR+OR+B,1,primary,BPFI 3X,700.3121602858486,IR,3,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1600/M1_IR+OR+B_25600_30204_1600.tdms,30204,1600,M1,IR+OR+B,1,primary,BPFO 1X,165.9376132380506,OR,1,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1600/M1_IR+OR+B_25600_30204_1600.tdms,30204,1600,M1,IR+OR+B,1,primary,BPFO 2X,331.8752264761012,OR,2,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1600/M1_IR+OR+B_25600_30204_1600.tdms,30204,1600,M1,IR+OR+B,1,primary,BPFO 3X,497.8128397141518,OR,3,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1600/M1_IR+OR+B_25600_30204_1600.tdms,30204,1600,M1,IR+OR+B,1,primary,BSF 1X,74.67314626593517,B,1,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1600/M1_IR+OR+B_25600_30204_1600.tdms,30204,1600,M1,IR+OR+B,1,primary,BSF 2X,149.34629253187035,B,2,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1600/M1_IR+OR+B_25600_30204_1600.tdms,30204,1600,M1,IR+OR+B,1,primary,BSF 3X,224.01943879780552,B,3,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1600/M1_IR+OR+B_25600_30204_1600.tdms,30204,1600,M1,IR+OR+B,1,interaction_candidate,|BPFI-BPFO|,67.49977352389891,compound,,difference
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1600/M1_IR+OR+B_25600_30204_1600.tdms,30204,1600,M1,IR+OR+B,1,interaction_candidate,BPFI+BPFO,399.3750000000001,compound,,sum
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1600/M1_IR+OR+B_25600_30204_1600.tdms,30204,1600,M1,IR+OR+B,1,interaction_candidate,|BPFI-BSF|,158.76424049601434,compound,,difference
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1600/M1_IR+OR+B_25600_30204_1600.tdms,30204,1600,M1,IR+OR+B,1,interaction_candidate,BPFI+BSF,308.1105330278847,compound,,sum
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1600/M1_IR+OR+B_25600_30204_1600.tdms,30204,1600,M1,IR+OR+B,1,interaction_candidate,|BPFO-BSF|,91.26446697211543,compound,,difference
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1600/M1_IR+OR+B_25600_30204_1600.tdms,30204,1600,M1,IR+OR+B,1,interaction_candidate,BPFO+BSF,240.61075950398578,compound,,sum
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1600/M2_IR+OR+B_25600_30204_1600.tdms,30204,1600,M2,IR+OR+B,1,primary,1X,26.68750000000001,ROT,1,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1600/M2_IR+OR+B_25600_30204_1600.tdms,30204,1600,M2,IR+OR+B,1,primary,BPFI 1X,233.9853618482452,IR,1,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1600/M2_IR+OR+B_25600_30204_1600.tdms,30204,1600,M2,IR+OR+B,1,primary,BPFI 2X,467.9707236964904,IR,2,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1600/M2_IR+OR+B_25600_30204_1600.tdms,30204,1600,M2,IR+OR+B,1,primary,BPFI 3X,701.9560855447355,IR,3,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1600/M2_IR+OR+B_25600_30204_1600.tdms,30204,1600,M2,IR+OR+B,1,primary,BPFO 1X,166.32713815175495,OR,1,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1600/M2_IR+OR+B_25600_30204_1600.tdms,30204,1600,M2,IR+OR+B,1,primary,BPFO 2X,332.6542763035099,OR,2,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1600/M2_IR+OR+B_25600_30204_1600.tdms,30204,1600,M2,IR+OR+B,1,primary,BPFO 3X,498.9814144552648,OR,3,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1600/M2_IR+OR+B_25600_30204_1600.tdms,30204,1600,M2,IR+OR+B,1,primary,BSF 1X,74.8484353416768,B,1,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1600/M2_IR+OR+B_25600_30204_1600.tdms,30204,1600,M2,IR+OR+B,1,primary,BSF 2X,149.6968706833536,B,2,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1600/M2_IR+OR+B_25600_30204_1600.tdms,30204,1600,M2,IR+OR+B,1,primary,BSF 3X,224.5453060250304,B,3,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1600/M2_IR+OR+B_25600_30204_1600.tdms,30204,1600,M2,IR+OR+B,1,interaction_candidate,|BPFI-BPFO|,67.65822369649024,compound,,difference
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1600/M2_IR+OR+B_25600_30204_1600.tdms,30204,1600,M2,IR+OR+B,1,interaction_candidate,BPFI+BPFO,400.3125000000001,compound,,sum
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1600/M2_IR+OR+B_25600_30204_1600.tdms,30204,1600,M2,IR+OR+B,1,interaction_candidate,|BPFI-BSF|,159.1369265065684,compound,,difference
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1600/M2_IR+OR+B_25600_30204_1600.tdms,30204,1600,M2,IR+OR+B,1,interaction_candidate,BPFI+BSF,308.833797189922,compound,,sum
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1600/M2_IR+OR+B_25600_30204_1600.tdms,30204,1600,M2,IR+OR+B,1,interaction_candidate,|BPFO-BSF|,91.47870281007815,compound,,difference
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1600/M2_IR+OR+B_25600_30204_1600.tdms,30204,1600,M2,IR+OR+B,1,interaction_candidate,BPFO+BSF,241.17557349343176,compound,,sum
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1600/M3_IR+OR+B_25600_30204_1600.tdms,30204,1600,M3,IR+OR+B,1,primary,1X,26.62500000000001,ROT,1,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1600/M3_IR+OR+B_25600_30204_1600.tdms,30204,1600,M3,IR+OR+B,1,primary,BPFI 1X,233.4373867619495,IR,1,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1600/M3_IR+OR+B_25600_30204_1600.tdms,30204,1600,M3,IR+OR+B,1,primary,BPFI 2X,466.874773523899,IR,2,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1600/M3_IR+OR+B_25600_30204_1600.tdms,30204,1600,M3,IR+OR+B,1,primary,BPFI 3X,700.3121602858486,IR,3,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1600/M3_IR+OR+B_25600_30204_1600.tdms,30204,1600,M3,IR+OR+B,1,primary,BPFO 1X,165.9376132380506,OR,1,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1600/M3_IR+OR+B_25600_30204_1600.tdms,30204,1600,M3,IR+OR+B,1,primary,BPFO 2X,331.8752264761012,OR,2,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1600/M3_IR+OR+B_25600_30204_1600.tdms,30204,1600,M3,IR+OR+B,1,primary,BPFO 3X,497.8128397141518,OR,3,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1600/M3_IR+OR+B_25600_30204_1600.tdms,30204,1600,M3,IR+OR+B,1,primary,BSF 1X,74.67314626593517,B,1,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1600/M3_IR+OR+B_25600_30204_1600.tdms,30204,1600,M3,IR+OR+B,1,primary,BSF 2X,149.34629253187035,B,2,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1600/M3_IR+OR+B_25600_30204_1600.tdms,30204,1600,M3,IR+OR+B,1,primary,BSF 3X,224.01943879780552,B,3,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1600/M3_IR+OR+B_25600_30204_1600.tdms,30204,1600,M3,IR+OR+B,1,interaction_candidate,|BPFI-BPFO|,67.49977352389891,compound,,difference
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1600/M3_IR+OR+B_25600_30204_1600.tdms,30204,1600,M3,IR+OR+B,1,interaction_candidate,BPFI+BPFO,399.3750000000001,compound,,sum
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1600/M3_IR+OR+B_25600_30204_1600.tdms,30204,1600,M3,IR+OR+B,1,interaction_candidate,|BPFI-BSF|,158.76424049601434,compound,,difference
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1600/M3_IR+OR+B_25600_30204_1600.tdms,30204,1600,M3,IR+OR+B,1,interaction_candidate,BPFI+BSF,308.1105330278847,compound,,sum
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1600/M3_IR+OR+B_25600_30204_1600.tdms,30204,1600,M3,IR+OR+B,1,interaction_candidate,|BPFO-BSF|,91.26446697211543,compound,,difference
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1600/M3_IR+OR+B_25600_30204_1600.tdms,30204,1600,M3,IR+OR+B,1,interaction_candidate,BPFO+BSF,240.61075950398578,compound,,sum
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1600/U1_IR+OR+B_25600_30204_1600.tdms,30204,1600,U1,IR+OR+B,1,primary,1X,26.68750000000001,ROT,1,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1600/U1_IR+OR+B_25600_30204_1600.tdms,30204,1600,U1,IR+OR+B,1,primary,BPFI 1X,233.9853618482452,IR,1,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1600/U1_IR+OR+B_25600_30204_1600.tdms,30204,1600,U1,IR+OR+B,1,primary,BPFI 2X,467.9707236964904,IR,2,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1600/U1_IR+OR+B_25600_30204_1600.tdms,30204,1600,U1,IR+OR+B,1,primary,BPFI 3X,701.9560855447355,IR,3,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1600/U1_IR+OR+B_25600_30204_1600.tdms,30204,1600,U1,IR+OR+B,1,primary,BPFO 1X,166.32713815175495,OR,1,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1600/U1_IR+OR+B_25600_30204_1600.tdms,30204,1600,U1,IR+OR+B,1,primary,BPFO 2X,332.6542763035099,OR,2,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1600/U1_IR+OR+B_25600_30204_1600.tdms,30204,1600,U1,IR+OR+B,1,primary,BPFO 3X,498.9814144552648,OR,3,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1600/U1_IR+OR+B_25600_30204_1600.tdms,30204,1600,U1,IR+OR+B,1,primary,BSF 1X,74.8484353416768,B,1,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1600/U1_IR+OR+B_25600_30204_1600.tdms,30204,1600,U1,IR+OR+B,1,primary,BSF 2X,149.6968706833536,B,2,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1600/U1_IR+OR+B_25600_30204_1600.tdms,30204,1600,U1,IR+OR+B,1,primary,BSF 3X,224.5453060250304,B,3,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1600/U1_IR+OR+B_25600_30204_1600.tdms,30204,1600,U1,IR+OR+B,1,interaction_candidate,|BPFI-BPFO|,67.65822369649024,compound,,difference
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1600/U1_IR+OR+B_25600_30204_1600.tdms,30204,1600,U1,IR+OR+B,1,interaction_candidate,BPFI+BPFO,400.3125000000001,compound,,sum
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1600/U1_IR+OR+B_25600_30204_1600.tdms,30204,1600,U1,IR+OR+B,1,interaction_candidate,|BPFI-BSF|,159.1369265065684,compound,,difference
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1600/U1_IR+OR+B_25600_30204_1600.tdms,30204,1600,U1,IR+OR+B,1,interaction_candidate,BPFI+BSF,308.833797189922,compound,,sum
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1600/U1_IR+OR+B_25600_30204_1600.tdms,30204,1600,U1,IR+OR+B,1,interaction_candidate,|BPFO-BSF|,91.47870281007815,compound,,difference
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1600/U1_IR+OR+B_25600_30204_1600.tdms,30204,1600,U1,IR+OR+B,1,interaction_candidate,BPFO+BSF,241.17557349343176,compound,,sum
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1600/U2_IR+OR+B_25600_30204_1600.tdms,30204,1600,U2,IR+OR+B,1,primary,1X,26.68750000000001,ROT,1,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1600/U2_IR+OR+B_25600_30204_1600.tdms,30204,1600,U2,IR+OR+B,1,primary,BPFI 1X,233.9853618482452,IR,1,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1600/U2_IR+OR+B_25600_30204_1600.tdms,30204,1600,U2,IR+OR+B,1,primary,BPFI 2X,467.9707236964904,IR,2,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1600/U2_IR+OR+B_25600_30204_1600.tdms,30204,1600,U2,IR+OR+B,1,primary,BPFI 3X,701.9560855447355,IR,3,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1600/U2_IR+OR+B_25600_30204_1600.tdms,30204,1600,U2,IR+OR+B,1,primary,BPFO 1X,166.32713815175495,OR,1,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1600/U2_IR+OR+B_25600_30204_1600.tdms,30204,1600,U2,IR+OR+B,1,primary,BPFO 2X,332.6542763035099,OR,2,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1600/U2_IR+OR+B_25600_30204_1600.tdms,30204,1600,U2,IR+OR+B,1,primary,BPFO 3X,498.9814144552648,OR,3,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1600/U2_IR+OR+B_25600_30204_1600.tdms,30204,1600,U2,IR+OR+B,1,primary,BSF 1X,74.8484353416768,B,1,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1600/U2_IR+OR+B_25600_30204_1600.tdms,30204,1600,U2,IR+OR+B,1,primary,BSF 2X,149.6968706833536,B,2,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1600/U2_IR+OR+B_25600_30204_1600.tdms,30204,1600,U2,IR+OR+B,1,primary,BSF 3X,224.5453060250304,B,3,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1600/U2_IR+OR+B_25600_30204_1600.tdms,30204,1600,U2,IR+OR+B,1,interaction_candidate,|BPFI-BPFO|,67.65822369649024,compound,,difference
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1600/U2_IR+OR+B_25600_30204_1600.tdms,30204,1600,U2,IR+OR+B,1,interaction_candidate,BPFI+BPFO,400.3125000000001,compound,,sum
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1600/U2_IR+OR+B_25600_30204_1600.tdms,30204,1600,U2,IR+OR+B,1,interaction_candidate,|BPFI-BSF|,159.1369265065684,compound,,difference
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1600/U2_IR+OR+B_25600_30204_1600.tdms,30204,1600,U2,IR+OR+B,1,interaction_candidate,BPFI+BSF,308.833797189922,compound,,sum
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1600/U2_IR+OR+B_25600_30204_1600.tdms,30204,1600,U2,IR+OR+B,1,interaction_candidate,|BPFO-BSF|,91.47870281007815,compound,,difference
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1600/U2_IR+OR+B_25600_30204_1600.tdms,30204,1600,U2,IR+OR+B,1,interaction_candidate,BPFO+BSF,241.17557349343176,compound,,sum
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1600/U3_IR+OR+B_25600_30204_1600.tdms,30204,1600,U3,IR+OR+B,1,primary,1X,26.68750000000001,ROT,1,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1600/U3_IR+OR+B_25600_30204_1600.tdms,30204,1600,U3,IR+OR+B,1,primary,BPFI 1X,233.9853618482452,IR,1,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1600/U3_IR+OR+B_25600_30204_1600.tdms,30204,1600,U3,IR+OR+B,1,primary,BPFI 2X,467.9707236964904,IR,2,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1600/U3_IR+OR+B_25600_30204_1600.tdms,30204,1600,U3,IR+OR+B,1,primary,BPFI 3X,701.9560855447355,IR,3,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1600/U3_IR+OR+B_25600_30204_1600.tdms,30204,1600,U3,IR+OR+B,1,primary,BPFO 1X,166.32713815175495,OR,1,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1600/U3_IR+OR+B_25600_30204_1600.tdms,30204,1600,U3,IR+OR+B,1,primary,BPFO 2X,332.6542763035099,OR,2,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1600/U3_IR+OR+B_25600_30204_1600.tdms,30204,1600,U3,IR+OR+B,1,primary,BPFO 3X,498.9814144552648,OR,3,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1600/U3_IR+OR+B_25600_30204_1600.tdms,30204,1600,U3,IR+OR+B,1,primary,BSF 1X,74.8484353416768,B,1,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1600/U3_IR+OR+B_25600_30204_1600.tdms,30204,1600,U3,IR+OR+B,1,primary,BSF 2X,149.6968706833536,B,2,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1600/U3_IR+OR+B_25600_30204_1600.tdms,30204,1600,U3,IR+OR+B,1,primary,BSF 3X,224.5453060250304,B,3,
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1600/U3_IR+OR+B_25600_30204_1600.tdms,30204,1600,U3,IR+OR+B,1,interaction_candidate,|BPFI-BPFO|,67.65822369649024,compound,,difference
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1600/U3_IR+OR+B_25600_30204_1600.tdms,30204,1600,U3,IR+OR+B,1,interaction_candidate,BPFI+BPFO,400.3125000000001,compound,,sum
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1600/U3_IR+OR+B_25600_30204_1600.tdms,30204,1600,U3,IR+OR+B,1,interaction_candidate,|BPFI-BSF|,159.1369265065684,compound,,difference
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1600/U3_IR+OR+B_25600_30204_1600.tdms,30204,1600,U3,IR+OR+B,1,interaction_candidate,BPFI+BSF,308.833797189922,compound,,sum
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1600/U3_IR+OR+B_25600_30204_1600.tdms,30204,1600,U3,IR+OR+B,1,interaction_candidate,|BPFO-BSF|,91.47870281007815,compound,,difference
+dataset/uosv2/수집 데이터/BearingType_TaperedRoller/RotatingSpeed_1600/U3_IR+OR+B_25600_30204_1600.tdms,30204,1600,U3,IR+OR+B,1,interaction_candidate,BPFO+BSF,241.17557349343176,compound,,sum

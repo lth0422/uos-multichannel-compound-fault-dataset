@@ -1,0 +1,5 @@
+file,bearing,rpm,rotor,fault,repeat,condition_label,actual_sampling_rate_hz,analysis_start_s,analysis_duration_s,spectral_duration_s,samples_per_channel
+dataset/uosv2/수집 데이터/BearingType_DeepGrooveBall/RotatingSpeed_1000/H_IR+OR+B_25600_6204_1000.tdms,6204,1000,H,IR+OR+B,1,H_IR+OR+B,25600.000000000015,59.999999999999964,119.99999999999993,29.999999999999982,3072000
+dataset/uosv2/수집 데이터/BearingType_DeepGrooveBall/RotatingSpeed_1200/H_IR+OR+B_25600_6204_1200.tdms,6204,1200,H,IR+OR+B,1,H_IR+OR+B,25600.000000000015,59.999999999999964,119.99999999999993,29.999999999999982,3072000
+dataset/uosv2/수집 데이터/BearingType_DeepGrooveBall/RotatingSpeed_1400/H_IR+OR+B_25600_6204_1400.tdms,6204,1400,H,IR+OR+B,1,H_IR+OR+B,25600.000000000015,59.999999999999964,119.99999999999993,29.999999999999982,3072000
+dataset/uosv2/수집 데이터/BearingType_DeepGrooveBall/RotatingSpeed_1600/H_IR+OR+B_25600_6204_1600.tdms,6204,1600,H,IR+OR+B,1,H_IR+OR+B,25600.000000000015,59.999999999999964,119.99999999999993,29.999999999999982,3072000

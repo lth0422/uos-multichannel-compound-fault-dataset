@@ -1,0 +1,4 @@
+component,raw_fft_at_least_one_harmonic_channels,raw_fft_at_least_two_harmonics_channels,envelope_fft_at_least_one_harmonic_channels,envelope_fft_at_least_two_harmonics_channels,total_channels
+IR,67,24,143,70,192
+OR,107,58,134,107,192
+B,9,1,32,0,192
